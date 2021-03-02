@@ -30,7 +30,8 @@ class SignUp extends React.Component {
         type: "skin",
         skin: 1,
         eyes: "black",
-        username: ""
+        username: "",
+        loading: false
     }
 
     async componentDidMount() {
@@ -125,6 +126,24 @@ class SignUp extends React.Component {
         }
     }
 
+    _onConfirmPassword = () => {
+        if (this.state.password < 6) {
+            alert("Your password must be at least 6 characters long.")
+        } else if (this.state.password !== this.state.confirmPassword) {
+            alert("The passwords don't match.")
+        } else {
+            this.setState({ index: this.state.index + 1 })
+        }
+    }
+
+    _onNextPhoneEmail = () => {
+        if (this.state.phoneNumber.length < 10) {
+            alert("Phone number has to be 10 characters long.")
+        } else {
+            this.setState({ ...this.state, phoneNumber: "+1" + this.state.phoneNumber, index: this.state.index + 1 })
+        }
+    }
+
     _displayPage() {
         switch (this.state.index) {
             case 0:
@@ -143,34 +162,26 @@ class SignUp extends React.Component {
                         </View>
                         <View style={{flex: 8, width: "100%", justifyContent: 'center', alignItems: 'center'}}>
                             {
-                                this.state.firstName.length > 0
-                                ?
-                                    null
-                                :
-                                    <Text style={{fontSize: 18}}>First name</Text>
+                                this.state.firstName.length === 0 && <Text style={{fontSize: 18}}>First name</Text>
                             }
                             <TextInput
                             onChangeText={text => this.setState({
                                 firstName: text
                             })}
                             style={styles.input}
-                            autoCapitalize='none'
+                            autoCapitalize='words'
                             value={this.state.firstName}
                             autoCorrect={false}
                             />
                             {
-                                this.state.lastName.length > 0
-                                ?
-                                    null
-                                :
-                                    <Text style={{fontSize: 18}}>Last name</Text>
+                                this.state.lastName.length === 0 && <Text style={{fontSize: 18}}>Last name</Text>
                             }
                             <TextInput
                             onChangeText={text => this.setState({
                                 lastName: text
                             })}
                             style={styles.input}
-                            autoCapitalize='none'
+                            autoCapitalize='words'
                             value={this.state.lastName}
                             autoCorrect={false}
                             />
@@ -214,6 +225,7 @@ class SignUp extends React.Component {
                             style={{ textAlign: 'left', fontSize: 17 }}
                             autoCapitalize='none'
                             placeholder="MM"
+                            placeholderTextColor="gray"
                             value={this.state.date.month}
                             keyboardType={"numeric"}
                             />
@@ -230,6 +242,7 @@ class SignUp extends React.Component {
                             style={{ textAlign: 'left', fontSize: 17 }}
                             autoCapitalize='none'
                             placeholder="DD"
+                            placeholderTextColor="gray"
                             value={this.state.date.day}
                             keyboardType={"numeric"}
                             />
@@ -246,6 +259,7 @@ class SignUp extends React.Component {
                             style={{textAlign: 'left', fontSize: 17 }}
                             autoCapitalize='none'
                             placeholder="YYYY"
+                            placeholderTextColor="gray"
                             value={this.state.date.year}
                             keyboardType={"numeric"}
                             />
@@ -276,14 +290,13 @@ class SignUp extends React.Component {
                             </View>
                             <View style={{flex: 1}}/>
                         </View>
-                        <View style={{flex: 8, width: "100%", justifyContent: 'center', alignItems: 'center'}}>
-                            {
-                                this.state.password.length > 0
-                                ?
-                                    null
-                                :
-                                    <Text style={{fontSize: 18}}>Password</Text>
-                            }
+                        <View style={{flex: 2, alignItems: 'center', margin: 7, justifyContent: 'center'}}>
+                            <Text style={{fontSize: 18, textAlign: 'center'}}>Your password must be at least 6 characters long.</Text>
+                        </View>
+                        <View style={{flex: 10, width: "100%", justifyContent: 'center', alignItems: 'center'}}>
+                                {
+                                    this.state.password.length == 0 && <Text style={{fontSize: 18}}>Password</Text>
+                                }
                             <TextInput
                             onChangeText={text => this.setState({
                                 password: text
@@ -314,9 +327,8 @@ class SignUp extends React.Component {
                         </View>
                         <View style={{flex: 1, margin: 30}}>
                             <TouchableOpacity
-                            style={{ height: 40, width: 200, borderRadius: 15, backgroundColor: (this.state.password.length > 0 && this.state.confirmPassword.length > 0) ? appColor : "lightgray", alignItems: 'center', justifyContent: 'center'}}
-                            onPress={() => this.setState({ index: this.state.index + 1 })}
-                            disabled={!(this.state.password.length > 0 && this.state.confirmPassword.length > 0)}
+                            style={{ height: 40, width: 200, borderRadius: 15, backgroundColor: (this.state.password.length >= 6 && this.state.confirmPassword.length >= 6) ? appColor : "lightgray", alignItems: 'center', justifyContent: 'center'}}
+                            onPress={this._onConfirmPassword}
                             >
                                 <Text style={{color: "white", fontWeight: "600", fontSize: 16}}>Next</Text>
                             </TouchableOpacity>
@@ -340,47 +352,74 @@ class SignUp extends React.Component {
                         </View>
                         <View style={{flex: 8, width: "100%", justifyContent: 'center', alignItems: 'center'}}>
                             {
-                                this.state.phoneNumber.length > 0
-                                ?
-                                    null
-                                :
+                                this.state.phoneNumber.length === 0 && 
+                                <View
+                                style={{  flexDirection: "row" }}
+                                >
+                                    <View
+                                    style={{height: 30, width: 30, alignItems: 'center', justifyContent: 'center'}}
+                                    />
                                     <Text style={{fontSize: 18}}>Phone number</Text>
+                                </View>
                             }
-                            <TextInput
-                            onChangeText={text => this.setState({
-                                phoneNumber: text
-                            })}
-                            style={styles.input}
-                            autoCapitalize='none'
-                            value={this.state.phoneNumber}
-                            autoCorrect={false}
-                            keyboardType={"phone-pad"}
-                            />
+                            <View
+                            style={{  flexDirection: "row" }}
+                            >
+                                <View
+                                style={{height: 30, width: 30, alignItems: 'center', justifyContent: 'center'}}
+                                >
+                                    <Text style={{fontSize: 18}}>+1</Text>
+                                </View>
+                                <TextInput
+                                onChangeText={text => this.setState({
+                                    phoneNumber: text
+                                })}
+                                style={styles.input}
+                                autoCapitalize='none'
+                                value={this.state.phoneNumber}
+                                autoCorrect={false}
+                                keyboardType={"phone-pad"}
+                                placeholder="9993334444"
+                                maxLength={10}
+                                />
+                            </View>
                             {
-                                this.state.email.length > 0
-                                ?
-                                    null
-                                :
+                                this.state.email.length === 0 && 
+                                <View
+                                style={{  flexDirection: "row" }}
+                                >
+                                    <View
+                                    style={{height: 30, width: 30, alignItems: 'center', justifyContent: 'center'}}
+                                    />
                                     <Text style={{fontSize: 18}}>Email address</Text>
+                                </View>
                             }
-                            <TextInput
-                            onChangeText={text => this.setState({
-                                email: text
-                            })}
-                            style={styles.input}
-                            autoCapitalize='none'
-                            value={this.state.email}
-                            autoCorrect={false}
-                            keyboardType="email-address"
-                            />
+                            <View
+                            style={{  flexDirection: "row" }}
+                            >
+                                <View
+                                style={{height: 30, width: 30, alignItems: 'center', justifyContent: 'center'}}
+                                >
+                                </View>
+                                <TextInput
+                                onChangeText={text => this.setState({
+                                    email: text
+                                })}
+                                style={styles.input}
+                                autoCapitalize='none'
+                                value={this.state.email}
+                                autoCorrect={false}
+                                keyboardType="email-address"
+                                />
+                            </View>
                         </View>
                         <View style={{flex: 1, margin: 30}}>
                             <TouchableOpacity
                             style={{ height: 40, width: 200, borderRadius: 15, backgroundColor: (this.state.phoneNumber.length > 0 && this.state.email.length > 0) ? appColor: "lightgray", alignItems: 'center', justifyContent: 'center'}}
-                            onPress={() => this.setState({ ...this.state, index: this.state.index + 1 })}
+                            onPress={this._onNextPhoneEmail}
                             disabled={!(this.state.phoneNumber.length > 0 && this.state.email.length > 0)}
                             >
-                                <Text style={{color: "white", fontWeight: "600", fontSize: 16}}>Register</Text>
+                                <Text style={{color: "white", fontWeight: "600", fontSize: 16}}>Next</Text>
                             </TouchableOpacity>
                         </View>
                     </SafeAreaView>
@@ -427,14 +466,6 @@ class SignUp extends React.Component {
                                 <Text style={{color: "white", fontWeight: "600", fontSize: 16}}>Register</Text>
                             </TouchableOpacity>
                         </View>
-                        {
-                            this.state.loading && 
-                            <View style={{position: "absolute", top: 0, bottom: 0, left: 0, backgroundColor: "rgba(0,0,0,0.8)", alignItems: 'center', justifyContent: 'center'}}>
-                                <ActivityIndicator
-                                size="large"
-                                />
-                            </View>
-                        }
                     </SafeAreaView>
                 )
 
@@ -801,13 +832,19 @@ class SignUp extends React.Component {
     }
 
     render() {
-        console.log(this.state)
         return (
             <KeyboardAvoidingView
             style={{flex: 1, backgroundColor: almostWhite}}
             behavior={Platform.OS === "ios" ? "padding" : "height"}
             >
-                {this._displayPage()}
+                {
+                    this.state.loading ?
+                    <View style={{position: "absolute", top: 0, bottom: 0, left: 0, backgroundColor: "rgba(0,0,0,0.8)", alignItems: 'center', justifyContent: 'center', width: "100%"}}>
+                        <ActivityIndicator
+                        size="large"
+                        />
+                    </View> : this._displayPage()
+                }
             </KeyboardAvoidingView>
         )
     }
@@ -820,7 +857,8 @@ const styles = StyleSheet.create({
         borderBottomWidth: 0.5,
         alignSelf: 'center',
         fontSize: 20,
-        marginBottom: 30
+        marginBottom: 30,
+        textAlign: 'center'
     },
     main_container: {
         justifyContent: 'center',

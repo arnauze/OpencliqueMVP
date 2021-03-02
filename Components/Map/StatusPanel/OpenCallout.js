@@ -84,6 +84,7 @@ export default class OpenCallout extends React.Component {
                                     <SuggestedByAndLike
                                     place={place}
                                     user={this.props.user}
+                                    dispatch={this.props.dispatch}
                                     />
                                     <Tags
                                     tags={place.tags}

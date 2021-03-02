@@ -183,7 +183,8 @@ export class SuggestedByAndLike extends React.Component {
             this.props.dispatch(action)
         })
         .catch(error => {
-            console.log(error.response)
+            console.log("Error when liking the recommendation")
+            console.log(error)
         })
 
         // Create like interaction backend button

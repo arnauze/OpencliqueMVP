@@ -1,5 +1,5 @@
 import React from 'react'
-import { Image, TextInput, StyleSheet, TouchableOpacity, View, Text, ScrollView, SafeAreaView} from 'react-native'
+import { Image, TextInput, StyleSheet, TouchableOpacity, View, Text, KeyboardAvoidingView, SafeAreaView} from 'react-native'
 import { connect } from 'react-redux'
 import { Auth, API, Storage } from 'aws-amplify'
 import { appColor } from '../../Styles/styles';
@@ -117,57 +117,64 @@ class SignIn extends React.Component {
 
     render() {
         return (
-            <SafeAreaView style={{flex: 1, position: 'relative'}}>
-                <View style={{flex: 1, alignItems: 'center', justifyContent: 'center', position: 'relative'}}>
-                    <TouchableOpacity onPress={() => this.props.navigation.goBack()} style={{position: 'absolute', left: 10, top: 0}}>
-                        <Image source={require('../../Images/goBack.png')} style={{height: 22, width: 14}}/>
-                    </TouchableOpacity>
-                    {
-                        this.state.username.length > 0
-                        ?
-                            null
-                        :
-                            <Text>Username or email address</Text>
-                    }
-                    <TextInput
-                    onChangeText={text => this.setState({
-                        username: text
-                    })}
-                    style={styles.input}
-                    autoCapitalize='none'
-                    autoCorrect={false}
-                    />
-                    {
-                        this.state.password.length > 0
-                        ?
-                            null
-                        :
-                            <Text>Password</Text>
-                    }
-                    <TextInput
-                    secureTextEntry={true}
-                    onChangeText={text => this.setState({
-                        password: text
-                    })}
-                    style={styles.input}
-                    onSubmitEditing={() => this._submitSignIn()}
-                    autoCapitalize='none'
-                    autoCorrect={false}
-                    />
-                    <TouchableOpacity>
-                        <Text style={{color: appColor}}>Forgot password ?</Text>
-                    </TouchableOpacity>
-                    <TouchableOpacity
-                    style={{marginTop: 20, width: '90%'}}
-                    onPress={() => this._submitSignIn()}
-                    >
-                        <View style={styles.button}>
-                            <Text style={{color: 'white'}}>Sign in</Text>
-                        </View>
-                    </TouchableOpacity>
-                    {this._displayMessage()}
-                </View>
-            </SafeAreaView>
+            <KeyboardAvoidingView
+            style={{flex: 1}}
+            behavior={Platform.OS === "ios" ? "padding" : "height"}
+            >
+                <SafeAreaView style={{flex: 1, position: 'relative'}}>
+                    <View style={{flex: 1, alignItems: 'center', justifyContent: 'center', position: 'relative'}}>
+                        <TouchableOpacity onPress={() => this.props.navigation.navigate("MainPage")} style={{position: 'absolute', left: 10, top: 0}}>
+                            <Image source={require('../../Images/goBack.png')} style={{height: 22, width: 14}}/>
+                        </TouchableOpacity>
+                        {
+                            this.state.username.length > 0
+                            ?
+                                null
+                            :
+                                <Text>Username or email address</Text>
+                        }
+                        <TextInput
+                        onChangeText={text => this.setState({
+                            username: text
+                        })}
+                        style={styles.input}
+                        autoCapitalize='none'
+                        autoCorrect={false}
+                        />
+                        {
+                            this.state.password.length > 0
+                            ?
+                                null
+                            :
+                                <Text>Password</Text>
+                        }
+                        <TextInput
+                        secureTextEntry={true}
+                        onChangeText={text => this.setState({
+                            password: text
+                        })}
+                        style={styles.input}
+                        onSubmitEditing={() => this._submitSignIn()}
+                        autoCapitalize='none'
+                        autoCorrect={false}
+                        />
+                        <TouchableOpacity
+                        onPress={() => alert("Ah bah c'est con fréro")}
+                        >
+                            <Text style={{color: appColor}}>Forgot password ?</Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity
+                        style={{marginTop: 20, width: '90%'}}
+                        onPress={() => this._submitSignIn()}
+                        >
+                            <View style={styles.button}>
+                                <Text style={{color: 'white'}}>Sign in</Text>
+                            </View>
+                        </TouchableOpacity>
+                        {this._displayMessage()}
+                    </View>
+                </SafeAreaView>
+            </KeyboardAvoidingView>
         )
     }
 }

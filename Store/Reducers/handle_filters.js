@@ -103,9 +103,12 @@ export default function changeFilter(state = initialState, action) {
             } else {
                 nextState = {
                     ...state,
-                    region: {
-                        latitude: action.value.lat,
-                        longitude: action.value.lng
+                    user: {
+                        ...state.user,
+                        currentLocation: {
+                            latitude: action.value.lat,
+                            longitude: action.value.lng
+                        }
                     }
                 }
             }
@@ -241,8 +244,7 @@ export default function changeFilter(state = initialState, action) {
                         object: {}
                     }
                 }
-            }
-            else {
+            } else {
 
                 // Connects the user and send us to the main page
 
@@ -421,31 +423,6 @@ export default function changeFilter(state = initialState, action) {
                     }
                 }
             } else if (action.value.location) {
-
-                console.log("Modifying location")
-                
-                let apiName = 'Openclique'
-                let path = '/users/' + state.user.info.username + '/location'
-                let myInit = {
-                    body: {
-                        location: {
-                            lat: action.value.location.latitude,
-                            lng: action.value.location.longitude
-                        }
-                    }
-                }
-
-                API.post(apiName, path, myInit)
-                .then(response => {
-
-                    console.log(response)
-
-                })
-                .catch(error => {
-
-                    console.log(error.response)
-
-                })
 
                 nextState = {
                     ...state,

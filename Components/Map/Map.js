@@ -115,33 +115,34 @@ class Map extends React.Component {
             navigator.geolocation.getCurrentPosition((location) => {
                 console.log(location)
 
-                this.setState({
-                    ...this.state,
-                    region: {
-                        ...this.state.region,
-                        latitude: location.coords.latitude,
-                        longitude: location.coords.longitude
-                    },
-                }, () => {
-                    let apiName = "Openclique"
-                    let path = "/users/" + this.props.user.info.username + "/location"
-                    let myInit = {
-                        body: {
-                            location: {
-                                lng: location.coords.longitude,
-                                lat: location.coords.latitude
-                            }
+                let action = {
+                    type: "CHANGE_REGION",
+                    value : {
+                        lat: location.coords.latitude,
+                        lng: location.coords.longitude
+                    }
+                }
+
+                this.props.dispatch(action)
+                
+                let apiName = "Openclique"
+                let path = "/users/" + this.props.user.info.username + "/location"
+                let myInit = {
+                    body: {
+                        location: {
+                            lng: location.coords.longitude,
+                            lat: location.coords.latitude
                         }
                     }
-                    API.get(apiName, path, myInit)
-                    .then(response => {
-                        console.log("Successfully updated user's location in database")
-                        console.log(response)
-                    })
-                    .catch(error => {
-                        console.log(error.response)
-                    })
-                })     
+                }
+                API.get(apiName, path, myInit)
+                .then(response => {
+                    console.log("Successfully updated user's location in database")
+                    console.log(response)
+                })
+                .catch(error => {
+                    console.log(error.response)
+                })
 
             })
         }
@@ -170,31 +171,46 @@ class Map extends React.Component {
 
                 console.log('[INFO] Location received: ', location);
 
-                this.setState({
-                    ...this.state,
-                    region: {
-                        ...this.state.region,
-                        latitude: location.latitude,
-                        longitude: location.longitude
-                    },
-                })
+                let action = {
+                    type: "CHANGE_REGION",
+                    value : {
+                        lat: location.coords.latitude,
+                        lng: location.coords.longitude
+                    }
+                }
+
+                this.props.dispatch(action)
 
                 // I only refresh the user's location every 1 minutes (60000 ms)
 
                 let currentDate = Date.now()
                 if ((currentDate - this.state.lastLocationUpdate) > 60000) {
 
-                    let action = {
-                        type: 'UPDATE_USER',
-                        value: {
+                    let apiName = 'Openclique'
+                    let path = '/users/' + state.user.info.username + '/location'
+                    let myInit = {
+                        body: {
                             location: {
-                                latitude: location.latitude,
-                                longitude: location.longitude
-                            },
+                                lat: action.value.location.latitude,
+                                lng: action.value.location.longitude
+                            }
                         }
                     }
-        
-                    this.props.dispatch(action)
+
+                    API.post(apiName, path, myInit)
+                    .then(response => {
+
+                        this.setState({
+                            ...this.state,
+                            lastLocationUpdate: currentDate
+                        })
+
+                    })
+                    .catch(error => {
+
+                        console.log(error.response)
+
+                    })
 
                 }
 
@@ -261,6 +277,7 @@ class Map extends React.Component {
         if (this.state.suggestions) {
             let suggestions = [...this.state.suggestions.coffee_and_tea, ...this.state.suggestions.culture, ...this.state.suggestions.likes, ...this.state.suggestions.restaurant, ...this.state.suggestions.nature]
             let bounds = this.state.bounds
+            let i = 0
             return (
                 suggestions.map((item, index) => {
                     let point = item.geoJson.coordinates
@@ -276,6 +293,7 @@ class Map extends React.Component {
                             navigation={this.props.navigation}
                             showCallout={this._showPlaceCallout}
                             openCallout={this.state.openCallout}
+                            user={this.props.user.info}
                             />
                         )
                     }
@@ -431,15 +449,7 @@ class Map extends React.Component {
     }
 
     _centerMap = () => {
-        this.setState({
-            region: {
-                latitude: this.props.user.info.location.lat,
-                longitude: this.props.user.info.location.lng,
-                latitudeDelta: this.state.region.latitudeDelta,
-                longitudeDelta: this.state.region.longitudeDelta
-            },
-            center: true
-        }, () => this.setState({center: false}));
+        this._camera.flyTo([this.props.user.currentLocation.longitude, this.props.user.currentLocation.latitude], 1000)
     }
 
     _onUpdateUserLocation = (location) => {
@@ -463,9 +473,9 @@ class Map extends React.Component {
                 this.setState({...this.state, componentHeight: event.nativeEvent.layout.height, componentWidth: event.nativeEvent.layout.width})
             }}
             >
-                <NavigationEvents
+                {/* <NavigationEvents
                 onDidFocus={() => this._onDidFocus()}
-                />
+                /> */}
                 <MapboxGL.MapView
                 rotateEnabled={false}
                 onLayout={(e) => this.setState({ ...this.state, mapHeight: e.nativeEvent.layout.height })}
@@ -491,8 +501,7 @@ class Map extends React.Component {
                     showsUserHeadingIndicator
                     visible
                     animated
-                    >
-                    </MapboxGL.UserLocation>
+                    />
                     {this._displayMarker()}
                 </MapboxGL.MapView>
                 <MyLocationButton
@@ -504,6 +513,7 @@ class Map extends React.Component {
                 onBottomReached={() => this.setState({ ...this.state, openCallout: null })}
                 setRefCallout={this._setRefCallout}
                 user={this.props.user.info}
+                dispatch={this.props.dispatch}
                 />
             </View>
         )

@@ -8,18 +8,20 @@ MapboxGL.setAccessToken("pk.eyJ1IjoiYXJuYXV6ZSIsImEiOiJja2Jhcjg4c3cwOTlrMnVuMWFw
 export default class CustomMarker extends React.Component {
 
     _renderAnimation(item) {
-        if (item.type === "coffee_and_tea") {
-            return (require('../../Animations/map_icons/coffee.json'))
-        } else if (item.type === "restaurant") {
-            return (require('../../Animations/map_icons/restaurant.json'))
-        } else if (item.type === "nightlife") {
-            return (require('../../Animations/map_icons/nightlife.json'))
-        } else if (item.type === "nature") {
-            return (require('../../Animations/map_icons/nature.json'))
-        } else if (item.type === "culture") {
-            return (require('../../Animations/map_icons/culture.json'))
-        } else {
+        if (this.props.user.places_liked.indexOf(item.rangeKey) >= 0) {
             return (require('../../Animations/map_icons/liked.json'))
+        } else {
+            if (item.type === "coffee_and_tea") {
+                return (require('../../Animations/map_icons/coffee.json'))
+            } else if (item.type === "restaurant") {
+                return (require('../../Animations/map_icons/restaurant.json'))
+            } else if (item.type === "nightlife") {
+                return (require('../../Animations/map_icons/nightlife.json'))
+            } else if (item.type === "nature") {
+                return (require('../../Animations/map_icons/nature.json'))
+            } else if (item.type === "culture") {
+                return (require('../../Animations/map_icons/culture.json'))
+            } 
         }
     }
 
