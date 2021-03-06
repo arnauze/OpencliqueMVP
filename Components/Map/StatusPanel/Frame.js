@@ -434,15 +434,13 @@ export class PlacesSuggested extends React.Component {
         fetchBatch: 5,
         isOpen: false,
         currentList: [],
-        places: [],
-        filter:"restaurant"
     }
 
     componentDidMount() {
-        this._fetchMoreItems()
+        this._fetchMoreItems(null)
     }
 
-    _fetchMoreItems = () => {
+    _fetchMoreItems = (callback) => {
 
         // That function is called when the user reaches the bottom of the flat list
         // Improvements:
@@ -460,13 +458,26 @@ export class PlacesSuggested extends React.Component {
         this.setState({
             ...this.state,
             currentList: list,
-            fetchedCount: this.state.fetchedCount + 1
-        })
+            fetchedCount: this.state.fetchedCount + 1,
+            updatingFilter: false
+        }, callback != null ? () => callback() : null)
 
     }
 
+    _updateList = () => {
+        this.setState({
+            currentList: [],
+            fetchedCount: 0,
+            updatingFilter: true
+        }, () => this._fetchMoreItems(this.props.updateOldFilter))
+    }
+
     render() {
-        console.log(this.props)
+        if (this.props.filter !== this.props.oldFilter && !this.state.updatingFilter) {
+            this._updateList()
+        }
+        console.log(this.props.filter)
+        console.log(this.props.oldFilter)
         if (this.props.places && this.props.places.length > 0) {
             return (
                 <FlatList
@@ -547,9 +558,11 @@ class Suggestions extends React.Component {
         return (
             <PlacesSuggested
             filter={this.props.filter}
-            places={this.props.suggestions[this.props.filter]}
+            oldFilter={this.props.oldFilter}
+            places={this.props.suggestions}
             user={this.props.user}
             dispatch={this.props.dispatch}
+            updateOldFilter={this.props.updateOldFilter}
             />
         )
     }
@@ -561,7 +574,8 @@ class Frame extends React.Component {
     state = {
         currentDate: Date.now(),
         refreshDate: Date.parse('2021-03-07T00:00:00'),
-        filter: "restaurant"
+        filter: "restaurant",
+        oldFilter: "restaurant"
     }
 
     formatDate() {
@@ -577,12 +591,16 @@ class Frame extends React.Component {
     }
 
     updateFilter = (newFilter) => {
-        this.setState({ ...this.state, filter: newFilter })
+        this.setState({ ...this.state, filter: newFilter, oldFilter: this.state.filter })
     }
 
-    // componentDidMount() {
-    //     setInterval(() => this.setState({ ...this.state, currentDate: Date.now() }), 1000)
-    // }
+    updateOldFilter = () => {
+        this.setState({ ...this.state, oldFilter: this.state.filter })
+    }
+
+    componentDidMount() {
+        setInterval(() => this.setState({ ...this.state, currentDate: Date.now() }), 1000)
+    }
 
     render() {
         
@@ -605,10 +623,12 @@ class Frame extends React.Component {
                         />
                     </View>
                     <Suggestions
-                    suggestions={this.props.globalSuggestions}
+                    suggestions={this.props.globalSuggestions[this.state.filter]}
                     filter={this.state.filter}
+                    oldFilter={this.state.oldFilter}
                     user={this.props.user}
                     dispatch={this.props.dispatch}
+                    updateOldFilter={this.updateOldFilter}
                     />
                 </View>
             </SafeAreaView>

@@ -45,10 +45,10 @@
 	<string>$(PRODUCT_NAME) would like to use your camera</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
 	<string>Location required to display points of interests around  you</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Location required in background to improve our recommendations for you</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Location required to display points of interests around you</string>
-	<key>NSLocationAlwaysUsageDescription</key>
-        <string>Location required in background to improve our recommendations for you</string>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>$(PRODUCT_NAME) would like to access your microphone (for videos)</string>
 	<key>NSMotionUsageDescription</key>
