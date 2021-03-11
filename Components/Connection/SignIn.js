@@ -63,42 +63,8 @@ class SignIn extends React.Component {
 
                 console.log(response)
 
-                // let key = "items/" + response.character.avatar.hair.key
-                // let resp = await Storage.get(key, { level: 'public' })
-                // response.character.avatar.hair.url = resp;
-
-                // key = "items/" + response.character.avatar.eyes.key
-                // resp = await Storage.get(key, { level: 'public' })
-                // response.character.avatar.eyes.url = resp;
-
-                // key = "items/" + response.character.avatar.skin.key
-                // resp = await Storage.get(key, { level: 'public' })
-                // response.character.avatar.skin.url = resp;
-
-                // key = "items/" + response.character.items.hat.key
-                // resp = await Storage.get(key, { level: 'public' })
-                // response.character.items.hat.url = resp;
-
-                // key = "items/" + response.character.items.top.key
-                // resp = await Storage.get(key, { level: 'public' })
-                // response.character.items.top.url = resp;
-
-                // key = "items/" + response.character.items.bottom.key
-                // resp = await Storage.get(key, { level: 'public' })
-                // response.character.items.bottom.url = resp;
-
-                // key = "items/" + response.character.items.shoes.key
-                // resp = await Storage.get(key, { level: 'public' })
-                // response.character.items.shoes.url = resp;
-
                 let action = { type: 'CHANGE_CONNECTED_USER', value: response, token: data.signInUserSession.idToken.jwtToken }
                 this.props.dispatch(action)
-
-                // let action2 = { type: 'CHANGE_FILTERS', value: {
-                //     filters: response.info.preferences.filters,
-                //     user: response.info
-                // }}
-                // this.props.dispatch(action2)
 
             })
             .catch(error => {
@@ -126,13 +92,7 @@ class SignIn extends React.Component {
                         <TouchableOpacity onPress={() => this.props.navigation.navigate("MainPage")} style={{position: 'absolute', left: 10, top: 0}}>
                             <Image source={require('../../Images/goBack.png')} style={{height: 22, width: 14}}/>
                         </TouchableOpacity>
-                        {
-                            this.state.username.length > 0
-                            ?
-                                null
-                            :
-                                <Text>Username or email address</Text>
-                        }
+                        <Text>Username or email address</Text>
                         <TextInput
                         onChangeText={text => this.setState({
                             username: text
@@ -140,14 +100,9 @@ class SignIn extends React.Component {
                         style={styles.input}
                         autoCapitalize='none'
                         autoCorrect={false}
+                        multiline={true}
                         />
-                        {
-                            this.state.password.length > 0
-                            ?
-                                null
-                            :
-                                <Text>Password</Text>
-                        }
+                        <Text>Password</Text>
                         <TextInput
                         secureTextEntry={true}
                         onChangeText={text => this.setState({
@@ -181,12 +136,14 @@ class SignIn extends React.Component {
 
 const styles = StyleSheet.create({
     input: {
-        width: '65%',
-        height: 30,
+        minWidth: '65%',
+        minHeight: 30,
         borderBottomWidth: 0.3,
         alignSelf: 'center',
         fontSize: 20,
-        marginBottom: 10
+        margin: 10,
+        marginBottom: 30,
+        textAlign: 'center'
     },
     button: {
         width: '100%',

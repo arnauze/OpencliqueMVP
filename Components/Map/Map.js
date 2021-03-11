@@ -52,8 +52,8 @@ class Map extends React.Component {
             poi: [],
             showMarker: true,
             region: {
-                latitude: 34.052235, // props.user.info.location && props.user.info.location.lat != null ? props.user.info.location.lat : 34.0209,
-                longitude: -118.243683, // props.user.info.location && props.user.info.location.lng != null ? props.user.info.location.lng : -118.2856,
+                latitude: props.user.info.location && props.user.info.location.lat != null ? props.user.info.location.lat : 34.0209,
+                longitude: props.user.info.location && props.user.info.location.lng != null ? props.user.info.location.lng : -118.2856,
                 latitudeDelta: 0.0922,
                 longitudeDelta: 0.0421
             },

@@ -432,7 +432,7 @@ export class PlacesSuggested extends React.Component {
         fetchedCount: 0,
         mediasIndex: 0,
         fetchBatch: 5,
-        isOpen: false,
+        isOpen: [],
         currentList: [],
     }
 
@@ -473,11 +473,8 @@ export class PlacesSuggested extends React.Component {
     }
 
     render() {
-        if (this.props.filter !== this.props.oldFilter && !this.state.updatingFilter) {
+        if (this.props.filter !== this.props.oldFilter && !this.state.updatingFilter)
             this._updateList()
-        }
-        console.log(this.props.filter)
-        console.log(this.props.oldFilter)
         if (this.props.places && this.props.places.length > 0) {
             return (
                 <FlatList
@@ -514,17 +511,17 @@ export class PlacesSuggested extends React.Component {
                                 tags={place.tags}
                                 />
                                 <TouchableOpacity
-                                onPress={() => this.setState({ ...this.state, isOpen: !this.state.isOpen })}
+                                onPress={() => this.setState({ ...this.state, isOpen: this.state.isOpen.indexOf(place) >= 0 ? this.state.isOpen.filter(item => item !== place) : [...this.state.isOpen, place] })}
                                 style={{flexDirection: "row", alignItems: 'center', margin: 7}}
                                 >
                                     <Text style={{fontWeight: "600"}}>More</Text>
                                     <Image
                                     source={require('../../../Images/back_icon_black.png')}
-                                    style={{width: 16, height: 10, marginLeft: 5, transform: this.state.isOpen ? [{ rotate: "180deg" }] : []}}
+                                    style={{width: 16, height: 10, marginLeft: 5, transform: this.state.isOpen.indexOf(place) >= 0 ? [{ rotate: "180deg" }] : []}}
                                     />
                                 </TouchableOpacity>
                                 {
-                                    this.state.isOpen ?
+                                    this.state.isOpen.indexOf(place) >= 0 ?
                                         <View style={{margin: 10}}>
                                             <PlaceInformations
                                             place={place}
@@ -573,9 +570,28 @@ class Frame extends React.Component {
 
     state = {
         currentDate: Date.now(),
-        refreshDate: Date.parse('2021-03-07T00:00:00'),
+        refreshDate: this.makeRefreshDate(),
         filter: "restaurant",
         oldFilter: "restaurant"
+    }
+
+    makeRefreshDate() {
+        // Creating a Date object
+        let date = new Date(Date.now())
+
+        // Setting the hours to 23h59m59s
+        date.setHours(23, 59, 59)
+
+        // Getting the day of the month (1 - 31)
+        let day_of_month = date.getDate()
+        
+        // Getting the day of the month (Sun: 0, Sat: 6)
+        let day_of_week = date.getDay()
+        let diff_before_sunday = 7 - day_of_week
+
+        // Updating the date to make it be Sunday of current week
+        date.setDate(day_of_month + diff_before_sunday)
+        return Date.parse(date)
     }
 
     formatDate() {
