@@ -52,8 +52,8 @@ class Map extends React.Component {
             poi: [],
             showMarker: true,
             region: {
-                latitude: 34.0209,//props.user.info.location && props.user.info.location.lat != null ? props.user.info.location.lat : 34.0209,
-                longitude: -118.2856,//props.user.info.location && props.user.info.location.lng != null ? props.user.info.location.lng : -118.2856,
+                latitude: props.user.info.location && props.user.info.location.lat != null ? props.user.info.location.lat : 34.0209,
+                longitude: props.user.info.location && props.user.info.location.lng != null ? props.user.info.location.lng : -118.2856,
                 latitudeDelta: 0.0922,
                 longitudeDelta: 0.0421
             },
@@ -232,8 +232,7 @@ class Map extends React.Component {
     _getUsers = () => {
 
         let apiName = 'Openclique'
-        let path = '/users/' + this.props.user.info.username + '/friends'
-        
+        let path = '/users'
         let myInit = {}
 
         API.get(apiName, path, myInit)
@@ -430,7 +429,6 @@ class Map extends React.Component {
                         key={index}
                         location={item.location}
                         user={item}
-                        character={this.props.user.character}
                         isCurrentUser={item.username === this.props.user.info.username}
                         // showCallout={this._showUserCallout}
                         openCallout={this.state.openCallout}
@@ -618,6 +616,7 @@ class Map extends React.Component {
                     animated
                     />
                     {this._displayMarker()}
+                    {this._displayUsers()}
                 </MapboxGL.MapView>
                 <MyLocationButton
                 centerMap={this._centerMap}

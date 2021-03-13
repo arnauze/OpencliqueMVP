@@ -3,7 +3,7 @@ import { View, Text, Image } from 'react-native'
 import { Marker } from 'react-native-maps'
 import { Storage, API } from 'aws-amplify'
 import MapboxGL from '@react-native-mapbox-gl/maps';
-import { flyToAnimationSpeed } from '../../Styles/styles';
+import { appColor, flyToAnimationSpeed } from '../../Styles/styles';
 import Character from '../Character/Character';
 import { connect } from 'react-redux'
 
@@ -87,48 +87,22 @@ export default class UserMarker extends React.Component {
     }
 
     render() {
-        return (
-            <MapboxGL.PointAnnotation
-            coordinate={[this.props.location.lng, this.props.location.lat]}
-            onSelected={this.onPointClicked}
-            anchor={{x: 0.5, y: 1}}
-            id={this.props.user.username}
-            >
-                <View style={{alignItems: 'center'}}>
-                    {/* <Image 
-                    source={require('../../Images/avatar.png')}
-                    style={{width: this._isPressed() ? 24 : 20, height: this._isPressed() ? 88 : 74, position: 'relative'}}
-                    />
-                    {
-                        this.state.items.map((item, index) => {
-
-                            return (
-                                <Image
-                                key={index}
-                                source={{url: item.url}}
-                                style={[{
-                                    position: 'absolute',
-                                    height: this._isPressed() ? (item.item.height / 3) + (item.item.height / 5) : item.item.height / 3,
-                                    width: this._isPressed() ? (item.item.width / 3) + (item.item.width / 5) : item.item.width / 3,
-                                    top: this._isPressed() ? (item.item.top / 3) + (item.item.top / 5) : item.item.top / 3
-                                }, this.getExtraStyle(item)]}
-                                />
-                            )
-
-                        })
-                    } */}
-                    <Character
-                    isUserMarker={true}
-                    disabled={true}
-                    navigation={this.props.navigation}
-                    isMapNotClicked={!this._isPressed()}
-                    isMapClicked={this._isPressed()}
-                    character={this.props.character}
-                    isCurrentUser={this.props.isCurrentUser}
-                    username="arnauze"
-                    />
-                </View>
-            </MapboxGL.PointAnnotation>
-        )
+        console.log(this.props)
+        if (!this.props.isCurrentUser) {
+            return (
+                <MapboxGL.PointAnnotation
+                coordinate={[this.props.location.lng, this.props.location.lat]}
+                onSelected={this.onPointClicked}
+                anchor={{x: 0.5, y: 1}}
+                id={this.props.user.username}
+                >
+                    <View style={{width: 30, height: 30, backgroundColor: "white", alignItems: 'center', justifyContent: "center", borderRadius: 15 }}>
+                        <View style={{width: 20, height: 20, borderRadius: 10, backgroundColor: appColor}} />
+                    </View>
+                </MapboxGL.PointAnnotation>
+            )
+        } else {
+            return null
+        }
     }
 }

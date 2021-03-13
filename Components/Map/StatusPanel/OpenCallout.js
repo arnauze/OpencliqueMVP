@@ -85,6 +85,7 @@ export default class OpenCallout extends React.Component {
                                     place={place}
                                     user={this.props.user}
                                     dispatch={this.props.dispatch}
+                                    refreshGlobalRecommendations={() => {}}
                                     />
                                     <Tags
                                     tags={place.tags}
