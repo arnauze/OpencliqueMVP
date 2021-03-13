@@ -8,18 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* OpencliqueTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* OpencliqueTests.m */; };
+		02C2676F2966AD333E085F9E /* libPods-Openclique-OpencliqueTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 67342927D79AEFED198801C9 /* libPods-Openclique-OpencliqueTests.a */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		2145BA69E1B5303F0548A740 /* libPods-Openclique-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F10D8E2BF793E7147DBC96C /* libPods-Openclique-tvOSTests.a */; };
 		2D02E4BC1E0B4A80006451C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2DCD954D1E0B4F2C00145EB5 /* OpencliqueTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* OpencliqueTests.m */; };
-		62079F470FB0763D5BF05C18 /* libPods-Openclique-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FBBE890C36E579BEDD6D016 /* libPods-Openclique-tvOS.a */; };
+		62BFD3B3D406399924B9DE1C /* libPods-Openclique-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C295277484DBC8810AC6E8E /* libPods-Openclique-tvOS.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		A5688A11D1571AA1988DF9E8 /* libPods-Openclique-OpencliqueTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0951068CBF1E4CEA5FC3DB46 /* libPods-Openclique-OpencliqueTests.a */; };
-		B30318AF3E9D4052D5C43E83 /* libPods-Openclique.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6419419C620730468984A40C /* libPods-Openclique.a */; };
+		AFB02F2ECED01F1FA219680E /* libPods-Openclique.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ABCE412963E2477F70EF20B6 /* libPods-Openclique.a */; };
+		FF9C09DD63B613AED01DF62C /* libPods-Openclique-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BFDE54768D1F10F087BBA78 /* libPods-Openclique-tvOSTests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,28 +44,28 @@
 		00E356EE1AD99517003FC87E /* OpencliqueTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OpencliqueTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* OpencliqueTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OpencliqueTests.m; sourceTree = "<group>"; };
-		049424BA9F2EC069E89E8E8C /* Pods-Openclique-OpencliqueTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Openclique-OpencliqueTests.debug.xcconfig"; path = "Target Support Files/Pods-Openclique-OpencliqueTests/Pods-Openclique-OpencliqueTests.debug.xcconfig"; sourceTree = "<group>"; };
-		0951068CBF1E4CEA5FC3DB46 /* libPods-Openclique-OpencliqueTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Openclique-OpencliqueTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0BFDE54768D1F10F087BBA78 /* libPods-Openclique-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Openclique-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07F961A680F5B00A75B9A /* Openclique.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Openclique.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = Openclique/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = Openclique/AppDelegate.m; sourceTree = "<group>"; };
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Openclique/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Openclique/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Openclique/main.m; sourceTree = "<group>"; };
-		1E7C872E76D33895A0490494 /* Pods-Openclique.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Openclique.debug.xcconfig"; path = "Target Support Files/Pods-Openclique/Pods-Openclique.debug.xcconfig"; sourceTree = "<group>"; };
-		298A1CC2442AF8CC8B8BD974 /* Pods-Openclique-OpencliqueTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Openclique-OpencliqueTests.release.xcconfig"; path = "Target Support Files/Pods-Openclique-OpencliqueTests/Pods-Openclique-OpencliqueTests.release.xcconfig"; sourceTree = "<group>"; };
 		2D02E47B1E0B4A5D006451C7 /* Openclique-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Openclique-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* Openclique-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Openclique-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4577D219B3C84F290140ABB2 /* Pods-Openclique-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Openclique-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-Openclique-tvOSTests/Pods-Openclique-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
+		4CF82645BC23025E710B7C3D /* Pods-Openclique-OpencliqueTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Openclique-OpencliqueTests.debug.xcconfig"; path = "Target Support Files/Pods-Openclique-OpencliqueTests/Pods-Openclique-OpencliqueTests.debug.xcconfig"; sourceTree = "<group>"; };
 		51254B6425EAAF0F002F78FD /* Openclique.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = Openclique.entitlements; path = Openclique/Openclique.entitlements; sourceTree = "<group>"; };
-		6419419C620730468984A40C /* libPods-Openclique.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Openclique.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		658A2C680C2630F485D7E211 /* Pods-Openclique.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Openclique.release.xcconfig"; path = "Target Support Files/Pods-Openclique/Pods-Openclique.release.xcconfig"; sourceTree = "<group>"; };
-		6F10D8E2BF793E7147DBC96C /* libPods-Openclique-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Openclique-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		7CA5614D0A4BEA3980034536 /* Pods-Openclique-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Openclique-tvOS.release.xcconfig"; path = "Target Support Files/Pods-Openclique-tvOS/Pods-Openclique-tvOS.release.xcconfig"; sourceTree = "<group>"; };
-		7FBBE890C36E579BEDD6D016 /* libPods-Openclique-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Openclique-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		51C57CCBA929BDE1D62FD762 /* Pods-Openclique.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Openclique.debug.xcconfig"; path = "Target Support Files/Pods-Openclique/Pods-Openclique.debug.xcconfig"; sourceTree = "<group>"; };
+		5BC915670ED8072D11272303 /* Pods-Openclique.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Openclique.release.xcconfig"; path = "Target Support Files/Pods-Openclique/Pods-Openclique.release.xcconfig"; sourceTree = "<group>"; };
+		5C295277484DBC8810AC6E8E /* libPods-Openclique-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Openclique-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		67342927D79AEFED198801C9 /* libPods-Openclique-OpencliqueTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Openclique-OpencliqueTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		737BE906144A63B442BA8504 /* Pods-Openclique-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Openclique-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-Openclique-tvOS/Pods-Openclique-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = Openclique/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		858081478C304CF7E2269E42 /* Pods-Openclique-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Openclique-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-Openclique-tvOSTests/Pods-Openclique-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
-		BBB7E2AB68C195C27E89F517 /* Pods-Openclique-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Openclique-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-Openclique-tvOS/Pods-Openclique-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
-		EB11A17F27A73C625E665202 /* Pods-Openclique-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Openclique-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-Openclique-tvOSTests/Pods-Openclique-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		989CAB72A77F369327C5DF9A /* Pods-Openclique-OpencliqueTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Openclique-OpencliqueTests.release.xcconfig"; path = "Target Support Files/Pods-Openclique-OpencliqueTests/Pods-Openclique-OpencliqueTests.release.xcconfig"; sourceTree = "<group>"; };
+		ABCE412963E2477F70EF20B6 /* libPods-Openclique.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Openclique.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B5E19CB18021F91561CC8E89 /* Pods-Openclique-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Openclique-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-Openclique-tvOSTests/Pods-Openclique-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		E27FD7C67713420C400CB7A0 /* Pods-Openclique-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Openclique-tvOS.release.xcconfig"; path = "Target Support Files/Pods-Openclique-tvOS/Pods-Openclique-tvOS.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
@@ -75,7 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A5688A11D1571AA1988DF9E8 /* libPods-Openclique-OpencliqueTests.a in Frameworks */,
+				02C2676F2966AD333E085F9E /* libPods-Openclique-OpencliqueTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,7 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B30318AF3E9D4052D5C43E83 /* libPods-Openclique.a in Frameworks */,
+				AFB02F2ECED01F1FA219680E /* libPods-Openclique.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,7 +91,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				62079F470FB0763D5BF05C18 /* libPods-Openclique-tvOS.a in Frameworks */,
+				62BFD3B3D406399924B9DE1C /* libPods-Openclique-tvOS.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,7 +99,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2145BA69E1B5303F0548A740 /* libPods-Openclique-tvOSTests.a in Frameworks */,
+				FF9C09DD63B613AED01DF62C /* libPods-Openclique-tvOSTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,10 +143,10 @@
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
 				ED2971642150620600B7C4FE /* JavaScriptCore.framework */,
-				6419419C620730468984A40C /* libPods-Openclique.a */,
-				0951068CBF1E4CEA5FC3DB46 /* libPods-Openclique-OpencliqueTests.a */,
-				7FBBE890C36E579BEDD6D016 /* libPods-Openclique-tvOS.a */,
-				6F10D8E2BF793E7147DBC96C /* libPods-Openclique-tvOSTests.a */,
+				ABCE412963E2477F70EF20B6 /* libPods-Openclique.a */,
+				67342927D79AEFED198801C9 /* libPods-Openclique-OpencliqueTests.a */,
+				5C295277484DBC8810AC6E8E /* libPods-Openclique-tvOS.a */,
+				0BFDE54768D1F10F087BBA78 /* libPods-Openclique-tvOSTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -154,14 +154,14 @@
 		8103D2AB56F691DB178F4578 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				1E7C872E76D33895A0490494 /* Pods-Openclique.debug.xcconfig */,
-				658A2C680C2630F485D7E211 /* Pods-Openclique.release.xcconfig */,
-				049424BA9F2EC069E89E8E8C /* Pods-Openclique-OpencliqueTests.debug.xcconfig */,
-				298A1CC2442AF8CC8B8BD974 /* Pods-Openclique-OpencliqueTests.release.xcconfig */,
-				BBB7E2AB68C195C27E89F517 /* Pods-Openclique-tvOS.debug.xcconfig */,
-				7CA5614D0A4BEA3980034536 /* Pods-Openclique-tvOS.release.xcconfig */,
-				EB11A17F27A73C625E665202 /* Pods-Openclique-tvOSTests.debug.xcconfig */,
-				858081478C304CF7E2269E42 /* Pods-Openclique-tvOSTests.release.xcconfig */,
+				51C57CCBA929BDE1D62FD762 /* Pods-Openclique.debug.xcconfig */,
+				5BC915670ED8072D11272303 /* Pods-Openclique.release.xcconfig */,
+				4CF82645BC23025E710B7C3D /* Pods-Openclique-OpencliqueTests.debug.xcconfig */,
+				989CAB72A77F369327C5DF9A /* Pods-Openclique-OpencliqueTests.release.xcconfig */,
+				737BE906144A63B442BA8504 /* Pods-Openclique-tvOS.debug.xcconfig */,
+				E27FD7C67713420C400CB7A0 /* Pods-Openclique-tvOS.release.xcconfig */,
+				B5E19CB18021F91561CC8E89 /* Pods-Openclique-tvOSTests.debug.xcconfig */,
+				4577D219B3C84F290140ABB2 /* Pods-Openclique-tvOSTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -206,12 +206,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "OpencliqueTests" */;
 			buildPhases = (
-				494AED26A9B1F7E4B184DDE3 /* [CP] Check Pods Manifest.lock */,
+				4DE58689E0C24CFB45B63C40 /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
-				9F94D0A4A22D61D1A5B48C91 /* [CP] Embed Pods Frameworks */,
-				E70AAC4CABD0397EAD6B37E7 /* [CP] Copy Pods Resources */,
+				AFBEBAF16024C9E7977796E7 /* [CP] Embed Pods Frameworks */,
+				ACCFD1E336E9F69094F93089 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -227,14 +227,14 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "Openclique" */;
 			buildPhases = (
-				4E7BBE0A01D5549D8FD3C51B /* [CP] Check Pods Manifest.lock */,
+				A8B9EA79F0CFD095D1FD8E83 /* [CP] Check Pods Manifest.lock */,
 				FD10A7F022414F080027D42C /* Start Packager */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
-				F62F6ABD617661A284E8181F /* [CP] Embed Pods Frameworks */,
-				3668CE5F619E9FB66BA59AB3 /* [CP] Copy Pods Resources */,
+				FC05D70BC0904370BFBBAC2D /* [CP] Embed Pods Frameworks */,
+				7396076E067440B8DA7DB422 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -249,7 +249,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "Openclique-tvOS" */;
 			buildPhases = (
-				7EFD37B93C4A0E4943E4AB40 /* [CP] Check Pods Manifest.lock */,
+				6F0384992362E83FAE70A1FB /* [CP] Check Pods Manifest.lock */,
 				FD10A7F122414F3F0027D42C /* Start Packager */,
 				2D02E4771E0B4A5D006451C7 /* Sources */,
 				2D02E4781E0B4A5D006451C7 /* Frameworks */,
@@ -269,7 +269,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "Openclique-tvOSTests" */;
 			buildPhases = (
-				4F7847224ED30C93EB34E5E1 /* [CP] Check Pods Manifest.lock */,
+				43C2B056A5CB3B37CED27694 /* [CP] Check Pods Manifest.lock */,
 				2D02E48C1E0B4A5D006451C7 /* Sources */,
 				2D02E48D1E0B4A5D006451C7 /* Frameworks */,
 				2D02E48E1E0B4A5D006451C7 /* Resources */,
@@ -395,71 +395,7 @@
 			shellPath = /bin/sh;
 			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh";
 		};
-		3668CE5F619E9FB66BA59AB3 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Openclique/Pods-Openclique-resources.sh",
-				"${PODS_ROOT}/MapboxMobileEvents/MapboxMobileEvents/Resources/logger.html",
-				"${PODS_CONFIGURATION_BUILD_DIR}/React-Core/AccessibilityResources.bundle",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/logger.html",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AccessibilityResources.bundle",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Openclique/Pods-Openclique-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		494AED26A9B1F7E4B184DDE3 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Openclique-OpencliqueTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		4E7BBE0A01D5549D8FD3C51B /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Openclique-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		4F7847224ED30C93EB34E5E1 /* [CP] Check Pods Manifest.lock */ = {
+		43C2B056A5CB3B37CED27694 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -481,7 +417,29 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		7EFD37B93C4A0E4943E4AB40 /* [CP] Check Pods Manifest.lock */ = {
+		4DE58689E0C24CFB45B63C40 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Openclique-OpencliqueTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6F0384992362E83FAE70A1FB /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -503,43 +461,49 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		9F94D0A4A22D61D1A5B48C91 /* [CP] Embed Pods Frameworks */ = {
+		7396076E067440B8DA7DB422 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Openclique-OpencliqueTests/Pods-Openclique-OpencliqueTests-frameworks.sh",
-				"${PODS_ROOT}/@react-native-mapbox-gl-mapbox-static/dynamic/MapboxMobileEvents.framework",
-				"${PODS_ROOT}/@react-native-mapbox-gl-mapbox-static/dynamic/MapboxMobileEvents.framework.dSYM",
-				"${PODS_ROOT}/@react-native-mapbox-gl-mapbox-static/dynamic/EF3F193B-8B19-3D7A-9C4D-CC7ACB8FD1B2.bcsymbolmap",
-				"${PODS_ROOT}/@react-native-mapbox-gl-mapbox-static/dynamic/AF8AFA46-95A0-3C36-89B4-0A23D7D0A613.bcsymbolmap",
-				"${PODS_ROOT}/@react-native-mapbox-gl-mapbox-static/dynamic/224E36C4-6533-3853-8416-A668FDC17C35.bcsymbolmap",
-				"${PODS_ROOT}/@react-native-mapbox-gl-mapbox-static/dynamic/E1D60A9C-E180-3412-BFDB-809E8A1C178E.bcsymbolmap",
-				"${PODS_ROOT}/Mapbox-iOS-SDK/dynamic/Mapbox.framework",
-				"${PODS_ROOT}/Mapbox-iOS-SDK/dynamic/Mapbox.framework.dSYM",
-				"${PODS_ROOT}/Mapbox-iOS-SDK/dynamic/EF3F193B-8B19-3D7A-9C4D-CC7ACB8FD1B2.bcsymbolmap",
-				"${PODS_ROOT}/Mapbox-iOS-SDK/dynamic/AF8AFA46-95A0-3C36-89B4-0A23D7D0A613.bcsymbolmap",
-				"${PODS_ROOT}/Mapbox-iOS-SDK/dynamic/224E36C4-6533-3853-8416-A668FDC17C35.bcsymbolmap",
-				"${PODS_ROOT}/Mapbox-iOS-SDK/dynamic/E1D60A9C-E180-3412-BFDB-809E8A1C178E.bcsymbolmap",
+				"${PODS_ROOT}/Target Support Files/Pods-Openclique/Pods-Openclique-resources.sh",
+				"${PODS_ROOT}/MapboxMobileEvents/MapboxMobileEvents/Resources/logger.html",
+				"${PODS_CONFIGURATION_BUILD_DIR}/React-Core/AccessibilityResources.bundle",
 			);
-			name = "[CP] Embed Pods Frameworks";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MapboxMobileEvents.framework",
-				"${DWARF_DSYM_FOLDER_PATH}/MapboxMobileEvents.framework.dSYM",
-				"${BUILT_PRODUCTS_DIR}/EF3F193B-8B19-3D7A-9C4D-CC7ACB8FD1B2.bcsymbolmap",
-				"${BUILT_PRODUCTS_DIR}/AF8AFA46-95A0-3C36-89B4-0A23D7D0A613.bcsymbolmap",
-				"${BUILT_PRODUCTS_DIR}/224E36C4-6533-3853-8416-A668FDC17C35.bcsymbolmap",
-				"${BUILT_PRODUCTS_DIR}/E1D60A9C-E180-3412-BFDB-809E8A1C178E.bcsymbolmap",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Mapbox.framework",
-				"${DWARF_DSYM_FOLDER_PATH}/Mapbox.framework.dSYM",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/logger.html",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AccessibilityResources.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Openclique-OpencliqueTests/Pods-Openclique-OpencliqueTests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Openclique/Pods-Openclique-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		E70AAC4CABD0397EAD6B37E7 /* [CP] Copy Pods Resources */ = {
+		A8B9EA79F0CFD095D1FD8E83 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Openclique-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ACCFD1E336E9F69094F93089 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -559,7 +523,27 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Openclique-OpencliqueTests/Pods-Openclique-OpencliqueTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		F62F6ABD617661A284E8181F /* [CP] Embed Pods Frameworks */ = {
+		AFBEBAF16024C9E7977796E7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Openclique-OpencliqueTests/Pods-Openclique-OpencliqueTests-frameworks.sh",
+				"${PODS_ROOT}/@react-native-mapbox-gl-mapbox-static/dynamic/MapboxMobileEvents.framework",
+				"${PODS_ROOT}/Mapbox-iOS-SDK/dynamic/Mapbox.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MapboxMobileEvents.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Mapbox.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Openclique-OpencliqueTests/Pods-Openclique-OpencliqueTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FC05D70BC0904370BFBBAC2D /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -567,28 +551,12 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Openclique/Pods-Openclique-frameworks.sh",
 				"${PODS_ROOT}/@react-native-mapbox-gl-mapbox-static/dynamic/MapboxMobileEvents.framework",
-				"${PODS_ROOT}/@react-native-mapbox-gl-mapbox-static/dynamic/MapboxMobileEvents.framework.dSYM",
-				"${PODS_ROOT}/@react-native-mapbox-gl-mapbox-static/dynamic/EF3F193B-8B19-3D7A-9C4D-CC7ACB8FD1B2.bcsymbolmap",
-				"${PODS_ROOT}/@react-native-mapbox-gl-mapbox-static/dynamic/AF8AFA46-95A0-3C36-89B4-0A23D7D0A613.bcsymbolmap",
-				"${PODS_ROOT}/@react-native-mapbox-gl-mapbox-static/dynamic/224E36C4-6533-3853-8416-A668FDC17C35.bcsymbolmap",
-				"${PODS_ROOT}/@react-native-mapbox-gl-mapbox-static/dynamic/E1D60A9C-E180-3412-BFDB-809E8A1C178E.bcsymbolmap",
 				"${PODS_ROOT}/Mapbox-iOS-SDK/dynamic/Mapbox.framework",
-				"${PODS_ROOT}/Mapbox-iOS-SDK/dynamic/Mapbox.framework.dSYM",
-				"${PODS_ROOT}/Mapbox-iOS-SDK/dynamic/EF3F193B-8B19-3D7A-9C4D-CC7ACB8FD1B2.bcsymbolmap",
-				"${PODS_ROOT}/Mapbox-iOS-SDK/dynamic/AF8AFA46-95A0-3C36-89B4-0A23D7D0A613.bcsymbolmap",
-				"${PODS_ROOT}/Mapbox-iOS-SDK/dynamic/224E36C4-6533-3853-8416-A668FDC17C35.bcsymbolmap",
-				"${PODS_ROOT}/Mapbox-iOS-SDK/dynamic/E1D60A9C-E180-3412-BFDB-809E8A1C178E.bcsymbolmap",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MapboxMobileEvents.framework",
-				"${DWARF_DSYM_FOLDER_PATH}/MapboxMobileEvents.framework.dSYM",
-				"${BUILT_PRODUCTS_DIR}/EF3F193B-8B19-3D7A-9C4D-CC7ACB8FD1B2.bcsymbolmap",
-				"${BUILT_PRODUCTS_DIR}/AF8AFA46-95A0-3C36-89B4-0A23D7D0A613.bcsymbolmap",
-				"${BUILT_PRODUCTS_DIR}/224E36C4-6533-3853-8416-A668FDC17C35.bcsymbolmap",
-				"${BUILT_PRODUCTS_DIR}/E1D60A9C-E180-3412-BFDB-809E8A1C178E.bcsymbolmap",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Mapbox.framework",
-				"${DWARF_DSYM_FOLDER_PATH}/Mapbox.framework.dSYM",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -688,7 +656,7 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 049424BA9F2EC069E89E8E8C /* Pods-Openclique-OpencliqueTests.debug.xcconfig */;
+			baseConfigurationReference = 4CF82645BC23025E710B7C3D /* Pods-Openclique-OpencliqueTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -711,7 +679,7 @@
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 298A1CC2442AF8CC8B8BD974 /* Pods-Openclique-OpencliqueTests.release.xcconfig */;
+			baseConfigurationReference = 989CAB72A77F369327C5DF9A /* Pods-Openclique-OpencliqueTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
@@ -731,7 +699,7 @@
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1E7C872E76D33895A0490494 /* Pods-Openclique.debug.xcconfig */;
+			baseConfigurationReference = 51C57CCBA929BDE1D62FD762 /* Pods-Openclique.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -742,7 +710,7 @@
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Openclique/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 1.0.3;
+				MARKETING_VERSION = 1.0.4;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -759,7 +727,7 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 658A2C680C2630F485D7E211 /* Pods-Openclique.release.xcconfig */;
+			baseConfigurationReference = 5BC915670ED8072D11272303 /* Pods-Openclique.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -769,7 +737,7 @@
 				DEVELOPMENT_TEAM = 565VDQBBRM;
 				INFOPLIST_FILE = Openclique/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 1.0.3;
+				MARKETING_VERSION = 1.0.4;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -785,7 +753,7 @@
 		};
 		2D02E4971E0B4A5E006451C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BBB7E2AB68C195C27E89F517 /* Pods-Openclique-tvOS.debug.xcconfig */;
+			baseConfigurationReference = 737BE906144A63B442BA8504 /* Pods-Openclique-tvOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -813,7 +781,7 @@
 		};
 		2D02E4981E0B4A5E006451C7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7CA5614D0A4BEA3980034536 /* Pods-Openclique-tvOS.release.xcconfig */;
+			baseConfigurationReference = E27FD7C67713420C400CB7A0 /* Pods-Openclique-tvOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -841,7 +809,7 @@
 		};
 		2D02E4991E0B4A5E006451C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EB11A17F27A73C625E665202 /* Pods-Openclique-tvOSTests.debug.xcconfig */;
+			baseConfigurationReference = B5E19CB18021F91561CC8E89 /* Pods-Openclique-tvOSTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NONNULL = YES;
@@ -868,7 +836,7 @@
 		};
 		2D02E49A1E0B4A5E006451C7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 858081478C304CF7E2269E42 /* Pods-Openclique-tvOSTests.release.xcconfig */;
+			baseConfigurationReference = 4577D219B3C84F290140ABB2 /* Pods-Openclique-tvOSTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NONNULL = YES;

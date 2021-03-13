@@ -220,7 +220,7 @@ PODS:
     - React-Core
   - react-native-maps (0.24.2):
     - React
-  - react-native-safe-area-context (3.1.9):
+  - react-native-safe-area-context (3.2.0):
     - React-Core
   - React-RCTActionSheet (0.63.4):
     - React-Core/RCTActionSheetHeaders (= 0.63.4)
@@ -284,7 +284,7 @@ PODS:
     - React-jsi (= 0.63.4)
   - rn-fetch-blob (0.12.0):
     - React-Core
-  - RNAWSCognito (4.5.12):
+  - RNAWSCognito (4.5.13):
     - React
   - RNBackgroundFetch (3.1.0):
     - React
@@ -460,7 +460,7 @@ SPEC CHECKSUMS:
   react-native-image-picker: fd93361c666f397bdf72f9c6c23f13d2685b9173
   react-native-mapbox-gl: eec7e5be5b874cfceb79fcfe24d595411015153a
   react-native-maps: 0316ed017dbb64b33b227751fa810e2454fcfa39
-  react-native-safe-area-context: b6e0e284002381d2ff29fa4fff42b4d8282e3c94
+  react-native-safe-area-context: f0906bf8bc9835ac9a9d3f97e8bde2a997d8da79
   React-RCTActionSheet: 89a0ca9f4a06c1f93c26067af074ccdce0f40336
   React-RCTAnimation: 1bde3ecc0c104c55df246eda516e0deb03c4e49b
   React-RCTBlob: a97d378b527740cc667e03ebfa183a75231ab0f0
@@ -472,7 +472,7 @@ SPEC CHECKSUMS:
   React-RCTVibration: ae4f914cfe8de7d4de95ae1ea6cc8f6315d73d9d
   ReactCommon: 73d79c7039f473b76db6ff7c6b159c478acbbb3b
   rn-fetch-blob: f065bb7ab7fb48dd002629f8bdcb0336602d3cba
-  RNAWSCognito: 33038dcfd16bd804d3d7de783aa2ab6525e87266
+  RNAWSCognito: c9c66de7fc54e8232a3ff9e1fdcadf072ba2886f
   RNBackgroundFetch: 8dbb63141792f1473e863a0797ffbd5d987af2fc
   RNCAsyncStorage: b03032fdbdb725bea0bd9e5ec5a7272865ae7398
   RNCMaskedView: 5a8ec07677aa885546a0d98da336457e2bea557f
@@ -481,4 +481,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 4775a3d028ef41614b34e12f370066b4fa83d0da
 
-COCOAPODS: 1.9.3
+COCOAPODS: 1.10.1

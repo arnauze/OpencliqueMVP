@@ -12,7 +12,7 @@ class MainPage extends React.Component {
 
     constructor(props) {
         super(props)
-        Auth.currentAuthenticatedUser({mandatorySignIn: false})
+        Auth.currentAuthenticatedUser()
         .then(data => {
 
             console.log("GOING THROUGH CURRRENT AUTHENTICATED USER")
@@ -37,11 +37,6 @@ class MainPage extends React.Component {
 
                 // Here I added the Cognito token into the user informations because I need it to connect to the API (security)
 
-                // let action2 = { type: 'CHANGE_FILTERS', value: {
-                //     filters: response.preferences.filters,
-                //     user: response
-                // }}
-                // this.props.dispatch(action2)
                 let action = { type: 'CHANGE_CONNECTED_USER', value: response, token: data.signInUserSession.idToken.jwtToken }
                 this.props.dispatch(action)
 
@@ -53,60 +48,10 @@ class MainPage extends React.Component {
         .catch(err => {
             console.log(err)
         })
-        // this.connect()
     }
 
-    // connect() {
-
-    //     // Connecting to the app's websocket for notifications and the chat
-    //     let websocket = new WebSocket("wss://gf3tcxpki0.execute-api.us-east-2.amazonaws.com/dev");
-    
-    //     // When the websocket's connection is established I send a message to the websocket, and it updates the connection ID of the user
-    //     websocket.onopen = (event) => {
-    //       console.log("Connection established!")
-    
-    //       let message = {
-    //         action: "connectUser",
-    //         user: this.props.user.info
-    //       }
-    
-    //       let stringifiedMessage = JSON.stringify(message)
-    
-    //       websocket.send(stringifiedMessage)
-
-    //     }
-    
-    //     websocket.onmessage = (event) => {
-    //       console.log("New message received:")
-    //       console.log(event)
-        
-    //       var notification = JSON.parse(event.data)
-
-    //       let action = {
-    //           type: "ADD_NOTIFICATION",
-    //           notification: notification
-    //       }
-    //       this.props.dispatch(action)
-
-    //     }
-    
-    //     websocket.onclose = (event) => {
-    //         console.log("Websocket connection lost")
-    //         console.log(event);
-    //         setTimeout(connect,10000); //re-connect after 10 seconds
-    //         //..and so on
-    //     }
-    
-    //     websocket.onerror = (error) => {
-    //       alert("Error: ", error.message)
-    //     }
-    
-    //   }
 
     render() {
-        // return (
-        //     <Navigation />
-        // )
         if (this.props.user.isConnected && !this.props.user.isFirstConnection) {
             return (
                 <Navigation />

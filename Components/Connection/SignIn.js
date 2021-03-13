@@ -100,7 +100,6 @@ class SignIn extends React.Component {
                         style={styles.input}
                         autoCapitalize='none'
                         autoCorrect={false}
-                        multiline={true}
                         />
                         <Text>Password</Text>
                         <TextInput

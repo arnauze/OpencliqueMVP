@@ -1,74 +1,73 @@
 import React from 'react'
 import { View, Text, TouchableOpacity, Dimensions, Image, ScrollView, StyleSheet, TextInput, SafeAreaView, FlatList } from 'react-native'
-import SlidingUpPanel from 'rn-sliding-up-panel'
 import Amplify, { API, Storage } from 'aws-amplify'
 import { appColor, bronzeFeather, platinumFeather, goldFeather, almostWhite } from '../../../Styles/styles'
 import { connect } from 'react-redux'
-import { LineChart } from "react-native-chart-kit";
 
 const { height, width } = Dimensions.get('window')
+START_FILTER = "restaurant"
 
 class Filters extends React.Component {
 
     render() {
         return (
             <ScrollView
-            horizontal={true}
-            showsHorizontalScrollIndicator={false}
-            alwaysBounceHorizontal={false}
+                horizontal={true}
+                showsHorizontalScrollIndicator={false}
+                alwaysBounceHorizontal={false}
             >
-                <View style={{flex: 1, alignItems: 'center', justifyContent: "center"}}>
+                <View style={{ flex: 1, alignItems: 'center', justifyContent: "center" }}>
                     <TouchableOpacity
-                    style={{minHeight: 35, margin: 7, borderWidth: 0.5, borderColor: "black", borderRadius: 10, alignItems: 'center', justifyContent: 'center', backgroundColor: this.props.filter === "restaurant" ? "black" : "white"}}
-                    onPress={() => this.props.updateFilter("restaurant")}
+                        style={{ minHeight: 35, margin: 7, borderWidth: 0.5, borderColor: "black", borderRadius: 10, alignItems: 'center', justifyContent: 'center', backgroundColor: this.props.filter === "restaurant" ? "black" : "white" }}
+                        onPress={() => this.props.updateFilter("restaurant")}
                     >
-                        <Text style={{fontWeight: "500", margin: 10, color: this.props.filter === "restaurant" ? "white" : "black"}}>Restaurant</Text>
+                        <Text style={{ fontWeight: "500", margin: 10, color: this.props.filter === "restaurant" ? "white" : "black" }}>Restaurant</Text>
                     </TouchableOpacity>
                 </View>
-                <View style={{flex: 1, alignItems: 'center', justifyContent: "center"}}>
+                <View style={{ flex: 1, alignItems: 'center', justifyContent: "center" }}>
                     <TouchableOpacity
-                    style={{minHeight: 35, margin: 7, borderWidth: 0.5, borderColor: "black", borderRadius: 10, alignItems: 'center', justifyContent: 'center', backgroundColor: this.props.filter === "coffee_and_tea" ? "black" : "white"}}
-                    onPress={() => this.props.updateFilter("coffee_and_tea")}
+                        style={{ minHeight: 35, margin: 7, borderWidth: 0.5, borderColor: "black", borderRadius: 10, alignItems: 'center', justifyContent: 'center', backgroundColor: this.props.filter === "coffee_and_tea" ? "black" : "white" }}
+                        onPress={() => this.props.updateFilter("coffee_and_tea")}
                     >
-                        <Text style={{fontWeight: "500", margin: 10, color: this.props.filter === "coffee_and_tea" ? "white" : "black"}}>Coffee & Tea</Text>
+                        <Text style={{ fontWeight: "500", margin: 10, color: this.props.filter === "coffee_and_tea" ? "white" : "black" }}>Coffee & Tea</Text>
                     </TouchableOpacity>
                 </View>
-                <View style={{flex: 1, alignItems: 'center', justifyContent: "center"}}>
+                <View style={{ flex: 1, alignItems: 'center', justifyContent: "center" }}>
                     <TouchableOpacity
-                    style={{minHeight: 35, margin: 7, borderWidth: 0.5, borderColor: "black", borderRadius: 10, alignItems: 'center', justifyContent: 'center', backgroundColor: this.props.filter === "nightlife" ? "black" : "white"}}
-                    onPress={() => this.props.updateFilter("nightlife")}
+                        style={{ minHeight: 35, margin: 7, borderWidth: 0.5, borderColor: "black", borderRadius: 10, alignItems: 'center', justifyContent: 'center', backgroundColor: this.props.filter === "nightlife" ? "black" : "white" }}
+                        onPress={() => this.props.updateFilter("nightlife")}
                     >
-                        <Text style={{fontWeight: "500", margin: 10, color: this.props.filter === "nightlife" ? "white" : "black"}}>Nightlife</Text>
+                        <Text style={{ fontWeight: "500", margin: 10, color: this.props.filter === "nightlife" ? "white" : "black" }}>Nightlife</Text>
                     </TouchableOpacity>
                 </View>
-                <View style={{flex: 1, alignItems: 'center', justifyContent: "center"}}>
+                <View style={{ flex: 1, alignItems: 'center', justifyContent: "center" }}>
                     <TouchableOpacity
-                    style={{minHeight: 35, margin: 7, borderWidth: 0.5, borderColor: "black", borderRadius: 10, alignItems: 'center', justifyContent: 'center', backgroundColor: this.props.filter === "nature" ? "black" : "white"}}
-                    onPress={() => this.props.updateFilter("nature")}
+                        style={{ minHeight: 35, margin: 7, borderWidth: 0.5, borderColor: "black", borderRadius: 10, alignItems: 'center', justifyContent: 'center', backgroundColor: this.props.filter === "nature" ? "black" : "white" }}
+                        onPress={() => this.props.updateFilter("nature")}
                     >
-                        <Text style={{fontWeight: "500", margin: 10, color: this.props.filter === "nature" ? "white" : "black"}}>Nature</Text>
+                        <Text style={{ fontWeight: "500", margin: 10, color: this.props.filter === "nature" ? "white" : "black" }}>Nature</Text>
                     </TouchableOpacity>
                 </View>
-                <View style={{flex: 1, alignItems: 'center', justifyContent: "center"}}>
+                <View style={{ flex: 1, alignItems: 'center', justifyContent: "center" }}>
                     <TouchableOpacity
-                    style={{minHeight: 35, margin: 7, borderWidth: 0.5, borderColor: "black", borderRadius: 10, alignItems: 'center', justifyContent: 'center', backgroundColor: this.props.filter === "culture" ? "black" : "white"}}
-                    onPress={() => this.props.updateFilter("culture")}
+                        style={{ minHeight: 35, margin: 7, borderWidth: 0.5, borderColor: "black", borderRadius: 10, alignItems: 'center', justifyContent: 'center', backgroundColor: this.props.filter === "culture" ? "black" : "white" }}
+                        onPress={() => this.props.updateFilter("culture")}
                     >
-                        <Text style={{fontWeight: "500", margin: 10, color: this.props.filter === "culture" ? "white" : "black"}}>Culture</Text>
+                        <Text style={{ fontWeight: "500", margin: 10, color: this.props.filter === "culture" ? "white" : "black" }}>Culture</Text>
                     </TouchableOpacity>
                 </View>
-                <View style={{flex: 1, alignItems: 'center', justifyContent: "center"}}>
+                <View style={{ flex: 1, alignItems: 'center', justifyContent: "center" }}>
                     <TouchableOpacity
-                    style={{minHeight: 35, margin: 7, borderWidth: 0.5, borderColor: "black", borderRadius: 10, alignItems: 'center', justifyContent: 'center', backgroundColor: this.props.filter === "likes" ? "black" : "white"}}
-                    onPress={() => this.props.updateFilter("likes")}
+                        style={{ minHeight: 35, margin: 7, borderWidth: 0.5, borderColor: "black", borderRadius: 10, alignItems: 'center', justifyContent: 'center', backgroundColor: this.props.filter === "likes" ? "black" : "white" }}
+                        onPress={() => this.props.updateFilter("likes")}
                     >
-                        <Text style={{fontWeight: "500", margin: 10, color: this.props.filter === "likes" ? "white" : appColor}}>My likes</Text>
+                        <Text style={{ fontWeight: "500", margin: 10, color: this.props.filter === "likes" ? "white" : appColor }}>My likes</Text>
                     </TouchableOpacity>
                 </View>
             </ScrollView>
         )
     }
-    
+
 }
 
 export class Tags extends React.Component {
@@ -76,10 +75,10 @@ export class Tags extends React.Component {
     getTag(item, index) {
         return (
             <View
-            style={styles.tag}
-            key={index}
+                style={styles.tag}
+                key={index}
             >
-                <Text style={{fontWeight: "600"}}>{item}</Text>
+                <Text style={{ fontWeight: "600" }}>{item}</Text>
             </View>
         )
     }
@@ -87,10 +86,10 @@ export class Tags extends React.Component {
     render() {
         return (
             <ScrollView
-            horizontal={true}
-            alwaysBounceHorizontal={false}
-            showsHorizontalScrollIndicator={false}
-            style={{marginRight: 10}}
+                horizontal={true}
+                alwaysBounceHorizontal={false}
+                showsHorizontalScrollIndicator={false}
+                style={{ marginRight: 10 }}
             >
                 {
                     this.props.tags.map((item, index) => this.getTag(item, index))
@@ -106,17 +105,17 @@ export class Photos extends React.Component {
     render() {
         return (
             <ScrollView
-            horizontal={true}
-            showsHorizontalScrollIndicator={false}
-            style={{backgroundColor: "#rgba(128,128,128,0.2)", borderRadius: 5}}
+                horizontal={true}
+                showsHorizontalScrollIndicator={false}
+                style={{ backgroundColor: "#rgba(128,128,128,0.2)", borderRadius: 5 }}
             >
                 {
                     this.props.photos.map((item, index) => {
                         return (
                             <Image
-                            key={index}
-                            source={{url: item}}
-                            style={{width: 375, height: 425, marginTop: 20, marginBottom: 20, marginLeft: 10, marginRight: 10, borderRadius: 10}}
+                                key={index}
+                                source={{ url: item }}
+                                style={{ width: 375, height: 425, marginTop: 20, marginBottom: 20, marginLeft: 10, marginRight: 10, borderRadius: 10 }}
                             />
                         )
                     })
@@ -131,11 +130,11 @@ export class IsOpen extends React.Component {
 
     render() {
         return this.props.isOpen ?
-            <Text style={{fontWeight: "600", color: "#219653"}}>
+            <Text style={{ fontWeight: "600", color: "#219653" }}>
                 Open now
             </Text>
-        :
-            <Text style={{fontWeight: "600", color: "red"}}>
+            :
+            <Text style={{ fontWeight: "600", color: "red" }}>
                 Closed
             </Text>
     }
@@ -171,47 +170,47 @@ export class SuggestedByAndLike extends React.Component {
         }
 
         API.post(apiName, path, myInit)
-        .then(response => {
-            console.log(response)
-            let action = {
-                type: 'UPDATE_USER',
-                value: {
-                    full: true,
-                    user: response
+            .then(response => {
+                console.log(response)
+                let action = {
+                    type: 'UPDATE_USER',
+                    value: {
+                        full: true,
+                        user: response
+                    }
                 }
-            }
-            this.props.dispatch(action)
-        })
-        .catch(error => {
-            console.log("Error when liking the recommendation")
-            console.log(error)
-        })
+                this.props.dispatch(action)
+            })
+            .catch(error => {
+                console.log("Error when liking the recommendation")
+                console.log(error)
+            })
 
         // Create like interaction backend button
 
         this.setState({
             ...this.state,
             isLiked: !this.state.isLiked
-        })
+        }, () => this.props.refreshGlobalRecommendations(!this.state.isLiked))
     }
 
-    render () {
+    render() {
         let place = this.props.place
         return (
-            <View style={{flexDirection: "row", flex: 1, margin: 10}}>
-                <View style={{flex: 2}}>
-                    <View style={{flexDirection: "row"}}>
-                        <Text style={{fontWeight: "600"}}>Suggested by </Text>
-                        <Text style={{fontWeight: "600", color: appColor}}>{place.suggested_by ? place.suggested_by : "Openclique"}</Text>
+            <View style={{ flexDirection: "row", flex: 1, margin: 10 }}>
+                <View style={{ flex: 2 }}>
+                    <View style={{ flexDirection: "row" }}>
+                        <Text style={{ fontWeight: "600" }}>Suggested by </Text>
+                        <Text style={{ fontWeight: "600", color: appColor }}>{place.suggested_by ? place.suggested_by : "Openclique"}</Text>
                     </View>
                 </View>
-                <View style={{flex: 1, alignItems: "flex-end"}}>
+                <View style={{ flex: 1, alignItems: "flex-end" }}>
                     <TouchableOpacity
-                    onPress={this._onPlaceLiked}
+                        onPress={this._onPlaceLiked}
                     >
                         <Image
-                        source={this._getLikeButton(place)}
-                        style={{width: 20, height: 17.92}}
+                            source={this._getLikeButton(place)}
+                            style={{ width: 20, height: 17.92 }}
                         />
                     </TouchableOpacity>
                 </View>
@@ -257,19 +256,19 @@ export class PlaceInformations extends React.Component {
         let place = this.props.place
         return (
             <View>
-                <View style={{flexDirection: "row", alignItems: 'center'}}>
+                <View style={{ flexDirection: "row", alignItems: 'center' }}>
                     <Image
-                    source={require("../../../Images/location_red.png")}
-                    style={{height: 14, width: 10, marginRight: 5}}
+                        source={require("../../../Images/location_red.png")}
+                        style={{ height: 14, width: 10, marginRight: 5 }}
                     />
-                    <Text style={{fontWeight: "500", margin: 7}}>{place.address}</Text>
+                    <Text style={{ fontWeight: "500", margin: 7 }}>{place.address}</Text>
                 </View>
-                <View style={{marginTop: 10, marginBottom: 10}}>
+                <View style={{ marginTop: 10, marginBottom: 10 }}>
                     <IsOpen
-                    isOpen={place.is_open}
+                        isOpen={place.is_open}
                     />
                     <OpeningHours
-                    hours={place.opening_hours}
+                        hours={place.opening_hours}
                     />
                 </View>
             </View>
@@ -309,25 +308,25 @@ export class OpeningHours extends React.Component {
     render() {
         console.log(this.props.hours)
         return (
-                this.props.hours.map((item, index) => {
-                    if (item.open && item.close) {
-                        let open_hours = this.split_at_index(item.open.time, 2)
-                        let close_hours = this.split_at_index(item.close.time, 2)
-                        return (
-                            <View
-                            style={{flexDirection: "row", width: "100%"}}
+            this.props.hours.map((item, index) => {
+                if (item.open && item.close) {
+                    let open_hours = this.split_at_index(item.open.time, 2)
+                    let close_hours = this.split_at_index(item.close.time, 2)
+                    return (
+                        <View
+                            style={{ flexDirection: "row", width: "100%" }}
                             key={index}
-                            >
-                                <View style={{flex: 1}}>
-                                    <Text style={{fontWeight: "600"}}>{this.getDay(item.open.day) + ":"}</Text>
-                                </View>
-                                <View style={{flex: 6}}>
-                                    <Text key={index}>{open_hours[0] + "h" + open_hours[1] + " - " + close_hours[0] + "h" + close_hours[1]}</Text>
-                                </View>
+                        >
+                            <View style={{ flex: 1 }}>
+                                <Text style={{ fontWeight: "600" }}>{this.getDay(item.open.day) + ":"}</Text>
                             </View>
-                        )
-                    } else return null
-                })
+                            <View style={{ flex: 6 }}>
+                                <Text key={index}>{open_hours[0] + "h" + open_hours[1] + " - " + close_hours[0] + "h" + close_hours[1]}</Text>
+                            </View>
+                        </View>
+                    )
+                } else return null
+            })
         )
     }
 
@@ -335,92 +334,209 @@ export class OpeningHours extends React.Component {
 
 export class Flames extends React.Component {
 
-    state = {
-        clicked: false
-    }
-
     displayFlames() {
         let ret = []
         let i = -1;
         while (++i < this.props.flames) {
             ret.push(
                 <Image
-                key={i}
-                source={require("../../../Images/Flames/new_flame.png")}
-                style={{width: 14.55, height: 20, margin: 3}}
+                    key={i}
+                    source={require("../../../Images/Flames/new_flame.png")}
+                    style={{ width: 14.55, height: 20, margin: 3 }}
+                />
+            )
+        }
+        while (i++ < 5) {
+            ret.push(
+                <Image
+                    key={i}
+                    source={require("../../../Images/Flames/empty_flame.png")}
+                    style={{ width: 14.55, height: 20, margin: 3 }}
                 />
             )
         }
         return ret.map(item => item)
     }
 
-    displayChart() {
-        return (
-            <View>
-                <Text>Coucou</Text>
-            </View>
-            // <LineChart
-            //     data={{
-            //     labels: ["January", "February", "March", "April", "May", "June"],
-            //     datasets: [
-            //         {
-            //         data: [
-            //             Math.random() * 100,
-            //             Math.random() * 100,
-            //             Math.random() * 100,
-            //             Math.random() * 100,
-            //             Math.random() * 100,
-            //             Math.random() * 100
-            //         ]
-            //         }
-            //     ]
-            //     }}
-            //     width={Dimensions.get("window").width} // from react-native
-            //     height={220}
-            //     yAxisLabel="$"
-            //     yAxisSuffix="k"
-            //     // yAxisInterval={1} // optional, defaults to 1
-            //     chartConfig={{
-            //         backgroundColor: "#e26a00",
-            //         // backgroundGradientFrom: "#fb8c00",
-            //         // backgroundGradientTo: "#ffa726",
-            //         // decimalPlaces: 2, // optional, defaults to 2dp
-            //         color: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
-            //         labelColor: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
-            //         style: {
-            //             borderRadius: 16
-            //         },
-            //         propsForDots: {
-            //             r: "6",
-            //             strokeWidth: "2",
-            //             stroke: "#ffa726"
-            //         }
-            //     }}
-            //     // bezier
-            //     // style={{
-            //     //     marginVertical: 8,
-            //     //     borderRadius: 16
-            //     // }}
-            // />
-        )
-    }
-
     render() {
         return (
             <TouchableOpacity
-            style={{flexDirection: "row"}}
-            onPress={() => this.setState({ ...this.state, clicked: !this.state.clicked })}
+                style={{ flexDirection: "row" }}
+                onPress={() => this.props.onPress()}
             >
-                {
-                    !this.state.clicked ? 
-                        this.displayFlames()
-                    :
-                        this.displayFlames()//this.displayChart()
-                }
+                {this.displayFlames()}
             </TouchableOpacity>
         )
     }
 
+}
+
+class PopularTimes extends React.Component {
+
+    constructor(props) {
+        super(props)
+        this.state = {
+            // 0: Sunday - 6: Saturday
+            day_of_week: this._getDayOfWeek(),
+            hour_of_day: this._getHourOfDay(),
+            days_list: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+            hours: [{ "hour": 0, "moment": "a" }, { "hour": 1, "moment": "a" }, { "hour": 2, "moment": "a" }, { "hour": 3, "moment": "a" }, { "hour": 4, "moment": "a" }, { "hour": 5, "moment": "a" }, { "hour": 6, "moment": "a" }, { "hour": 7, "moment": "a" }, { "hour": 8, "moment": "a" }, { "hour": 9, "moment": "a" }, { "hour": 10, "moment": "a" }, { "hour": 11, "moment": "a" }, {"hour": 12, "moment": "p"}, { "hour": 1, "moment": "p" }, { "hour": 2, "moment": "p" }, { "hour": 3, "moment": "p" }, { "hour": 4, "moment": "p" }, { "hour": 5, "moment": "p" }, { "hour": 6, "moment": "p" }, { "hour": 7, "moment": "p" }, { "hour": 8, "moment": "p" }, { "hour": 9, "moment": "p" }, { "hour": 10, "moment": "p" }, { "hour": 11, "moment": "p" }]
+        }
+    }
+
+    _getDayOfWeek = () => {
+        let date = new Date(Date.now())
+        let day = date.getDay()
+        if (day === 0) {
+            return 6
+        } else {
+            return day - 1
+        }
+    }
+
+    _getHourOfDay = () => {
+        let date = new Date(Date.now())
+        let hour = date.getHours()
+        return hour
+    }
+
+    _compareHours = (hour_obj) => {
+        let h1 = this.state.hour_of_day
+        let h2 = hour_obj["moment"] == "a" ? hour_obj["hour"] : hour_obj["hour"] + 12
+        return h1 === h2
+    }
+
+    render() {
+        return (
+            <View
+                style={styles.popular_times_frame}
+            >
+                <View
+                    style={{ flexDirection: "row", marginLeft: 15, marginRight: 15 }}
+                >
+                    {
+                        this.state.days_list.map((item, index) => {
+                            return (
+                                <TouchableOpacity
+                                    key={index}
+                                    style={[styles.day_button, {
+                                        backgroundColor: this.state.day_of_week === index ? appColor : "#e6e6e6",
+                                    }]}
+                                    onPress={() => this.setState({ ...this.state, day_of_week: index })}
+                                >
+                                    <Text style={{ fontWeight: "600", color: this.state.day_of_week === index ? "white" : "black" }}>{item}</Text>
+                                </TouchableOpacity>
+                            )
+                        })
+                    }
+                </View>
+                <View
+                style={{width: "100%", height: 115, alignItems: 'center'}}
+                >
+                    <View
+                    style={{width: "95%", height: 0.5, backgroundColor: "#b6b6b6", top: 15}}
+                    />
+                    <View
+                    style={{width: "95%", height: 0.5, backgroundColor: "#b6b6b6", top: 48}}
+                    />
+                    <View
+                    style={{width: "95%", height: 0.5, backgroundColor: "#b6b6b6", top: 81}}
+                    />
+                    <View style={{ flexDirection: "row", height: 115, alignItems: 'flex-end', justifyContent: 'space-evenly', maxWidth: "95%"}}>
+                        {
+                            this.props.populartimes[this.state.day_of_week]["data"].map((item, index) => {
+                                return (
+                                    <View
+                                        key={index}
+                                        style={{ height: item, backgroundColor: this._compareHours(this.state.hours[index]) ? "rgba(240, 84, 99, 1)" : "rgba(240, 84, 99, 0.5)", width: 13, marginHorizontal: 1, borderTopLeftRadius: 5, borderTopRightRadius: 5 }}
+                                    />
+                                )
+                            })
+                        }
+                    </View>
+                </View>
+                <View
+                style={{height: 0.5, backgroundColor: "#b6b6b6", width: "95%"}}
+                />
+                <View
+                style={{flexDirection: "row"}}
+                >
+                    {
+                        this.state.hours.map((item, index) => {
+                            if (index !== 0 && (index % 3) == 0) {
+                                return (
+                                    <View
+                                    style={{minWidth: 13, margin: 1, alignItems: 'center'}}
+                                    >
+                                        <View
+                                        style={{height: 6, width: 0.5, backgroundColor: "#b6b6b6", marginBottom: 4}}
+                                        />
+                                        <Text>
+                                            {item.hour}{item.moment}
+                                        </Text>
+                                    </View>
+                                )
+                            } else {
+                                if (index !== 0) {
+                                    return (
+                                        <View style={{minWidth: 13, margin: 1, alignItems: 'center'}}>
+                                            <View
+                                            style={{height: 3, width: 0.5, backgroundColor: "#b6b6b6"}}
+                                            />
+                                        </View>
+                                    )
+                                }
+                            }
+                        })
+                    }
+                </View>
+            </View>
+        )
+    }
+}
+
+class PlaceNameAndFlames extends React.Component {
+
+    state = {
+        flames: true,
+    }
+
+    onPress = () => {
+        if (typeof(this.props.populartimes) === "object") {
+            this.setState({
+                ...this.state,
+                flames: !this.state.flames
+            })
+        } else {
+            alert("Sorry, we are still analyzing the most popular times for this place\n Try again later !")
+        }
+    }
+
+    render() {
+        return (
+            <View>
+                <View style={{ flexDirection: 'row', margin: 7 }}>
+                    <View style={{ flex: 2, alignItems: 'flex-start' }}>
+                        <Text style={styles.title}>{this.props.name}</Text>
+                    </View>
+                    <View style={{ flex: 1, alignItems: 'flex-end' }}>
+                        <Flames
+                            flames={this.props.flames}
+                            onPress={this.onPress}
+                        />
+                    </View>
+                </View>
+                {
+                    !this.state.flames
+                    &&
+                    <PopularTimes
+                        populartimes={this.props.populartimes}
+                        onPress={this.onPress}
+                    />
+                }
+            </View>
+        )
+    }
 }
 
 export class PlacesSuggested extends React.Component {
@@ -465,6 +581,8 @@ export class PlacesSuggested extends React.Component {
     }
 
     _updateList = () => {
+        // Removes the old list, update the filter and create a new one
+        // setState [here] -> fetchMoreItems [here] -> updateOldFilter [parent widget]
         this.setState({
             currentList: [],
             fetchedCount: 0,
@@ -473,8 +591,13 @@ export class PlacesSuggested extends React.Component {
     }
 
     render() {
+
+        // That is the way I found to be able to update the list when the filter changes
+        // Maybe using Redux would be better for that tasks, sincec it would reduce the amount
+        // of refresh of the page, as well as be cleaner than this workaround
         if (this.props.filter !== this.props.oldFilter && !this.state.updatingFilter)
             this._updateList()
+
         if (this.props.places && this.props.places.length > 0) {
             return (
                 <FlatList
@@ -487,58 +610,55 @@ export class PlacesSuggested extends React.Component {
                     renderItem={(item) => {
                         let place = item.item
                         return (
-                            <View style={{marginBottom: 25}}>
-                                <View style={{flexDirection: 'row', margin: 7}}>
-                                    <View style={{flex: 2, alignItems: 'flex-start'}}>
-                                        <Text style={styles.title}>{place.name}</Text>
-                                    </View>
-                                    <View style={{flex: 1, alignItems: 'flex-end'}}>
-                                        <Flames
-                                        flames={3}
-                                        />
-                                    </View>
-                                </View>
+                            <View style={{ marginBottom: 25 }}>
+                                <PlaceNameAndFlames
+                                    name={place.name}
+                                    populartimes={place.populartimes}
+                                    flames={place.flames}
+                                />
                                 <Photos
-                                photos={place.photos}
-                                index={this.state.mediasIndex}
+                                    photos={place.photos}
+                                    index={this.state.mediasIndex}
                                 />
                                 <SuggestedByAndLike
-                                place={place}
-                                user={this.props.user.info}
-                                dispatch={this.props.dispatch}
+                                    place={place}
+                                    user={this.props.user.info}
+                                    dispatch={this.props.dispatch}
+                                    refreshGlobalRecommendations={(boolean) => { this.props.refreshGlobalRecommendations(boolean, () => this._updateList()) }}
                                 />
                                 <Tags
-                                tags={place.tags}
+                                    tags={place.tags}
                                 />
                                 <TouchableOpacity
-                                onPress={() => this.setState({ ...this.state, isOpen: this.state.isOpen.indexOf(place) >= 0 ? this.state.isOpen.filter(item => item !== place) : [...this.state.isOpen, place] })}
-                                style={{flexDirection: "row", alignItems: 'center', margin: 7}}
+                                    onPress={() => this.setState({ ...this.state, isOpen: this.state.isOpen.indexOf(place) >= 0 ? this.state.isOpen.filter(item => item !== place) : [...this.state.isOpen, place] })}
+                                    style={{ flexDirection: "row", alignItems: 'center', margin: 7 }}
                                 >
-                                    <Text style={{fontWeight: "600"}}>More</Text>
+                                    <Text style={{ fontWeight: "600" }}>More</Text>
                                     <Image
-                                    source={require('../../../Images/back_icon_black.png')}
-                                    style={{width: 16, height: 10, marginLeft: 5, transform: this.state.isOpen.indexOf(place) >= 0 ? [{ rotate: "180deg" }] : []}}
+                                        source={require('../../../Images/back_icon_black.png')}
+                                        style={{ width: 16, height: 10, marginLeft: 5, transform: this.state.isOpen.indexOf(place) >= 0 ? [{ rotate: "180deg" }] : [] }}
                                     />
                                 </TouchableOpacity>
                                 {
                                     this.state.isOpen.indexOf(place) >= 0 ?
-                                        <View style={{margin: 10}}>
+                                        <View style={{ margin: 10 }}>
                                             <PlaceInformations
-                                            place={place}
+                                                place={place}
                                             />
-                                            <View style={{flexDirection: 'row', alignItems: 'center'}}>
+                                            <View style={{ flexDirection: 'row', alignItems: 'center' }}>
                                                 <Image
-                                                source={require("../../../Images/flux_image.png")}
-                                                style={{height: 15, width: 15, marginRight: 5}}
+                                                    source={require("../../../Images/flux_image.png")}
+                                                    style={{ height: 15, width: 15, marginRight: 5 }}
                                                 />
-                                                <Text style={{color: appColor, fontWeight: "500"}}>{place.website}</Text>
+                                                <Text style={{ color: appColor, fontWeight: "500" }}>{place.website}</Text>
                                             </View>
                                         </View>
-                                    :
+                                        :
                                         null
                                 }
                             </View>
-                        )}
+                        )
+                    }
                     }
                 />
             )
@@ -554,12 +674,13 @@ class Suggestions extends React.Component {
     render() {
         return (
             <PlacesSuggested
-            filter={this.props.filter}
-            oldFilter={this.props.oldFilter}
-            places={this.props.suggestions}
-            user={this.props.user}
-            dispatch={this.props.dispatch}
-            updateOldFilter={this.props.updateOldFilter}
+                filter={this.props.filter}
+                oldFilter={this.props.oldFilter}
+                places={this.props.suggestions}
+                user={this.props.user}
+                dispatch={this.props.dispatch}
+                updateOldFilter={this.props.updateOldFilter}
+                refreshGlobalRecommendations={this.props.refreshGlobalRecommendations}
             />
         )
     }
@@ -571,8 +692,9 @@ class Frame extends React.Component {
     state = {
         currentDate: Date.now(),
         refreshDate: this.makeRefreshDate(),
-        filter: "restaurant",
-        oldFilter: "restaurant"
+        filter: START_FILTER,
+        oldFilter: START_FILTER,
+        suggestions: this.props.globalSuggestions[START_FILTER]
     }
 
     makeRefreshDate() {
@@ -584,7 +706,7 @@ class Frame extends React.Component {
 
         // Getting the day of the month (1 - 31)
         let day_of_month = date.getDate()
-        
+
         // Getting the day of the month (Sun: 0, Sat: 6)
         let day_of_week = date.getDay()
         let diff_before_sunday = 7 - day_of_week
@@ -596,22 +718,64 @@ class Frame extends React.Component {
 
     formatDate() {
         let ms = this.state.refreshDate - this.state.currentDate
-        let days = Math.floor(ms / (24*60*60*1000));
-        let daysms=ms % (24*60*60*1000);
-        let hours = Math.floor((daysms)/(60*60*1000));
-        let hoursms=ms % (60*60*1000);
-        let minutes = Math.floor((hoursms)/(60*1000));
-        let minutesms=ms % (60*1000);
-        let sec = Math.floor((minutesms)/(1000));
-        return days+" days, "+hours+" hours, "+minutes+" minutes, "+sec+" seconds";
+        let days = Math.floor(ms / (24 * 60 * 60 * 1000));
+        let daysms = ms % (24 * 60 * 60 * 1000);
+        let hours = Math.floor((daysms) / (60 * 60 * 1000));
+        let hoursms = ms % (60 * 60 * 1000);
+        let minutes = Math.floor((hoursms) / (60 * 1000));
+        let minutesms = ms % (60 * 1000);
+        let sec = Math.floor((minutesms) / (1000));
+        return days + " days, " + hours + " hours, " + minutes + " minutes, " + sec + " seconds";
     }
 
     updateFilter = (newFilter) => {
-        this.setState({ ...this.state, filter: newFilter, oldFilter: this.state.filter })
+        this.setState({ ...this.state, filter: newFilter, oldFilter: this.state.filter, suggestions: this.props.globalSuggestions[newFilter] })
     }
 
     updateOldFilter = () => {
         this.setState({ ...this.state, oldFilter: this.state.filter })
+    }
+
+    refreshGlobalRecommendations = (boolean, callback) => {
+        let apiName = 'Openclique'
+        let path = '/recommendations/' + this.props.user.info.username
+        let myInit = {
+            body: {
+                location: {
+                    latitude: this.props.user.currentLocation.latitude,
+                    longitude: this.props.user.currentLocation.longitude
+                }
+            }
+        }
+
+        API.post(apiName, path, myInit)
+            .then(response => {
+
+                console.log("SUCCESSFULLY FETCHED RECOMMENDATIONS")
+                console.log(response[this.state.filter])
+
+                let action = {
+                    type: 'UPDATE_SUGGESTIONS',
+                    value: {
+                        suggestions: response
+                    }
+                }
+
+                this.props.dispatch(action)
+                this.setState({
+                    ...this.state,
+                    suggestions: response[this.state.filter]
+                }, () => callback())
+
+                if (!boolean)
+                    alert('You liked this place !\nYou can now find it in the section "My likes".')
+                else
+                    alert('You unliked this place !\nYou can now find it in its original section.')
+            })
+            .catch(error => {
+                console.log("[PLACES/NEARBYSEARCH] ERROR:")
+                console.log(error.response)
+            })
     }
 
     componentDidMount() {
@@ -619,32 +783,33 @@ class Frame extends React.Component {
     }
 
     render() {
-        
+
         return (
             <SafeAreaView
-            style={{flex: 1}}
+                style={{ flex: 1 }}
             >
                 <View
-                style={{flex: 1, backgroundColor: 'white'}}
+                    style={{ flex: 1, backgroundColor: 'white' }}
                 >
-                    <View style={{padding: 10, backgroundColor: "white", paddingBottom: 0, paddingTop: 0}}>
-                        <View style={{alignItems: 'center', marginBottom: 10}}>
+                    <View style={{ padding: 10, backgroundColor: "white", paddingBottom: 0, paddingTop: 0 }}>
+                        <View style={{ alignItems: 'center', marginBottom: 10 }}>
                             <Text style={styles.title}>Los Angeles</Text>
-                            <Text style={{margin: 5}}>New recommendations in</Text>
-                            <Text style={{color: appColor, fontWeight: "600"}}>{this.formatDate()}</Text>
+                            <Text style={{ margin: 5 }}>New recommendations in</Text>
+                            <Text style={{ color: appColor, fontWeight: "600" }}>{this.formatDate()}</Text>
                         </View>
                         <Filters
-                        filter={this.state.filter}
-                        updateFilter={this.updateFilter}
+                            filter={this.state.filter}
+                            updateFilter={this.updateFilter}
                         />
                     </View>
                     <Suggestions
-                    suggestions={this.props.globalSuggestions[this.state.filter]}
-                    filter={this.state.filter}
-                    oldFilter={this.state.oldFilter}
-                    user={this.props.user}
-                    dispatch={this.props.dispatch}
-                    updateOldFilter={this.updateOldFilter}
+                        refreshGlobalRecommendations={this.refreshGlobalRecommendations}
+                        suggestions={this.state.suggestions}
+                        filter={this.state.filter}
+                        oldFilter={this.state.oldFilter}
+                        user={this.props.user}
+                        dispatch={this.props.dispatch}
+                        updateOldFilter={this.updateOldFilter}
                     />
                 </View>
             </SafeAreaView>
@@ -674,6 +839,20 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         borderWidth: 0.5
+    },
+    popular_times_frame: {
+        minHeight: 175,
+        width: "100%",
+        borderRadius: 5,
+        alignItems: 'center'
+    },
+    day_button: {
+        paddingHorizontal: 10,
+        paddingVertical: 3,
+        borderRadius: 10,
+        alignItems: 'center',
+        justifyContent: 'center',
+        marginHorizontal: 6
     }
 })
 

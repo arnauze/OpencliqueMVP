@@ -5,6 +5,7 @@ import { Provider } from 'react-redux'
 import Store from './Store/configureStore'
 import Amplify, {Auth} from 'aws-amplify'
 import AWS from 'aws-sdk'
+import { MemoryStorageNew } from './StorageService'
 
 
 AWS.config.update({
@@ -19,6 +20,7 @@ Amplify.configure({
     region: 'us-east-2',
     userPoolId: 'us-east-2_i7csVrsOe',
     userPoolWebClientId: '5r05amt6mupbic89n5l5d9n9v0',
+    storage: MemoryStorageNew
   },
   API: {
     endpoints: [

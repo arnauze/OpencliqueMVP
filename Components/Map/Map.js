@@ -52,8 +52,8 @@ class Map extends React.Component {
             poi: [],
             showMarker: true,
             region: {
-                latitude: props.user.info.location && props.user.info.location.lat != null ? props.user.info.location.lat : 34.0209,
-                longitude: props.user.info.location && props.user.info.location.lng != null ? props.user.info.location.lng : -118.2856,
+                latitude: 34.0209,//props.user.info.location && props.user.info.location.lat != null ? props.user.info.location.lat : 34.0209,
+                longitude: -118.2856,//props.user.info.location && props.user.info.location.lng != null ? props.user.info.location.lng : -118.2856,
                 latitudeDelta: 0.0922,
                 longitudeDelta: 0.0421
             },
@@ -277,9 +277,6 @@ class Map extends React.Component {
     }
 
     _isInBounds = (point, bounds, isCluster) => {
-        console.log(point)
-        console.log(bounds)
-
         var inBound
         if (isCluster) {
             inBound = (Math.abs(point[1]) > Math.abs(bounds[0][0]) && Math.abs(point[1]) < Math.abs(bounds[1][0]))
@@ -313,6 +310,7 @@ class Map extends React.Component {
 
         let clusters = []
 
+        // Creating all 24 clusters
         let i = -1
         while (++i < 24) {
             let currentStepHeight = i % amountStepsHeight
@@ -339,6 +337,7 @@ class Map extends React.Component {
             )
         }
 
+        // Adding the suggestions in their respective clusters
         i = -1
         while (++i < suggestions.length) {
             let j = -1
@@ -353,6 +352,19 @@ class Map extends React.Component {
             }
         }
 
+        // Updating the clusters center point (Place where I display the icon on map)
+        // The center point is now based on the nested points locations
+        for (var cluster of clusters) {
+            if (cluster.points.length > 0) {
+                let total_lat = 0
+                let total_lon = 0
+                for (var point of cluster.points) {
+                    total_lat += point.geoJson.coordinates[0]
+                    total_lon += point.geoJson.coordinates[1]
+                }
+                cluster.center = [total_lon / cluster.points.length, total_lat / cluster.points.length]
+            }
+        }
         return clusters
 
     }
