@@ -56,7 +56,7 @@ class SignUp extends React.Component {
             }
         }
         API.post(apiName, path, myInit).then(response => {
-            this.props.navigation.navigate('SignIn')
+            this.props.navigation.navigate('Map')
         }).catch(error => {
             console.log("Error 2")
             console.log(error)
@@ -122,16 +122,22 @@ class SignUp extends React.Component {
         }
     }
 
-    _onNextPhoneEmail = () => {
-        if (this.state.phoneNumber.length < 10) {
-            alert("Phone number has to be 10 characters long.")
-        } else {
-            this.setState({ ...this.state, phoneNumber: this.state.phoneNumber.indexOf("+1") >= 0 ? this.state.phoneNumber : "+1" + this.state.phoneNumber, index: this.state.index + 1 })
-        }
-    }
-
     _onConfirmPhoneNumber = () => {
-        this.setState({ ...this.state, phoneNumber: this.state.phoneNumber.indexOf("+1") >= 0 ? this.state.phoneNumber : "+1" + this.state.phoneNumber, index: this.state.index + 1 })
+        // let phone = this.state.phoneNumber.indexOf("+1") >= 0 ? this.state.phoneNumber : "+1" + this.state.phoneNumber
+        let phone = this.state.phoneNumber
+        Auth.signUp({
+            username: this.state.username,
+            password: this.state.password,
+            attributes: {
+                email: this.state.email,
+                phone_number: phone
+            }
+        })
+        .then(data => {
+            console.log("SUCCESS")
+            this.setState({ ...this.state, phoneNumber: phone, index: this.state.index + 1 })  
+            this._sendUserInfo(data)
+        })
     }
 
     _onSignupComplete = () => {
@@ -172,6 +178,17 @@ class SignUp extends React.Component {
                 connectionMessage: '',
                 loading: false
             })
+        })
+    }
+
+    _confirmCode = () => {
+        // Add Auth.confirm code
+        Auth.confirmSignUp(this.state.username, this.state.confirmCode)
+        .then(response => {
+            this.setState({ ...this.state, index: this.state.index + 1 })
+        })
+        .catch(err => {
+            alert(err.message || err)
         })
     }
 
@@ -489,13 +506,14 @@ class SignUp extends React.Component {
                                 value={this.state.phoneNumber}
                                 autoCorrect={false}
                                 placeholder="Mobile number"
+                                secureTextEntry={false}
                                 />
                             </View>
                             <View style={{height: 18, marginBottom: 47}}>
                                 <Text style={{color: appColor}}>We'll send you a verification code.</Text>
                             </View>
                             <TouchableOpacity
-                            style={{ height: 50, width: 300, borderRadius: 30, backgroundColor: (this.state.phoneNumber.length == 10) ? "#F2788C" : "lightgray", alignItems: 'center', justifyContent: 'center'}}
+                            style={{ height: 50, width: 300, borderRadius: 30, backgroundColor: (this.state.phoneNumber.length == 12) ? "#F2788C" : "lightgray", alignItems: 'center', justifyContent: 'center'}}
                             onPress={this._onConfirmPhoneNumber}
                             >
                                 <Text style={{color: "white", fontWeight: "600", fontSize: 16}}>Next</Text>
@@ -538,6 +556,7 @@ class SignUp extends React.Component {
                                 autoCapitalize='none'
                                 value={this.state.confirmCode}
                                 autoCorrect={false}
+                                secureTextEntry={false}
                                 placeholder="Verification code"
                                 />
                             </View>
@@ -545,9 +564,9 @@ class SignUp extends React.Component {
                                 <Text style={{color: appColor}}>Enter the code we sent to {this.state.phoneNumber}.</Text>
                             </View>
                             <TouchableOpacity
-                            style={{ height: 50, width: 300, borderRadius: 30, backgroundColor: (this.state.confirmCode.length === 4) ? "#F2788C" : "lightgray", alignItems: 'center', justifyContent: 'center'}}
-                            onPress={() => this.setState({ ...this.state, index: this.state.index + 1 })}
-                            disabled={this.state.confirmCode.length !== 4}
+                            style={{ height: 50, width: 300, borderRadius: 30, backgroundColor: (this.state.confirmCode.length === 6) ? "#F2788C" : "lightgray", alignItems: 'center', justifyContent: 'center'}}
+                            onPress={() => this._confirmCode()}
+                            disabled={this.state.confirmCode.length !== 6}
                             >
                                 <Text style={{color: "white", fontWeight: "600", fontSize: 16}}>Next</Text>
                             </TouchableOpacity>

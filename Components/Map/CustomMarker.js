@@ -49,8 +49,6 @@ export default class CustomMarker extends React.Component {
             lat = item.center[0]
             lon = item.center[1]
         }
-        console.log("\n\nItem here:")
-        console.log(item)
         return (
             <MapboxGL.PointAnnotation
                 id={(lat + lon).toString()}

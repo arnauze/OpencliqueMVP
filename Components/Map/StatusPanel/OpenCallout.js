@@ -2,7 +2,7 @@ import React from 'react'
 import { StyleSheet, SafeAreaView, TouchableOpacity, Image, Text, View, ScrollView } from 'react-native'
 import SlidingUpPanel from 'rn-sliding-up-panel'
 import { appColor } from '../../../Styles/styles'
-import { Photos, Tags, Flames, PlaceInformations, SuggestedByAndLike } from './Frame'
+import { Photos, Tags, PlaceNameAndFlames, PlaceInformations, SuggestedByAndLike, PopularTimes } from './Frame'
 
 export default class OpenCallout extends React.Component {
 
@@ -58,7 +58,7 @@ export default class OpenCallout extends React.Component {
                             this.props.openCallout ?
                             <>
                                 <TouchableOpacity
-                                style={[styles.x_callout, styles.elevated]}
+                                style={[styles.x_callout, styles.elevated, {marginTop: 15}]}
                                 onPress={() => this._panelCallout.hide()}
                                 >
                                     <Image
@@ -67,28 +67,24 @@ export default class OpenCallout extends React.Component {
                                     />
                                 </TouchableOpacity>
                                 <View style={{marginBottom: 25}}>
-                                    <View style={{flexDirection: 'row', margin: 7}}>
-                                        <View style={{flex: 2, alignItems: 'flex-start'}}>
-                                            <Text style={styles.title}>{place.name}</Text>
-                                        </View>
-                                        <View style={{flex: 1, alignItems: 'flex-end'}}>
-                                            <Flames
-                                            flames={place.flames}
-                                            />
-                                        </View>
-                                    </View>
+                                    <PlaceNameAndFlames
+                                        name={place.name}
+                                        populartimes={place.populartimes}
+                                        flames={place.flames}
+                                        type={place.type}
+                                    />
                                     <Photos
                                     photos={place.photos}
                                     index={this.state.mediasIndex}
+                                    />
+                                    <Tags
+                                        tags={place.tags}
                                     />
                                     <SuggestedByAndLike
                                     place={place}
                                     user={this.props.user}
                                     dispatch={this.props.dispatch}
                                     refreshGlobalRecommendations={() => {}}
-                                    />
-                                    <Tags
-                                    tags={place.tags}
                                     />
                                     <TouchableOpacity
                                     onPress={() => this.setState({ ...this.state, isOpen: !this.state.isOpen })}

@@ -52,8 +52,8 @@ class Map extends React.Component {
             poi: [],
             showMarker: true,
             region: {
-                latitude: props.user.info.location && props.user.info.location.lat != null ? props.user.info.location.lat : 34.0209,
-                longitude: props.user.info.location && props.user.info.location.lng != null ? props.user.info.location.lng : -118.2856,
+                latitude: 34.0209,//props.user.info.location && props.user.info.location.lat != null ? props.user.info.location.lat : 34.0209,
+                longitude: -118.2856,//props.user.info.location && props.user.info.location.lng != null ? props.user.info.location.lng : -118.2856,
                 latitudeDelta: 0.0922,
                 longitudeDelta: 0.0421
             },
@@ -72,7 +72,8 @@ class Map extends React.Component {
             calloutHeight: 0,
             mapHeight: 0,
             bounds: [[0, 0], [0, 0]],
-            lastLocationUpdate: Date.now()
+            lastLocationUpdate: Date.now(),
+            zoom: 0
         }
 
         this.startBackgroundLocation()
@@ -123,7 +124,6 @@ class Map extends React.Component {
         navigator.geolocation.requestAuthorization()
         if (this.state.region.latitude == "0" && this.state.region.longitude == "0") {
             navigator.geolocation.getCurrentPosition((location) => {
-                console.log(location)
 
                 let action = {
                     type: "CHANGE_REGION",
@@ -368,17 +368,73 @@ class Map extends React.Component {
 
     }
 
-    _displayMarker() {
+    _inZoomRange(place, zoom) {
+        let ret = false
+        if (zoom > 6 && zoom < 10 && place.flames >= 5) {
+            ret = true
+        } else if ((zoom >= 10 && zoom < 12) && place.flames >= 4) {
+            ret = true
+        } else if ((zoom >= 12 && zoom < 13) && place.flames >= 3) {
+            ret = true
+        } else if ((zoom >= 13 && zoom < 14) && place.flames >= 2) {
+            ret = true
+        } else if (zoom >= 14 && place.flames >= 1) {
+            ret = true
+        }
+        return ret
+    }
+
+    _filterMarkers(bounds, suggestions, zoom) {
+        // Function used to filter suggestions based on zoom and boundsd of the map
+        return suggestions.map((item, index) => {
+            let point = item.geoJson.coordinates
+            if (this._isInBounds(point, bounds, false) && this._inZoomRange(item, zoom)) {
+                return (
+                    <CustomMarker
+                    isCluster={false}
+                    key={index}
+                    camera={this._camera}
+                    item={item}
+                    navigation={this.props.navigation}
+                    showCallout={this._showPlaceCallout}
+                    openCallout={this.state.openCallout}
+                    user={this.props.user.info}
+                    />
+                )
+            }
+        })
+    }
+
+    _displayMarkersByZoom() {
+        console.log("IN DISPLAY MARKERS BY ZOOM")
+        // Function used to display recommendations based on zooms
+        if (this.state.suggestions) {
+            let suggestions = [...this.state.suggestions.coffee_and_tea, ...this.state.suggestions.culture, ...this.state.suggestions.likes, ...this.state.suggestions.restaurant, ...this.state.suggestions.nature]
+            let bounds = this.state.bounds
+            let zoom = this.state.zoom
+            let toRet = this._filterMarkers(bounds, suggestions, zoom)
+            console.log(toRet)
+            return toRet
+        }
+    }
+
+    _displayMarkersByCluster() {
+        // Function used to clusterize the recommendations
         if (this.state.suggestions) {
             let suggestions = [...this.state.suggestions.coffee_and_tea, ...this.state.suggestions.culture, ...this.state.suggestions.likes, ...this.state.suggestions.restaurant, ...this.state.suggestions.nature]
             let bounds = this.state.bounds
             let i = 0
+            // First I cluster the points
             let clusters = this._clusterMarkers(bounds, suggestions)
+
             return (
+                // Then I loop through the clusters
                 clusters.map((item, index) => {
+                    // If the cluster only has one point in it, we display the point itself
                     if (item.points.length === 1) {
                         let place = item.points[0]
                         let point = place.geoJson.coordinates
+                        // If the point is in bounds, then we display it
                         if (this._isInBounds(point, bounds, false)) {
                             return (
                                 <CustomMarker
@@ -394,8 +450,9 @@ class Map extends React.Component {
                             )
                         }
                     } else {
+                        // If it is a cluster with more than one point, or 0 point
                         let point = item.center
-                        // If suggestion point is inside the current bounds of the map we display
+                        // If the cluster is in bound and has at least one point in it then we display it
                         if (this._isInBounds(point, bounds, true) && item.points.length > 0) {
                             return (
                                 <CustomMarker
@@ -552,12 +609,11 @@ class Map extends React.Component {
 
     onRegionDidChange = async () => {
         let resp = await this._map.getVisibleBounds()
+        let zoom = await this._map.getZoom()
         this.setState({
             ...this.state,
-            bounds: resp
-        }, () => {
-            console.log("[OnRegionDidChange] Resp:")
-            console.log(this.state)
+            bounds: resp,
+            zoom: zoom
         })
     }
 
@@ -586,17 +642,12 @@ class Map extends React.Component {
                 this.setState({...this.state, componentHeight: event.nativeEvent.layout.height, componentWidth: event.nativeEvent.layout.width})
             }}
             >
-                {/* <NavigationEvents
-                onDidFocus={() => this._onDidFocus()}
-                /> */}
                 <MapboxGL.MapView
                 rotateEnabled={false}
                 onLayout={(e) => this.setState({ ...this.state, mapHeight: e.nativeEvent.layout.height })}
                 onPress={() => this._updateScreen()}
-                // onUserLocationUpdate={() => {}}
                 style={styles.map}
                 styleURL="mapbox://styles/gure/ckk2da2bc3cj817nptcdryzor"
-                // onRegionDidChange={(region) => this._getLocations(region)}
                 logoEnabled={false}
                 pitchEnabled={false}
                 ref={(c) => this._map = c}
@@ -615,7 +666,8 @@ class Map extends React.Component {
                     visible
                     animated
                     />
-                    {this._displayMarker()}
+                    {/* {this._displayMarkersByZoom()} */}
+                    {this._displayMarkersByCluster()}
                     {this._displayUsers()}
                 </MapboxGL.MapView>
                 <MyLocationButton

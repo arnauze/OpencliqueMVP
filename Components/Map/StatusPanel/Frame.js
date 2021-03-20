@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Text, TouchableOpacity, Dimensions, Image, ScrollView, StyleSheet, TextInput, SafeAreaView, FlatList } from 'react-native'
+import { View, Text, TouchableOpacity, Dimensions, Image, ScrollView, StyleSheet, Linking, SafeAreaView, FlatList } from 'react-native'
 import Amplify, { API, Storage } from 'aws-amplify'
 import { appColor, bronzeFeather, platinumFeather, goldFeather, almostWhite } from '../../../Styles/styles'
 import { connect } from 'react-redux'
@@ -18,50 +18,50 @@ class Filters extends React.Component {
             >
                 <View style={{ flex: 1, alignItems: 'center', justifyContent: "center" }}>
                     <TouchableOpacity
-                        style={{ minHeight: 35, margin: 7, borderWidth: 0.5, borderColor: "black", borderRadius: 10, alignItems: 'center', justifyContent: 'center', backgroundColor: this.props.filter === "restaurant" ? "black" : "white" }}
+                        style={{ width: 120, minHeight: 35, borderBottomWidth: 2, borderColor: this.props.filter === "restaurant" ? appColor : "white", alignItems: 'center', justifyContent: 'center' }}
                         onPress={() => this.props.updateFilter("restaurant")}
                     >
-                        <Text style={{ fontWeight: "500", margin: 10, color: this.props.filter === "restaurant" ? "white" : "black" }}>Restaurant</Text>
+                        <Text style={{ fontWeight: "500", color: this.props.filter === "restaurant" ? appColor : "#D1D1D1" }}>Restaurant</Text>
                     </TouchableOpacity>
                 </View>
                 <View style={{ flex: 1, alignItems: 'center', justifyContent: "center" }}>
                     <TouchableOpacity
-                        style={{ minHeight: 35, margin: 7, borderWidth: 0.5, borderColor: "black", borderRadius: 10, alignItems: 'center', justifyContent: 'center', backgroundColor: this.props.filter === "coffee_and_tea" ? "black" : "white" }}
+                        style={{ width: 120, minHeight: 35, borderBottomWidth: 2, borderColor: this.props.filter === "coffee_and_tea" ? appColor : "white", alignItems: 'center', justifyContent: 'center' }}
                         onPress={() => this.props.updateFilter("coffee_and_tea")}
                     >
-                        <Text style={{ fontWeight: "500", margin: 10, color: this.props.filter === "coffee_and_tea" ? "white" : "black" }}>Coffee & Tea</Text>
+                        <Text style={{ fontWeight: "500", color: this.props.filter === "coffee_and_tea" ? appColor : "#D1D1D1" }}>Coffee & Tea</Text>
                     </TouchableOpacity>
                 </View>
                 <View style={{ flex: 1, alignItems: 'center', justifyContent: "center" }}>
                     <TouchableOpacity
-                        style={{ minHeight: 35, margin: 7, borderWidth: 0.5, borderColor: "black", borderRadius: 10, alignItems: 'center', justifyContent: 'center', backgroundColor: this.props.filter === "nightlife" ? "black" : "white" }}
+                        style={{ width: 120, minHeight: 35, borderBottomWidth: 2, borderColor: this.props.filter === "nightlife" ? appColor : "white", alignItems: 'center', justifyContent: 'center' }}
                         onPress={() => this.props.updateFilter("nightlife")}
                     >
-                        <Text style={{ fontWeight: "500", margin: 10, color: this.props.filter === "nightlife" ? "white" : "black" }}>Nightlife</Text>
+                        <Text style={{ fontWeight: "500", color: this.props.filter === "nightlife" ? appColor : "#D1D1D1" }}>Nightlife</Text>
                     </TouchableOpacity>
                 </View>
                 <View style={{ flex: 1, alignItems: 'center', justifyContent: "center" }}>
                     <TouchableOpacity
-                        style={{ minHeight: 35, margin: 7, borderWidth: 0.5, borderColor: "black", borderRadius: 10, alignItems: 'center', justifyContent: 'center', backgroundColor: this.props.filter === "nature" ? "black" : "white" }}
+                        style={{ width: 120, minHeight: 35, borderBottomWidth: 2, borderColor: this.props.filter === "nature" ? appColor : "white", alignItems: 'center', justifyContent: 'center' }}
                         onPress={() => this.props.updateFilter("nature")}
                     >
-                        <Text style={{ fontWeight: "500", margin: 10, color: this.props.filter === "nature" ? "white" : "black" }}>Nature</Text>
+                        <Text style={{ fontWeight: "500", color: this.props.filter === "nature" ? appColor : "#D1D1D1" }}>Nature</Text>
                     </TouchableOpacity>
                 </View>
                 <View style={{ flex: 1, alignItems: 'center', justifyContent: "center" }}>
                     <TouchableOpacity
-                        style={{ minHeight: 35, margin: 7, borderWidth: 0.5, borderColor: "black", borderRadius: 10, alignItems: 'center', justifyContent: 'center', backgroundColor: this.props.filter === "culture" ? "black" : "white" }}
+                        style={{ width: 120, minHeight: 35, borderBottomWidth: 2, borderColor: this.props.filter === "culture" ? appColor : "white", alignItems: 'center', justifyContent: 'center' }}
                         onPress={() => this.props.updateFilter("culture")}
                     >
-                        <Text style={{ fontWeight: "500", margin: 10, color: this.props.filter === "culture" ? "white" : "black" }}>Culture</Text>
+                        <Text style={{ fontWeight: "500", color: this.props.filter === "culture" ? appColor : "#D1D1D1" }}>Culture</Text>
                     </TouchableOpacity>
                 </View>
                 <View style={{ flex: 1, alignItems: 'center', justifyContent: "center" }}>
                     <TouchableOpacity
-                        style={{ minHeight: 35, margin: 7, borderWidth: 0.5, borderColor: "black", borderRadius: 10, alignItems: 'center', justifyContent: 'center', backgroundColor: this.props.filter === "likes" ? "black" : "white" }}
+                        style={{ width: 120, minHeight: 35, borderBottomWidth: 2, borderColor: this.props.filter === "likes" ? appColor : "white", alignItems: 'center', justifyContent: 'center' }}
                         onPress={() => this.props.updateFilter("likes")}
                     >
-                        <Text style={{ fontWeight: "500", margin: 10, color: this.props.filter === "likes" ? "white" : appColor }}>My likes</Text>
+                        <Text style={{ fontWeight: "500", color: this.props.filter === "likes" ? appColor : "#D1D1D1" }}>My likes</Text>
                     </TouchableOpacity>
                 </View>
             </ScrollView>
@@ -107,7 +107,6 @@ export class Photos extends React.Component {
             <ScrollView
                 horizontal={true}
                 showsHorizontalScrollIndicator={false}
-                style={{ backgroundColor: "#rgba(128,128,128,0.2)", borderRadius: 5 }}
             >
                 {
                     this.props.photos.map((item, index) => {
@@ -115,7 +114,7 @@ export class Photos extends React.Component {
                             <Image
                                 key={index}
                                 source={{ url: item }}
-                                style={{ width: 375, height: 425, marginTop: 20, marginBottom: 20, marginLeft: 10, marginRight: 10, borderRadius: 10 }}
+                                style={{ width: 375, height: 425, marginRight: 10 }}
                             />
                         )
                     })
@@ -146,7 +145,8 @@ export class SuggestedByAndLike extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            isLiked: this.props.user.places_liked.indexOf(this.props.place.rangeKey) >= 0
+            isLiked: this.props.user.places_liked.indexOf(this.props.place.rangeKey) >= 0,
+            likes_count: this.props.place.likes_count ? this.props.place.likes_count : 0
         }
     }
 
@@ -190,14 +190,15 @@ export class SuggestedByAndLike extends React.Component {
 
         this.setState({
             ...this.state,
-            isLiked: !this.state.isLiked
+            isLiked: !this.state.isLiked,
+            likes_count: this.state.isLiked ? this.state.likes_count - 1 : this.state.likes_count + 1
         }, () => this.props.refreshGlobalRecommendations(!this.state.isLiked))
     }
 
     render() {
         let place = this.props.place
         return (
-            <View style={{ flexDirection: "row", flex: 1, margin: 10 }}>
+            <View style={{ flexDirection: "row", flex: 1, margin: 10, alignItems: 'center' }}>
                 <View style={{ flex: 2 }}>
                     <View style={{ flexDirection: "row" }}>
                         <Text style={{ fontWeight: "600" }}>Suggested by </Text>
@@ -205,14 +206,18 @@ export class SuggestedByAndLike extends React.Component {
                     </View>
                 </View>
                 <View style={{ flex: 1, alignItems: "flex-end" }}>
-                    <TouchableOpacity
-                        onPress={this._onPlaceLiked}
-                    >
-                        <Image
-                            source={this._getLikeButton(place)}
-                            style={{ width: 20, height: 17.92 }}
-                        />
-                    </TouchableOpacity>
+                    <View style={{alignItems: 'flex-end'}}>
+                        <TouchableOpacity
+                            onPress={this._onPlaceLiked}
+                            style={{marginBottom: 10}}
+                        >
+                            <Image
+                                source={this._getLikeButton(place)}
+                                style={{ width: 20, height: 17.92 }}
+                            />
+                        </TouchableOpacity>
+                        <Text style={{color: "#8A8A8A"}}>{this.state.likes_count} likes</Text>
+                    </View>
                 </View>
             </View>
         )
@@ -342,7 +347,7 @@ export class Flames extends React.Component {
                 <Image
                     key={i}
                     source={require("../../../Images/Flames/new_flame.png")}
-                    style={{ width: 14.55, height: 20, margin: 3 }}
+                    style={{ width: 13, height: 18, margin: 3 }}
                 />
             )
         }
@@ -351,7 +356,7 @@ export class Flames extends React.Component {
                 <Image
                     key={i}
                     source={require("../../../Images/Flames/empty_flame.png")}
-                    style={{ width: 14.55, height: 20, margin: 3 }}
+                    style={{ width: 13, height: 18, margin: 3 }}
                 />
             )
         }
@@ -371,7 +376,7 @@ export class Flames extends React.Component {
 
 }
 
-class PopularTimes extends React.Component {
+export class PopularTimes extends React.Component {
 
     constructor(props) {
         super(props)
@@ -467,6 +472,7 @@ class PopularTimes extends React.Component {
                                 return (
                                     <View
                                     style={{minWidth: 13, margin: 1, alignItems: 'center'}}
+                                    key={index}
                                     >
                                         <View
                                         style={{height: 6, width: 0.5, backgroundColor: "#b6b6b6", marginBottom: 4}}
@@ -479,7 +485,10 @@ class PopularTimes extends React.Component {
                             } else {
                                 if (index !== 0) {
                                     return (
-                                        <View style={{minWidth: 13, margin: 1, alignItems: 'center'}}>
+                                        <View
+                                        style={{minWidth: 13, margin: 1, alignItems: 'center'}}
+                                        key={index}
+                                        >
                                             <View
                                             style={{height: 3, width: 0.5, backgroundColor: "#b6b6b6"}}
                                             />
@@ -495,7 +504,7 @@ class PopularTimes extends React.Component {
     }
 }
 
-class PlaceNameAndFlames extends React.Component {
+export class PlaceNameAndFlames extends React.Component {
 
     state = {
         flames: true,
@@ -512,11 +521,32 @@ class PlaceNameAndFlames extends React.Component {
         }
     }
 
+    _getImage = () => {
+        switch(this.props.type) {
+            case "restaurant":
+                return require("../../../Images/restaurant_image.png")
+            case "coffee_and_tea":
+                return require("../../../Images/coffee_and_tea_image.png")
+            case "nightlife":
+                return require("../../../Images/nightlife_image.png")
+            case "nature":
+                return require("../../../Images/nature_image.png")
+            case "culture":
+                return require("../../../Images/culture_image.png")
+            case "likes":
+                return require("../../../Images/likes_image.png")
+        }
+    }
+
     render() {
         return (
             <View>
-                <View style={{ flexDirection: 'row', margin: 7 }}>
-                    <View style={{ flex: 2, alignItems: 'flex-start' }}>
+                <View style={{ flexDirection: 'row', margin: 7, marginVertical: 15, alignItems: 'center' }}>
+                    <View style={{ flex: 2, alignItems: 'center', flexDirection: "row"}}>
+                        <Image
+                        source={this._getImage()}
+                        style={{width: this.props.type === "coffee_and_tea" ? 45 : 39, height: this.props.type === "coffee_and_tea" ? 54 : 41, marginRight: 10}}
+                        />
                         <Text style={styles.title}>{this.props.name}</Text>
                     </View>
                     <View style={{ flex: 1, alignItems: 'flex-end' }}>
@@ -590,6 +620,16 @@ export class PlacesSuggested extends React.Component {
         }, () => this._fetchMoreItems(this.props.updateOldFilter))
     }
 
+    handleClickUrl = (url) => {
+        let myUrl = "https://" + url
+        Linking.canOpenURL(myUrl).then(supported => {
+        if (supported) {
+            Linking.openURL(url);
+        } else {
+            console.log("Don't know how to open URI: " + myUrl);
+        }
+    })};
+
     render() {
 
         // That is the way I found to be able to update the list when the filter changes
@@ -602,6 +642,7 @@ export class PlacesSuggested extends React.Component {
             return (
                 <FlatList
                     data={this.state.currentList}
+                    style={{backgroundColor: "#EDF1F2"}}
                     refreshing={true}
                     scrollsToTop
                     onEndReachedThreshold={0.1}
@@ -610,15 +651,19 @@ export class PlacesSuggested extends React.Component {
                     renderItem={(item) => {
                         let place = item.item
                         return (
-                            <View style={{ marginBottom: 25 }}>
+                            <View style={{ margin: 10, borderRadius: 15, backgroundColor: "white" }}>
                                 <PlaceNameAndFlames
                                     name={place.name}
                                     populartimes={place.populartimes}
                                     flames={place.flames}
+                                    type={place.type}
                                 />
                                 <Photos
                                     photos={place.photos}
                                     index={this.state.mediasIndex}
+                                />
+                                <Tags
+                                    tags={place.tags}
                                 />
                                 <SuggestedByAndLike
                                     place={place}
@@ -626,12 +671,9 @@ export class PlacesSuggested extends React.Component {
                                     dispatch={this.props.dispatch}
                                     refreshGlobalRecommendations={(boolean) => { this.props.refreshGlobalRecommendations(boolean, () => this._updateList()) }}
                                 />
-                                <Tags
-                                    tags={place.tags}
-                                />
                                 <TouchableOpacity
                                     onPress={() => this.setState({ ...this.state, isOpen: this.state.isOpen.indexOf(place) >= 0 ? this.state.isOpen.filter(item => item !== place) : [...this.state.isOpen, place] })}
-                                    style={{ flexDirection: "row", alignItems: 'center', margin: 7 }}
+                                    style={{ flexDirection: "row", alignItems: 'center', marginLeft: 10, marginBottom: 20}}
                                 >
                                     <Text style={{ fontWeight: "600" }}>More</Text>
                                     <Image
@@ -650,7 +692,12 @@ export class PlacesSuggested extends React.Component {
                                                     source={require("../../../Images/flux_image.png")}
                                                     style={{ height: 15, width: 15, marginRight: 5 }}
                                                 />
-                                                <Text style={{ color: appColor, fontWeight: "500" }}>{place.website}</Text>
+
+                                                <TouchableOpacity
+                                                onPress={() => this.handleClickUrl("https://" + place.website)}
+                                                >
+                                                    <Text style={{ color: appColor, fontWeight: "500" }}>{place.website}</Text>
+                                                </TouchableOpacity>
                                             </View>
                                         </View>
                                         :
@@ -725,7 +772,7 @@ class Frame extends React.Component {
         let minutes = Math.floor((hoursms) / (60 * 1000));
         let minutesms = ms % (60 * 1000);
         let sec = Math.floor((minutesms) / (1000));
-        return days + " days, " + hours + " hours, " + minutes + " minutes, " + sec + " seconds";
+        return days + "d:" + hours + "h:" + minutes + "m:" + sec + "s";
     }
 
     updateFilter = (newFilter) => {
@@ -792,10 +839,19 @@ class Frame extends React.Component {
                     style={{ flex: 1, backgroundColor: 'white' }}
                 >
                     <View style={{ padding: 10, backgroundColor: "white", paddingBottom: 0, paddingTop: 0 }}>
-                        <View style={{ alignItems: 'center', marginBottom: 10 }}>
-                            <Text style={styles.title}>Los Angeles</Text>
-                            <Text style={{ margin: 5 }}>New recommendations in</Text>
-                            <Text style={{ color: appColor, fontWeight: "600" }}>{this.formatDate()}</Text>
+                        <View style={{ alignItems: 'center', marginVertical: 10, flexDirection: "row" }}>
+                            <View style={{flexDirection: "row", alignItems: 'center', flex: 1, justifyContent: "flex-start"}}>
+                                <Image
+                                source={require('../../../Images/logo_red.png')}
+                                style={{ width: 20, height: 21, marginRight: 10 }}
+                                />
+                                <Text style={{fontWeight: "400", color: appColor, fontSize: 18}}>openclique</Text>
+                            </View>
+                            <View
+                            style={{flex: 1, alignItems: "flex-end"}}
+                            >
+                                <Text style={{ color: appColor, fontWeight: "600" }}>{this.formatDate()}</Text>
+                            </View>
                         </View>
                         <Filters
                             filter={this.state.filter}
@@ -821,7 +877,7 @@ class Frame extends React.Component {
 
 const styles = StyleSheet.create({
     title: {
-        fontWeight: "600",
+        fontWeight: "500",
         fontSize: 20
     },
     medias: {

@@ -87,7 +87,6 @@ export default class UserMarker extends React.Component {
     }
 
     render() {
-        console.log(this.props)
         if (!this.props.isCurrentUser) {
             return (
                 <MapboxGL.PointAnnotation
