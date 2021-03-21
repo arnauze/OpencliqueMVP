@@ -78,11 +78,16 @@ export default class OpenCallout extends React.Component {
                                     index={this.state.mediasIndex}
                                     />
                                     <Tags
+                                        place={place}
                                         tags={place.tags}
+                                        userLocation={this.props.user.currentLocation}
+                                    />
+                                    <View
+                                        style={{width: "100%", height: 0.5, backgroundColor: "#DADADA"}}
                                     />
                                     <SuggestedByAndLike
                                     place={place}
-                                    user={this.props.user}
+                                    user={this.props.user.info}
                                     dispatch={this.props.dispatch}
                                     refreshGlobalRecommendations={() => {}}
                                     />
@@ -98,7 +103,7 @@ export default class OpenCallout extends React.Component {
                                     </TouchableOpacity>
                                     {
                                         this.state.isOpen ?
-                                            <View style={{margin: 10}}>
+                                            <View style={{margin: 10, marginBottom: 40}}>
                                                 <PlaceInformations
                                                 place={place}
                                                 />

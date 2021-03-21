@@ -230,8 +230,8 @@ export function getDistance(lat1, lon1, lat2, lon2) {
 		dist = Math.acos(dist);
 		dist = dist * 180/Math.PI;
         dist = dist * 60 * 1.1515;
-
-		return dist * 1.609344;
+        dist = dist * 1.609344; // km
+		return dist * 0.621371; // miles
 	}
 }
 

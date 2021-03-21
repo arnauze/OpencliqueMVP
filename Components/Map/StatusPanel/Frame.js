@@ -3,6 +3,7 @@ import { View, Text, TouchableOpacity, Dimensions, Image, ScrollView, StyleSheet
 import Amplify, { API, Storage } from 'aws-amplify'
 import { appColor, bronzeFeather, platinumFeather, goldFeather, almostWhite } from '../../../Styles/styles'
 import { connect } from 'react-redux'
+import { getDistance } from '../../Functions/functions.js'
 
 const { height, width } = Dimensions.get('window')
 START_FILTER = "restaurant"
@@ -78,19 +79,50 @@ export class Tags extends React.Component {
                 style={styles.tag}
                 key={index}
             >
-                <Text style={{ fontWeight: "600" }}>{item}</Text>
+                <Text style={{ color: "#8A8A8A" }}>{item}</Text>
             </View>
         )
     }
 
+    _displayPriceRange() {
+        let i = -1
+        let priceRange = parseInt(this.props.place.price_level)
+        let ret = []
+        console.log(priceRange)
+        if (priceRange > 0) {
+            while (++i < priceRange) {
+                ret.push(<Text style={{color: "#8A8A8A"}}>$</Text>)
+            }
+            while (i < 4) {
+                ret.push(<Text style={{color: "#CCCCCC"}}>$</Text>)
+                i++;
+            }
+        }
+        return ret;
+    }
+
     render() {
+        let distance = getDistance(this.props.place.geoJson.coordinates[1], this.props.place.geoJson.coordinates[0], this.props.userLocation.latitude, this.props.userLocation.longitude)
         return (
             <ScrollView
                 horizontal={true}
                 alwaysBounceHorizontal={false}
                 showsHorizontalScrollIndicator={false}
                 style={{ marginRight: 10 }}
+                contentContainerStyle={{alignItems: 'center'}}
             >
+                <View style={{flexDirection: 'row', alignItems: 'center', marginLeft: 18, marginRight: 10}}>
+                    <Image
+                    source={require('../../../Images/location_gray.png')}
+                    style={{width: 9.33, height: 11.67, marginRight: 5}}
+                    />
+                    <Text style={{color: "#8A8A8A"}}>{distance.toFixed(1)}mi away</Text>
+                </View>
+                <View style={{flexDirection: "row"}}>
+                    {
+                        this._displayPriceRange()
+                    }
+                </View>
                 {
                     this.props.tags.map((item, index) => this.getTag(item, index))
                 }
@@ -663,7 +695,12 @@ export class PlacesSuggested extends React.Component {
                                     index={this.state.mediasIndex}
                                 />
                                 <Tags
+                                    place={place}
                                     tags={place.tags}
+                                    userLocation={this.props.user.currentLocation}
+                                />
+                                <View
+                                    style={{width: "100%", height: 0.5, backgroundColor: "#DADADA"}}
                                 />
                                 <SuggestedByAndLike
                                     place={place}
@@ -887,14 +924,11 @@ const styles = StyleSheet.create({
     },
     tag: {
         minHeight: 35,
-        borderRadius: 15,
-        padding: 10,
         marginLeft: 10,
-        marginTop: 10,
-        marginBottom: 10,
+        marginTop: 5,
+        marginBottom: 5,
         alignItems: 'center',
         justifyContent: 'center',
-        borderWidth: 0.5
     },
     popular_times_frame: {
         minHeight: 175,

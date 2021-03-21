@@ -68,9 +68,9 @@ export default class CustomMarker extends React.Component {
                     {
                         this.props.isCluster
                         ?
-                            <Text style={{maxWidth: 150, textAlign: 'center', color: "white", fontWeight: "600", marginTop: 10}}>{item.points.length}</Text>
+                            <Text style={{maxWidth: 150, textAlign: 'center', color: "black", fontWeight: "600", marginTop: 10}}>{item.points.length}</Text>
                         :
-                            <Text style={{maxWidth: 150, textAlign: 'center', color: "white", fontWeight: "600", marginTop: 10}}>{item.name}</Text>
+                            <Text style={{maxWidth: 150, textAlign: 'center', color: "black", fontWeight: "600", marginTop: 10}}>{item.name}</Text>
                     }
                 </View>
             </MapboxGL.PointAnnotation>

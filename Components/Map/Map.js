@@ -10,7 +10,10 @@ import { appColor, almostWhite } from '../../Styles/styles'
 import BackgroundGeolocation from '@mauron85/react-native-background-geolocation';
 import MapboxGL from '@react-native-mapbox-gl/maps';
 import OpenCallout from './StatusPanel/OpenCallout'
-MapboxGL.setAccessToken("pk.eyJ1IjoiYXJuYXV6ZSIsImEiOiJja2Jhcjg4c3cwOTlrMnVuMWFwY2VwYnhyIn0.SEtqlYaWpFvuqSQ2GhXDTQ");
+// Dark version
+// MapboxGL.setAccessToken("pk.eyJ1IjoiYXJuYXV6ZSIsImEiOiJja2Jhcjg4c3cwOTlrMnVuMWFwY2VwYnhyIn0.SEtqlYaWpFvuqSQ2GhXDTQ");
+// Light version
+MapboxGL.setAccessToken("pk.eyJ1IjoibWF4c3RhdGhhbSIsImEiOiJjazlpZ3N3M2owNzdrM2xwNWtsNWNzOGR1In0.dnrjgWVBo2lvK9WjfE9K5A")
 navigator.geolocation = require('@react-native-community/geolocation');
 
 // When I move from the search tab to the map tab the slide up panel is not at the right position to begin with
@@ -647,7 +650,10 @@ class Map extends React.Component {
                 onLayout={(e) => this.setState({ ...this.state, mapHeight: e.nativeEvent.layout.height })}
                 onPress={() => this._updateScreen()}
                 style={styles.map}
-                styleURL="mapbox://styles/gure/ckk2da2bc3cj817nptcdryzor"
+                // Light version
+                styleURL="mapbox://styles/maxstatham/ckmgx5qg45xiy17lrbniy2g9x"
+                // That one is the dark version
+                // styleURL="mapbox://styles/gure/ckk2da2bc3cj817nptcdryzor"
                 logoEnabled={false}
                 pitchEnabled={false}
                 ref={(c) => this._map = c}
@@ -678,7 +684,7 @@ class Map extends React.Component {
                 calloutHeight={this.state.calloutHeight}
                 onBottomReached={() => this.setState({ ...this.state, openCallout: null })}
                 setRefCallout={this._setRefCallout}
-                user={this.props.user.info}
+                user={this.props.user}
                 dispatch={this.props.dispatch}
                 />
             </View>
