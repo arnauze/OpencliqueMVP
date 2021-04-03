@@ -225,6 +225,21 @@ class SuggestReport extends React.Component {
         )
     }
 
+    _getImage = (type) => {
+        switch (type) {
+            case "restaurant":
+                return require("../../Images/restaurant_image.png")
+            case "coffee_and_tea":
+                return require("../../Images/coffee_and_tea_image.png")
+            case "culture":
+                return require("../../Images/culture_image.png")
+            case "nightlife":
+                return require("../../Images/nightlife_image.png")
+            case "nature":
+                return require("../../Images/nature_image.png")
+        }
+    }
+
     render() {
         console.log(this.state)
         if (this.state.sentSuggestion) {
@@ -232,180 +247,233 @@ class SuggestReport extends React.Component {
             // That part of the code is the final pagee, once the user sent his suggestion
 
             return (
-                <SafeAreaView
-                    style={{ flex: 1 }}
+                <View
+                style={{flex: 1, backgroundColor: "#EDF1F2"}}
                 >
-                    <View style={{ flex: 3, alignItems: 'center', justifyContent: 'center' }}>
-                        <Text style={{ color: appColor, fontWeight: "600", fontSize: 30 }}>Thank you!</Text>
-                    </View>
-                    <View style={{ flex: 7, alignItems: 'center', justifyContent: 'flex-start', margin: 10 }}>
-                        <Text style={{ fontSize: 20, fontWeight: "600", textAlign: 'center' }}>Your suggestion has been sent to the team.</Text>
-                    </View>
-                    <View style={{ flex: 1 }}>
-                        <TouchableOpacity
-                            onPress={() => { this._resetState(); this.props.navigation.goBack() }}
-                            style={{ width: 200, height: 40, borderRadius: 30, alignItems: 'center', justifyContent: 'center', alignSelf: 'center', backgroundColor: appColor }}
-                        >
-                            <Text style={{ color: "white", fontWeight: "600" }}>Close</Text>
-                        </TouchableOpacity>
-                    </View>
-                </SafeAreaView>
+                    <SafeAreaView
+                        style={{ flex: 1, alignItems: 'center', justifyContent: "center" }}
+                    >
+                        <View style={{ flex: 9, alignItems: 'center', justifyContent: 'center' }}>
+                            <Text style={{ color: appColor, fontWeight: "600", fontSize: 22, marginBottom: 8 }}>Thank you!</Text>
+                            <Text style={{ fontSize: 14, fontWeight: "600", textAlign: 'center' }}>Your suggestion has been sent!</Text>
+                        </View>
+                        <View style={{ flex: 1 }}>
+                            <TouchableOpacity
+                                onPress={() => { this._resetState(); this.props.navigation.goBack() }}
+                                style={{ width: 300, height: 50, borderRadius: 30, alignItems: 'center', justifyContent: 'center', alignSelf: 'center', backgroundColor: this.canSubmit() ? appColor : "#DADADA" }}
+                            >
+                                <Text style={{ color: "white", fontWeight: "600" }}>Close</Text>
+                            </TouchableOpacity>
+                        </View>
+                    </SafeAreaView>
+                </View>
             )
         } else if (this.state.add_tag) {
 
             // Here is the second page, where the user needs to fill the tags describing the place he picked
             return (
-                <SafeAreaView
-                    style={{ flex: 1 }}
+                <View
+                style={{flex: 1, backgroundColor: "#EDF1F2"}}
                 >
-                    <ScrollView>
-                        <View style={{ flexDirection: "column" }}>
-                            <TouchableOpacity
-                                onPress={() => this.setState({ ...this.state, add_tag: false })}
-                                style={{ margin: 15, alignSelf: "flex-start" }}
-                            >
-                                <Image
-                                    source={require("../../Images/back_icon.png")}
-                                    style={{ width: 16, height: 10, marginLeft: 5, transform: [{ rotate: "90deg" }] }}
-                                />
-                            </TouchableOpacity>
-                            <View style={{ alignSelf: "center", alignItems: 'center' }}>
-                                <Text style={{ fontWeight: "600", fontSize: 18 }}>Describe #POI</Text>
-                                <Text style={{ fontWeight: "300", fontSize: 14 }}>Select at least 3 tags</Text>
-                            </View>
-                        </View>
-                        {
-                            this._displaySection()
-                        }
-                        <View style={{ marginBottom: 15, marginTop: 15, margin: 7 }}>
-                            <Text style={{ fontWeight: "600", color: appColor }}>Other</Text>
-                            <View style={{ flexDirection: "row", flexWrap: "wrap", marginTop: 7 }}>
-                                {
-                                    this.state.other_tags.map((tag, index) => {
-                                        return (
-                                            <TouchableOpacity
-                                                style={{ alignItems: 'center', justifyContent: "center", borderRadius: 10, borderWidth: 0.5, margin: 5, backgroundColor: this.otherTagExists(tag) ? "black" : "white" }}
-                                                onPress={() => this.onOtherTagSelected(tag)}
-                                                key={index}
-                                            >
-                                                <Text style={{ margin: 7, color: this.otherTagExists(tag) ? "white" : "black" }}>{tag}</Text>
-                                            </TouchableOpacity>
-                                        )
-                                    })
-                                }
-                                <View
-                                    style={{ alignItems: 'center', justifyContent: "center", borderRadius: 10, borderWidth: 0.5, margin: 5, borderColor: "gray" }}
-                                >
-                                    <TextInput
-                                    style={{margin: 7}}
-                                    placeholder="+ Add"
-                                    placeholderTextColor="gray"
-                                    autoCorrect={false}
-                                    onSubmitEditing={this.onSubmitOtherTag}
-                                    value={this.state.other_tag_entry}
-                                    onChangeText={(text) => this.setState({ ...this.state, other_tag_entry: text }) }
-                                    />
+                    <SafeAreaView
+                        style={{ flex: 1 }}
+                    >
+                        <ScrollView>
+                            <View style={{ flexDirection: "column" }}>
+                                <View style={{flexDirection: "row"}}>
+                                    <View style={{flex: 1, alignItems: "flex-start"}}>
+                                        <TouchableOpacity
+                                            onPress={() => this.setState({ ...this.state, add_tag: false })}
+                                            style={{ margin: 15}}
+                                        >
+                                            <Image
+                                                source={require("../../Images/back_icon.png")}
+                                                style={{ width: 16, height: 10, marginLeft: 5, transform: [{ rotate: "90deg" }] }}
+                                            />
+                                        </TouchableOpacity>
+                                    </View>
+                                    <View style={{flex: 1, alignItems: 'center'}}>
+                                        <View>
+                                            <Image
+                                            source={require("../../Images/logo_red.png")}
+                                            style={{width: 24, height: 25}}
+                                            />
+                                        </View>
+                                    </View>
+                                    <View
+                                    style={{flex: 1, alignItems: "flex-end" }}
+                                    >
+                                        <TouchableOpacity
+                                            onPress={() => this.props.navigation.navigate("Settings")}
+                                            style={{marginRight: 15}}
+                                        >
+                                            <Image
+                                                source={require("../../Images/bug_settings_red.png")}
+                                                style={{ width: 20, height: 20 }}
+                                            />
+                                        </TouchableOpacity>
+                                    </View>
+                                </View>
+                                <View style={{ alignSelf: "center", alignItems: 'center' }}>
+                                    <Text style={{ fontWeight: "600", fontSize: 22, marginBottom: 5 }}>Describe {this.state.place.name}!</Text>
+                                    <Text style={{ fontWeight: "300", fontSize: 14, color: appColor }}>Select at least 3 tags</Text>
                                 </View>
                             </View>
-                        </View>
-                        <View style={{ flex: 1, margin: 10 }}>
-                            <TouchableOpacity
-                                onPress={() => this.sendSuggestion()}
-                                style={{ width: 200, height: 40, borderRadius: 30, alignItems: 'center', justifyContent: 'center', alignSelf: 'center', backgroundColor: this.canSubmit() ? appColor : "lightgray" }}
-                            >
-                                <Text style={{ color: "white", fontWeight: "600" }}>Send</Text>
-                            </TouchableOpacity>
-                        </View>
-                    </ScrollView>
-                    {
-                            this.state.loading
-                        &&
-                            <View style={styles.loading}>
-                                <ActivityIndicator size='large' color="white" />
+                            {
+                                this._displaySection()
+                            }
+                            <View style={{ marginBottom: 15, marginTop: 15, margin: 7 }}>
+                                <Text style={{ fontWeight: "600", color: appColor }}>Other</Text>
+                                <View style={{ flexDirection: "row", flexWrap: "wrap", marginTop: 7 }}>
+                                    {
+                                        this.state.other_tags.map((tag, index) => {
+                                            return (
+                                                <TouchableOpacity
+                                                    style={{ alignItems: 'center', justifyContent: "center", borderRadius: 10, borderWidth: 0.5, margin: 5, backgroundColor: this.otherTagExists(tag) ? "black" : "white" }}
+                                                    onPress={() => this.onOtherTagSelected(tag)}
+                                                    key={index}
+                                                >
+                                                    <Text style={{ margin: 7, color: this.otherTagExists(tag) ? "white" : "black" }}>{tag}</Text>
+                                                </TouchableOpacity>
+                                            )
+                                        })
+                                    }
+                                    <View
+                                        style={{ alignItems: 'center', justifyContent: "center", borderRadius: 10, borderWidth: 0.5, margin: 5, borderColor: "gray" }}
+                                    >
+                                        <TextInput
+                                        style={{margin: 7}}
+                                        placeholder="+ Add"
+                                        placeholderTextColor="gray"
+                                        autoCorrect={false}
+                                        onSubmitEditing={this.onSubmitOtherTag}
+                                        value={this.state.other_tag_entry}
+                                        onChangeText={(text) => this.setState({ ...this.state, other_tag_entry: text }) }
+                                        />
+                                    </View>
+                                </View>
                             </View>
-                    }
-                </SafeAreaView>
+                            <View style={{ flex: 1, margin: 10 }}>
+                                <TouchableOpacity
+                                    onPress={() => this.sendSuggestion()}
+                                    style={{ width: 300, height: 50, borderRadius: 30, alignItems: 'center', justifyContent: 'center', alignSelf: 'center', backgroundColor: this.canSubmit() ? appColor : "#DADADA" }}
+                                >
+                                    <Text style={{ color: "white", fontWeight: "600" }}>Send</Text>
+                                </TouchableOpacity>
+                            </View>
+                        </ScrollView>
+                        {
+                                this.state.loading
+                            &&
+                                <View style={styles.loading}>
+                                    <ActivityIndicator size='large' color="white" />
+                                </View>
+                        }
+                    </SafeAreaView>
+                </View>
             )
         } else {
 
             // And that is the first page, where the user has to choose a place he wants to suggest
-
+            let type = this.state.picked_place ? parseTypes(this.state.place.types) : ""
             return (
-                <SafeAreaView
-                    style={{ flex: 1 }}
+                <View
+                style={{flex: 1, backgroundColor: "#EDF1F2"}}
                 >
-                    <View style={{ flex: 1, alignItems: "flex-end" }}>
-                        <TouchableOpacity
-                            onPress={() => this.props.navigation.navigate("Settings")}
-                            style={{ margin: 15 }}
-                        >
-                            <Image
-                                source={require("../../Images/bug_settings_red.png")}
-                                style={{ width: 20, height: 20 }}
-                            />
-                        </TouchableOpacity>
-                    </View>
-                    <View style={{ flexDirection: "row", justifyContent: 'center', margin: 15, flex: 1 }}>
-                        <Text style={{ fontWeight: "600", fontSize: 20, textAlign: 'center' }}>Send us a suggestion about a place that you like, and <Text style={{ color: appColor }}>get featured on the app!</Text></Text>
-                    </View>
-                    <View style={{ flex: 1, margin: 10 }}>
-                        <Text style={{ fontWeight: "600", marginBottom: 5 }}>What is the name of the place ?</Text>
-                        {
-                            this.state.picked_place ?
-                                <View
-                                    style={{ padding: 10, alignItems: 'center', backgroundColor: "#f2f2f2", margin: 5, borderRadius: 5, position: 'relative' }}
-                                >
-                                    <TouchableOpacity
-                                        style={{ position: "absolute", top: 5, right: 5 }}
-                                        onPress={() => {
-                                            this.setState({
-                                                ...this.state,
-                                                picked_place: false,
-                                                place: {
-                                                    name: "",
-                                                    address: "",
-                                                    id: "",
-                                                    icon: "",
-                                                    types: []
-                                                }
-                                            })
-                                        }}
-                                    >
-                                        <Text>x</Text>
-                                    </TouchableOpacity>
+                    <SafeAreaView
+                        style={{ flex: 1 }}
+                    >
+                        <View style={{ flex: 1, flexDirection: "row", alignItems: 'center' }}>
+                            <View style={{flex: 1}}/>
+                            <View style={{flex: 1, alignItems: 'center'}}>
+                                <View>
                                     <Image
-                                        source={{ uri: this.state.place.icon }}
-                                        style={{ width: 25, height: 25 }}
+                                    source={require("../../Images/logo_red.png")}
+                                    style={{width: 24, height: 25}}
                                     />
-                                    <Text style={{ textAlign: 'center', fontWeight: "600", fontSize: 16 }}>{this.state.place.name}</Text>
-                                    <Text>{this.state.place.address}</Text>
                                 </View>
-                                :
-                                <TextInput
-                                    autoCorrect={false}
-                                    autoCapitalize={false}
-                                    style={{ width: "100%", height: 35, backgroundColor: almostWhite, borderRadius: 5, borderWidth: 0.5, padding: 7, borderColor: "lightgray", marginTop: 10, marginBottom: 10 }}
-                                    onChangeText={(text) => this.setState({ ...this.state, placeName: text })}
-                                    onEndEditing={() => this.findPlaces()}
-                                />
-                        }
-                    </View>
-                    <View style={{ flex: 7 }}>
-                        <PotentialPlaces
-                            searching_places={this.state.searching_places}
-                            places={this.state.fetched_places}
-                            onPlacePicked={this.onPlacePicked}
-                        />
-                    </View>
-                    <View style={{ flex: 1, marginTop: 10 }}>
-                        <TouchableOpacity
-                            onPress={() => this.goToAddTag()}
-                            style={{ width: 200, height: 40, borderRadius: 30, alignItems: 'center', justifyContent: 'center', alignSelf: 'center', backgroundColor: this.canSubmit() ? appColor : "lightgray" }}
-                        >
-                            <Text style={{ color: "white", fontWeight: "600" }}>Next</Text>
-                        </TouchableOpacity>
-                    </View>
-                </SafeAreaView>
+                            </View>
+                            <View
+                            style={{flex: 1, alignItems: "flex-end" }}
+                            >
+                                <TouchableOpacity
+                                    onPress={() => this.props.navigation.navigate("Settings")}
+                                    style={{marginRight: 15}}
+                                >
+                                    <Image
+                                        source={require("../../Images/bug_settings_red.png")}
+                                        style={{ width: 20, height: 20 }}
+                                    />
+                                </TouchableOpacity>
+                            </View>
+                        </View>
+                        <View style={{ flexDirection: "row", justifyContent: 'center', margin: 15, marginBottom: 50 }}>
+                            <Text style={{ fontWeight: "600", fontSize: 20, textAlign: 'center'}}>Send us a suggestion about a place that you like, and <Text style={{ color: appColor }}>get featured on the app!</Text></Text>
+                        </View>
+                        <View style={{ flex: 1, margin: 10, alignItems: 'center'}}>
+                            {
+                                this.state.picked_place ?
+                                    <View
+                                    style={{ padding: 10, alignItems: 'center', backgroundColor: "white", margin: 5, borderRadius: 30, width: 300, flexDirection: 'row' }}
+                                    >
+                                        <TouchableOpacity
+                                            style={{ position: "absolute", top: 10, right: 10 }}
+                                            onPress={() => {
+                                                this.setState({
+                                                    ...this.state,
+                                                    picked_place: false,
+                                                    place: {
+                                                        name: "",
+                                                        address: "",
+                                                        id: "",
+                                                        icon: "",
+                                                        types: []
+                                                    }
+                                                })
+                                            }}
+                                        >
+                                            <Text>x</Text>
+                                        </TouchableOpacity>
+                                        <Image
+                                            source={this._getImage(type)}
+                                            style={{ width: type === "coffee_and_tea" ? 45 : 40, height: type === "coffee_and_tea" ? 54 : 42, marginHorizontal: 10 }}
+                                        />
+                                        <View
+                                            style={{ alignItems: "flex-start", maxWidth: 220}}
+                                        >
+                                            <Text style={{ textAlign: 'center', fontWeight: "600", fontSize: 16 }}>{this.state.place.name}</Text>
+                                            <Text style={{color: "#8A8A8A"}}>{this.state.place.address}</Text>
+                                        </View>
+                                    </View>
+                                    :
+                                    <TextInput
+                                        autoCorrect={false}
+                                        autoCapitalize={false}
+                                        style={{ width: 300, height: 50, borderRadius: 30, padding: 7, marginTop: 10, marginBottom: 10, textAlign: "center", alignSelf: 'center', backgroundColor: "white"}}
+                                        onChangeText={(text) => this.setState({ ...this.state, placeName: text })}
+                                        onEndEditing={() => this.findPlaces()}
+                                        placeholder="Name of place"
+                                        placeholderTextColor="#999999"
+                                    />
+                            }
+                        </View>
+                        <View style={{ flex: 7 }}>
+                            <PotentialPlaces
+                                searching_places={this.state.searching_places}
+                                places={this.state.fetched_places}
+                                onPlacePicked={this.onPlacePicked}
+                            />
+                        </View>
+                        <View style={{ flex: 1, marginTop: 10, marginBottom: 10}}>
+                            <TouchableOpacity
+                                onPress={() => this.goToAddTag()}
+                                style={{ width: 300, height: 50, borderRadius: 30, alignItems: 'center', justifyContent: 'center', alignSelf: 'center', backgroundColor: this.canSubmit() ? appColor : "#DADADA" }}
+                            >
+                                <Text style={{ color: "white", fontWeight: "600", fontSize: 17 }}>Next</Text>
+                            </TouchableOpacity>
+                        </View>
+                    </SafeAreaView>
+                </View>
             )
         }
     }
@@ -427,14 +495,14 @@ class TagsSection extends React.Component {
 
     render() {
         return (
-            <View style={{ marginBottom: 15, marginTop: 15, margin: 7 }}>
-                <Text style={{ fontWeight: "600", color: appColor }}>{this.props.section_type}</Text>
+            <View style={{ marginBottom: 15, marginTop: 15, marginHorizontal: 15 }}>
+                <Text style={{ fontWeight: "600", marginLeft: 5 }}>{this.props.section_type}</Text>
                 <View style={{ flexDirection: "row", flexWrap: "wrap", marginTop: 7 }}>
                     {
                         this.props.tags.map((tag, index) => {
                             return (
                                 <TouchableOpacity
-                                    style={{ alignItems: 'center', justifyContent: "center", borderRadius: 10, borderWidth: 0.5, margin: 5, backgroundColor: this._tagExists(tag) ? "black" : "white" }}
+                                    style={{ alignItems: 'center', justifyContent: "center", borderRadius: 10, borderWidth: 0.5, margin: 5, backgroundColor: this._tagExists(tag) ? appColor : "white", borderColor: this._tagExists(tag) ? appColor : "black" }}
                                     onPress={() => this.props.onTagSelected(tag)}
                                     key={index}
                                 >
@@ -463,28 +531,59 @@ class PotentialPlaces extends React.Component {
     //     return require('../../Images/MapIcons/Restaurant/restaurant.png')
     // }
 
+    _getImage = (type) => {
+        switch (type) {
+            case "restaurant":
+                return require("../../Images/restaurant_image.png")
+            case "coffee_and_tea":
+                return require("../../Images/coffee_and_tea_image.png")
+            case "culture":
+                return require("../../Images/culture_image.png")
+            case "nightlife":
+                return require("../../Images/nightlife_image.png")
+            case "nature":
+                return require("../../Images/nature_image.png")
+        }
+    }
+
     makePage = () => {
         if (this.props.searching_places) {
             return (
-                <ActivityIndicator
-                    size="large"
-                />
+                <View style={{alignItems: 'center', justifyContent: 'center'}}>
+                    <ActivityIndicator
+                        size="large"
+                    />
+                </View>
             )
         } else {
             return (
-                this.props.places.map(place =>
-                    <TouchableOpacity
-                        style={{ padding: 10, alignItems: 'center', backgroundColor: "#f2f2f2", margin: 5, borderRadius: 5 }}
-                        onPress={() => this.props.onPlacePicked(place)}
-                    >
-                        <Image
-                            source={{ uri: place.icon }}
-                            style={{ width: 25, height: 25 }}
-                        />
-                        <Text style={{ textAlign: 'center', fontWeight: "600", fontSize: 16 }}>{place.name}</Text>
-                        <Text>{place.address}</Text>
-                    </TouchableOpacity>
-                )
+                <View
+                style={{alignItems: 'center'}}
+                >
+                    {
+                        this.props.places.map((place, index) => {
+                            let type = parseTypes(place.types)
+                            return (
+                                <TouchableOpacity
+                                    key={index}
+                                    style={{ padding: 10, alignItems: 'center', backgroundColor: "white", margin: 5, borderRadius: 30, width: 300, flexDirection: 'row' }}
+                                    onPress={() => this.props.onPlacePicked(place)}
+                                >
+                                    <Image
+                                        source={this._getImage(type)}
+                                        style={{ width: type === "coffee_and_tea" ? 45 : 40, height: type === "coffee_and_tea" ? 54 : 42, marginHorizontal: 10 }}
+                                    />
+                                    <View
+                                        style={{ alignItems: "flex-start", maxWidth: 220}}
+                                    >
+                                        <Text style={{ fontWeight: "600", fontSize: 16 }}>{place.name}</Text>
+                                        <Text style={{color: "#8A8A8A"}}>{place.address}</Text>
+                                    </View>
+                                </TouchableOpacity>
+                            )}
+                        )
+                    }
+                </View>
             )
         }
     }

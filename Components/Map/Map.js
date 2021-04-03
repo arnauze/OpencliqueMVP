@@ -55,8 +55,8 @@ class Map extends React.Component {
             poi: [],
             showMarker: true,
             region: {
-                latitude: 34.0209,//props.user.info.location && props.user.info.location.lat != null ? props.user.info.location.lat : 34.0209,
-                longitude: -118.2856,//props.user.info.location && props.user.info.location.lng != null ? props.user.info.location.lng : -118.2856,
+                latitude: 34.0209, //props.user.info.location && props.user.info.location.lat != null ? props.user.info.location.lat : 34.0209,
+                longitude: -118.2856, //props.user.info.location && props.user.info.location.lng != null ? props.user.info.location.lng : -118.2856,
                 latitudeDelta: 0.0922,
                 longitudeDelta: 0.0421
             },
@@ -76,7 +76,8 @@ class Map extends React.Component {
             mapHeight: 0,
             bounds: [[0, 0], [0, 0]],
             lastLocationUpdate: Date.now(),
-            zoom: 0
+            zoom: 0,
+            clusters: []
         }
 
         this.startBackgroundLocation()
@@ -388,7 +389,7 @@ class Map extends React.Component {
     }
 
     _filterMarkers(bounds, suggestions, zoom) {
-        // Function used to filter suggestions based on zoom and boundsd of the map
+        // Function used to filter suggestions based on zoom and bounds of the map
         return suggestions.map((item, index) => {
             let point = item.geoJson.coordinates
             if (this._isInBounds(point, bounds, false) && this._inZoomRange(item, zoom)) {
@@ -424,12 +425,9 @@ class Map extends React.Component {
     _displayMarkersByCluster() {
         // Function used to clusterize the recommendations
         if (this.state.suggestions) {
-            let suggestions = [...this.state.suggestions.coffee_and_tea, ...this.state.suggestions.culture, ...this.state.suggestions.likes, ...this.state.suggestions.restaurant, ...this.state.suggestions.nature]
-            let bounds = this.state.bounds
             let i = 0
-            // First I cluster the points
-            let clusters = this._clusterMarkers(bounds, suggestions)
-
+            let clusters = this.state.clusters
+            let bounds = this.state.bounds
             return (
                 // Then I loop through the clusters
                 clusters.map((item, index) => {
@@ -613,10 +611,16 @@ class Map extends React.Component {
     onRegionDidChange = async () => {
         let resp = await this._map.getVisibleBounds()
         let zoom = await this._map.getZoom()
+        var clusters = null
+        if (zoom !== this.state.zoom) {
+            let suggestions = [...this.state.suggestions.coffee_and_tea, ...this.state.suggestions.culture, ...this.state.suggestions.likes, ...this.state.suggestions.restaurant, ...this.state.suggestions.nature]
+            clusters = this._clusterMarkers(resp, suggestions)
+        }
         this.setState({
             ...this.state,
             bounds: resp,
-            zoom: zoom
+            zoom: zoom,
+            clusters: clusters ? clusters : this.state.clusters
         })
     }
 
@@ -657,6 +661,7 @@ class Map extends React.Component {
                 logoEnabled={false}
                 pitchEnabled={false}
                 ref={(c) => this._map = c}
+                onDidFinishLoadingMap={this.onRegionDidChange}
                 onRegionDidChange={this.onRegionDidChange}
                 >
                     <MapboxGL.Camera

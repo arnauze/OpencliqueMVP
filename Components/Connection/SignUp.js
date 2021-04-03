@@ -118,7 +118,7 @@ class SignUp extends React.Component {
         } else if (this.state.password !== this.state.confirmPassword) {
             alert("The passwords don't match.")
         } else {
-            this.setState({ index: this.state.index + 1 })
+            this.setState({ ...this.state, index: this.state.index + 1 })
         }
     }
 
@@ -218,7 +218,7 @@ class SignUp extends React.Component {
                                 </TouchableOpacity>
                             </View>
                         </View>
-                        <View style={{flex: 4, width: "100%", justifyContent: 'center', alignItems: 'center'}}>
+                        <View style={{flex: 6, width: "100%", justifyContent: 'center', alignItems: 'center'}}>
                             <Text style={{fontSize: 22, fontWeight: "500"}}>What's your name?</Text>
                             <View style={{width: 300, justifyContent: 'center', height: 50, backgroundColor: "white", borderRadius: 30, marginVertical: 15}}>
                                 <TextInput
@@ -229,6 +229,7 @@ class SignUp extends React.Component {
                                 autoCapitalize='words'
                                 value={this.state.firstName}
                                 autoCorrect={false}
+                                placeholderTextColor="#999999"
                                 placeholder="First name"
                                 />
                             </View>
@@ -241,6 +242,7 @@ class SignUp extends React.Component {
                                 autoCapitalize='words'
                                 value={this.state.lastName}
                                 autoCorrect={false}
+                                placeholderTextColor="#999999"
                                 placeholder="Last name"
                                 />
                             </View>
@@ -259,7 +261,7 @@ class SignUp extends React.Component {
                                 <Text style={{textAlign: 'center', color: appColor}}>By signing up you agree to our Terms of Use and Privacy Policy.</Text>
                             </TouchableOpacity>
                         </View>
-                        <View style={{flex: 5, alignItems: 'center', justifyContent: "flex-end"}}>
+                        <View style={{flex: 3, alignItems: 'center', justifyContent: "flex-end", marginBottom: 10}}>
                             <Text style={{color: appColor}}>Already have an account? <Text style={{fontWeight: "600"}}>Log in</Text></Text>
                         </View>
                     </SafeAreaView>
@@ -289,7 +291,7 @@ class SignUp extends React.Component {
                                 </TouchableOpacity>
                             </View>
                         </View>
-                        <View style={{flex: 4, alignItems: 'center'}}>
+                        <View style={{flex: 6, alignItems: 'center'}}>
                             <Text style={{fontWeight: "500", fontSize: 20 }}>When's your birthday?</Text>
                             <View style={{flexDirection: "row", width: 300, height: 50, backgroundColor: "white", borderRadius: 30, justifyContent: 'center', alignItems: 'center', marginTop: 25, marginBottom: 80}}>
                                 <TextInput
@@ -304,7 +306,7 @@ class SignUp extends React.Component {
                                 style={{ textAlign: 'left', fontSize: 17 }}
                                 autoCapitalize='none'
                                 placeholder="MM"
-                                placeholderTextColor="gray"
+                                placeholderTextColor="#999999"
                                 value={this.state.date.month}
                                 keyboardType={"numeric"}
                                 />
@@ -321,7 +323,7 @@ class SignUp extends React.Component {
                                 style={{ textAlign: 'left', fontSize: 17 }}
                                 autoCapitalize='none'
                                 placeholder="DD"
-                                placeholderTextColor="gray"
+                                placeholderTextColor="#999999"
                                 value={this.state.date.day}
                                 keyboardType={"numeric"}
                                 />
@@ -338,7 +340,7 @@ class SignUp extends React.Component {
                                 style={{textAlign: 'left', fontSize: 17 }}
                                 autoCapitalize='none'
                                 placeholder="YYYY"
-                                placeholderTextColor="gray"
+                                placeholderTextColor="#999999"
                                 value={this.state.date.year}
                                 keyboardType={"numeric"}
                                 />
@@ -351,6 +353,7 @@ class SignUp extends React.Component {
                                 <Text style={{color: "white", fontWeight: "600", fontSize: 16}}>Next</Text>
                             </TouchableOpacity>
                         </View>
+                        <View style={{flex: 3}}></View>
                     </SafeAreaView>
                 )
         
@@ -378,7 +381,7 @@ class SignUp extends React.Component {
                                 </TouchableOpacity>
                             </View>
                         </View>
-                        <View style={{flex: 4, alignItems: 'center'}}>
+                        <View style={{flex: 6, alignItems: 'center'}}>
                             <Text style={{fontWeight: "500", fontSize: 20}}>Your username</Text>
                             <View style={{width: 300, height: 50, backgroundColor: "white", borderRadius: 30, alignItems: 'center', justifyContent: 'center', marginTop: 25, marginBottom: 80}}>
                                 <TextInput
@@ -388,6 +391,7 @@ class SignUp extends React.Component {
                                 autoCapitalize='none'
                                 value={this.state.username}
                                 autoCorrect={false}
+                                placeholderTextColor="#999999"
                                 placeholder="Enter username"
                                 />
                             </View>
@@ -398,7 +402,7 @@ class SignUp extends React.Component {
                                 <Text style={{color: "white", fontWeight: "600", fontSize: 16}}>Next</Text>
                             </TouchableOpacity>
                         </View>
-                        <View style={{flex: 5}}></View>
+                        <View style={{flex: 3}}></View>
                     </SafeAreaView>
                 )
 
@@ -426,7 +430,7 @@ class SignUp extends React.Component {
                                 </TouchableOpacity>
                             </View>
                         </View>
-                        <View style={{flex: 4, width: "100%", justifyContent: 'center', alignItems: 'center'}}>
+                        <View style={{flex: 6, width: "100%", justifyContent: 'center', alignItems: 'center'}}>
                             <Text style={{fontSize: 22, fontWeight: "500"}}>Set a password</Text>
                             <View style={{width: 300, justifyContent: 'center', height: 50, backgroundColor: "white", borderRadius: 30, marginVertical: 15}}>
                                 <TextInput
@@ -438,6 +442,7 @@ class SignUp extends React.Component {
                                 value={this.state.password}
                                 autoCorrect={false}
                                 placeholder="Password"
+                                placeholderTextColor="#999999"
                                 />
                             </View>
                             <View style={{width: 300, justifyContent: 'center', height: 50, backgroundColor: "white", borderRadius: 30, marginBottom: 15}}>
@@ -450,6 +455,7 @@ class SignUp extends React.Component {
                                 value={this.state.confirmPassword}
                                 autoCorrect={false}
                                 placeholder="Re-enter password"
+                                placeholderTextColor="#999999"
                                 />
                             </View>
                             <TouchableOpacity
@@ -467,7 +473,7 @@ class SignUp extends React.Component {
                                 <Text style={{textAlign: 'center', color: appColor}}>Your password must be at least 6 characters long.</Text>
                             </TouchableOpacity>
                         </View>
-                        <View style={{flex: 5, alignItems: 'center', justifyContent: "flex-end"}}>
+                        <View style={{flex: 3, alignItems: 'center', justifyContent: "flex-end"}}>
                         </View>
                     </SafeAreaView>
                 )
@@ -495,7 +501,7 @@ class SignUp extends React.Component {
                                 </TouchableOpacity>
                             </View>
                         </View>
-                        <View style={{flex: 4, alignItems: 'center'}}>
+                        <View style={{flex: 6, alignItems: 'center'}}>
                             <Text style={{fontWeight: "500", fontSize: 20}}>What's your mobile number?</Text>
                             <View style={{width: 300, height: 50, backgroundColor: "white", borderRadius: 30, alignItems: 'center', justifyContent: 'center', marginTop: 25, marginBottom: 15}}>
                                 <TextInput
@@ -506,6 +512,7 @@ class SignUp extends React.Component {
                                 value={this.state.phoneNumber}
                                 autoCorrect={false}
                                 placeholder="Mobile number"
+                                placeholderTextColor="#999999"
                                 secureTextEntry={false}
                                 />
                             </View>
@@ -519,7 +526,7 @@ class SignUp extends React.Component {
                                 <Text style={{color: "white", fontWeight: "600", fontSize: 16}}>Next</Text>
                             </TouchableOpacity>
                         </View>
-                        <View style={{flex: 5}}></View>
+                        <View style={{flex: 3}}></View>
                     </SafeAreaView>
                 )
             case 5:
@@ -546,7 +553,7 @@ class SignUp extends React.Component {
                                 </TouchableOpacity>
                             </View>
                         </View>
-                        <View style={{flex: 4, alignItems: 'center'}}>
+                        <View style={{flex: 6, alignItems: 'center'}}>
                             <Text style={{fontWeight: "500", fontSize: 20}}>Enter verification code</Text>
                             <View style={{width: 300, height: 50, backgroundColor: "white", borderRadius: 30, alignItems: 'center', justifyContent: 'center', marginTop: 25, marginBottom: 15}}>
                                 <TextInput
@@ -557,6 +564,7 @@ class SignUp extends React.Component {
                                 value={this.state.confirmCode}
                                 autoCorrect={false}
                                 secureTextEntry={false}
+                                placeholderTextColor="#999999"
                                 placeholder="Verification code"
                                 />
                             </View>
@@ -571,7 +579,7 @@ class SignUp extends React.Component {
                                 <Text style={{color: "white", fontWeight: "600", fontSize: 16}}>Next</Text>
                             </TouchableOpacity>
                         </View>
-                        <View style={{flex: 5}}></View>
+                        <View style={{flex: 3}}></View>
                     </SafeAreaView>
                 )
             case 6:

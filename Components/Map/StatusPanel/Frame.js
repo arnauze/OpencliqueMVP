@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Text, TouchableOpacity, Dimensions, Image, ScrollView, StyleSheet, Linking, SafeAreaView, FlatList } from 'react-native'
+import { View, Text, TouchableOpacity, Dimensions, Image, ScrollView, StyleSheet, Linking, SafeAreaView, FlatList, Alert } from 'react-native'
 import Amplify, { API, Storage } from 'aws-amplify'
 import { appColor, bronzeFeather, platinumFeather, goldFeather, almostWhite } from '../../../Styles/styles'
 import { connect } from 'react-redux'
@@ -91,10 +91,10 @@ export class Tags extends React.Component {
         console.log(priceRange)
         if (priceRange > 0) {
             while (++i < priceRange) {
-                ret.push(<Text style={{color: "#8A8A8A"}}>$</Text>)
+                ret.push(<Text key={i} style={{color: "#8A8A8A"}}>$</Text>)
             }
             while (i < 4) {
-                ret.push(<Text style={{color: "#CCCCCC"}}>$</Text>)
+                ret.push(<Text key={i} style={{color: "#CCCCCC"}}>$</Text>)
                 i++;
             }
         }
@@ -137,8 +137,11 @@ export class Photos extends React.Component {
     render() {
         return (
             <ScrollView
-                horizontal={true}
+                horizontal
                 showsHorizontalScrollIndicator={false}
+                decelerationRate={0}
+                snapToInterval={width - 10}
+                pagingEnabled={true}
             >
                 {
                     this.props.photos.map((item, index) => {
@@ -146,7 +149,7 @@ export class Photos extends React.Component {
                             <Image
                                 key={index}
                                 source={{ url: item }}
-                                style={{ width: 375, height: 425, marginRight: 10 }}
+                                style={{ width: width - 20, height: 425, marginRight: index + 1 === this.props.photos.length ? 0 : 10}}
                             />
                         )
                     })
@@ -448,8 +451,10 @@ export class PopularTimes extends React.Component {
             <View
                 style={styles.popular_times_frame}
             >
-                <View
-                    style={{ flexDirection: "row", marginLeft: 15, marginRight: 15 }}
+                <ScrollView
+                    horizontal={true}
+                    showsHorizontalScrollIndicator={false}
+                    style={{ marginLeft: 15, marginRight: 15 }}
                 >
                     {
                         this.state.days_list.map((item, index) => {
@@ -466,7 +471,7 @@ export class PopularTimes extends React.Component {
                             )
                         })
                     }
-                </View>
+                </ScrollView>
                 <View
                 style={{width: "100%", height: 115, alignItems: 'center'}}
                 >
@@ -549,7 +554,7 @@ export class PlaceNameAndFlames extends React.Component {
                 flames: !this.state.flames
             })
         } else {
-            alert("Sorry, we are still analyzing the most popular times for this place\n Try again later !")
+            Alert.alert("Sorry, we are still analyzing the most popular times for this place\n Try again later !")
         }
     }
 
@@ -574,14 +579,14 @@ export class PlaceNameAndFlames extends React.Component {
         return (
             <View>
                 <View style={{ flexDirection: 'row', margin: 7, marginVertical: 15, alignItems: 'center' }}>
-                    <View style={{ flex: 2, alignItems: 'center', flexDirection: "row"}}>
+                    <View style={{ flex: 2, alignItems: 'center', flexDirection: "row", marginRight: 10}}>
                         <Image
                         source={this._getImage()}
                         style={{width: this.props.type === "coffee_and_tea" ? 45 : 39, height: this.props.type === "coffee_and_tea" ? 54 : 41, marginRight: 10}}
                         />
                         <Text style={styles.title}>{this.props.name}</Text>
                     </View>
-                    <View style={{ flex: 1, alignItems: 'flex-end' }}>
+                    <View style={{ flex: 1, alignItems: 'flex-end', marginLeft: 10}}>
                         <Flames
                             flames={this.props.flames}
                             onPress={this.onPress}
@@ -887,7 +892,11 @@ class Frame extends React.Component {
                             <View
                             style={{flex: 1, alignItems: "flex-end"}}
                             >
-                                <Text style={{ color: appColor, fontWeight: "600" }}>{this.formatDate()}</Text>
+                                <TouchableOpacity
+                                onPress={() => Alert.alert("We update our recommendations every Monday morning.")}
+                                >
+                                    <Text style={{ color: appColor, fontWeight: "600" }}>{this.formatDate()}</Text>
+                                </TouchableOpacity>
                             </View>
                         </View>
                         <Filters

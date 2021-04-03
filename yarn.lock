@@ -7186,6 +7186,13 @@ react-native-datepicker@^1.7.2:
   dependencies:
     moment "^2.22.0"
 
+react-native-draggable@^3.3.0:
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/react-native-draggable/-/react-native-draggable-3.3.0.tgz#6f07c3ad4cff018bf0455fc48dbfe5f0af9b72cd"
+  integrity sha512-aU20CaKBmzXrwE9eTJZ+GDOr52mXLchg5Vydbx5rz8nYXlN+ppHIoTPgyXduyWNwpZ/DR6tyFtMwdgUHpuN6oA==
+  dependencies:
+    prop-types "^15.7.2"
+
 react-native-elements@^0.19.1:
   version "0.19.1"
   resolved "https://registry.yarnpkg.com/react-native-elements/-/react-native-elements-0.19.1.tgz#f92b69d864a150215d01f81fe3c52a9cada83e45"
@@ -7280,11 +7287,6 @@ react-native-maps@^0.24.2:
 react-native-maps@expo/react-native-maps#v0.22.1-exp.0:
   version "0.22.1"
   resolved "https://codeload.github.com/expo/react-native-maps/tar.gz/e6f98ff7272e5d0a7fe974a41f28593af2d77bb2"
-
-react-native-photo-library@^1.0.4:
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/react-native-photo-library/-/react-native-photo-library-1.0.4.tgz#4dc5cf83c91ad27ad483bfe1ee9ca1985cfce217"
-  integrity sha512-JO31U/tDg9+lC3FN3Vz673GCUulhACeETVnNTTOd1QtUFXv0jKDNVqLLPzFfMIzmC3TXkz0t9enM8N6IaMHnTQ==
 
 react-native-progress@^4.0.2:
   version "4.1.2"

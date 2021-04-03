@@ -1,5 +1,5 @@
 import React from 'react'
-import { Image, TextInput, StyleSheet, TouchableOpacity, View, Text, KeyboardAvoidingView, SafeAreaView} from 'react-native'
+import { Image, TextInput, StyleSheet, TouchableOpacity, View, Text, KeyboardAvoidingView, SafeAreaView, ActivityIndicator} from 'react-native'
 import { connect } from 'react-redux'
 import { Auth, API, Storage } from 'aws-amplify'
 import { appColor } from '../../Styles/styles';
@@ -21,7 +21,12 @@ class SignIn extends React.Component {
         }
         else if (this.state.connectionMessage) {
             return (
-                <Text style={{fontSize: 16, fontWeight: "600", color: 'black', alignSelf: 'center', marginTop: 10}}>{this.state.connectionMessage}</Text>
+                <View style={{position: "absolute", top: 0, bottom: 0, left: 0, right: 0, backgroundColor: "rgba(0,0,0,0.7)", alignItems: 'center', justifyContent: "center", width: "100%", height: "100%"}}>
+                    <ActivityIndicator
+                    size="large"
+                    color="white"
+                    />
+                </View>
             )
         }
     }
@@ -121,6 +126,7 @@ class SignIn extends React.Component {
                                 autoCapitalize='none'
                                 autoCorrect={false}
                                 placeholder="Username or Email"
+                                placeholderTextColor="#999999"
                                 />
                             </View>
                             <View style={{ width: 300, height: 50, backgroundColor: "white", borderRadius: 30, justifyContent: "center"}}>
@@ -132,6 +138,7 @@ class SignIn extends React.Component {
                                 autoCapitalize='none'
                                 autoCorrect={false}
                                 placeholder="Password"
+                                placeholderTextColor="#999999"
                                 secureTextEntry={true}
                                 />
                             </View>
@@ -148,9 +155,7 @@ class SignIn extends React.Component {
                                 <Text style={{color: appColor}}>Forgot password ?</Text>
                             </TouchableOpacity>
                         </View>
-                        <View style={{flex: 5}}>
-                            {this._displayMessage()}
-                        </View>
+                        {this._displayMessage()}
                     </View>
                 </SafeAreaView>
             </KeyboardAvoidingView>

@@ -104,13 +104,15 @@ const CommunityStack = createStackNavigator({
     BugsReport: {
         screen: BugsReport,
         navigationOptions: {
-            title: 'I spotted a bug'
+            title: 'I spotted a bug',
+            header: null
         }
     },
     SendBugReport: {
         screen: SendBugReport,
         navigationOptions: {
-            title: 'Bug'
+            title: 'Bug',
+            header: null
         }
     },
 }, {
@@ -134,7 +136,7 @@ const BottomTabNavigator = createBottomTabNavigator({
                 } else {
                     return (
                         <Image
-                        source={require('../Images/suggestions_white.png')}
+                        source={require('../Images/suggestions_black.png')}
                         style={{height: 20, width: 25}}
                         />
                     )
@@ -150,14 +152,14 @@ const BottomTabNavigator = createBottomTabNavigator({
                     return (
                         <Image
                         source={require('../Images/map_red.png')}
-                        style={{height: 25, width: 21}}
+                        style={{height: 32, width: 35}}
                         />
                     )
                 } else {
                     return (
                         <Image
-                        source={require('../Images/map_white.png')}
-                        style={{height: 25, width: 21}}
+                        source={require('../Images/map_black.png')}
+                        style={{height: 28, width: 30}}
                         />
                     )
                 }
@@ -181,7 +183,7 @@ const BottomTabNavigator = createBottomTabNavigator({
                     return (
                         <View style={{flexDirection: 'row', alignItems: 'baseline'}}>
                             <Image
-                            source={require('../Images/community_white.png')}
+                            source={require('../Images/community_black.png')}
                             style={{height: 24, width: 25}}
                             />
                         </View>
@@ -194,7 +196,7 @@ const BottomTabNavigator = createBottomTabNavigator({
        tabBarOptions: {
             showLabel: false,
             showIcon: true,
-            style: { backgroundColor: "black" },
+            style: { backgroundColor: "white" },
             activeTintColor: appColor
         },
         resetOnBlur: true,
