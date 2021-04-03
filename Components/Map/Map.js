@@ -293,59 +293,131 @@ class Map extends React.Component {
         return inBound
     }
 
-    _clusterMarkers = (bounds, suggestions) => {
-        let top = bounds[0][0]
-        let bottom = bounds[1][0]
-        let right = bounds[0][1]
-        let left = bounds[1][1]
+    _getMinMax = (suggestions, stepsWidth, stepsHeight) => {
+        /*
+        That function loops through all the weekly suggestions for the user
+        and finds the min and max latitude/longitude
+        :suggestions: list of suggestions for the usr
+        :stepsWidth: diff in longitude between left side and right side of cluster box
+        :stepsHeight: diff in latitude between top side and bottom side of cluster box
+        Returns
+        -> minLat: minimum latitude in suggestions
+        -> maxLat: maximum latitude in suggestions
+        -> minLon: minimum longitude in suggestions
+        -> maxLon: maximum longitude in suggestions
+        */
 
-        let latInversed = ((bounds[0][0] < 0) || (bounds[1][0] < 0))
-        let lngInversed = ((bounds[0][1] < 0) || (bounds[1][1] < 0))
-        
-        let differenceHeight = Math.abs(bottom - top)
-        let differenceWidth = Math.abs(left - right)
+        var minLat = null;
+        var maxLat = null;
+        var minLon = null;
+        var maxLon = null;
+        for (var suggestion of suggestions) {
+            let point = suggestion.geoJson.coordinates
+            if (!minLat || (minLat && Math.abs(point[0]) < Math.abs(minLat)))
+                minLat = point[0]
+            if (!maxLat || (maxLat && Math.abs(point[0]) > Math.abs(maxLat)))
+                maxLat = point[0]
+            if (!minLon || (minLon && Math.abs(point[1]) < Math.abs(minLon)))
+                minLon = point[1]
+            if (!maxLon || (maxLon && Math.abs(point[1]) > Math.abs(maxLon)))
+                maxLon = point[1]
+        }
+        minLat -= (stepsHeight / 2)
+        maxLat += (stepsHeight / 2)
+        minLon -= (stepsWidth / 2)
+        maxLon += (stepsWidth / 2)
+        return [minLat, maxLat, minLon, maxLon]
+    }
 
-        let amountStepsWidth = 4
-        let amountStepsHeight = 4
+    _makeClusters = (minLat, maxLat, minLon, maxLon, stepsLat, stepsLon, latInversed, lonInversed) => {
+        /*
+        That function loops in the zone determined by the suggestions positions,
+        and creates all the clusters needed, based on the current zoom
+        :minLat: Minimum latitude found in suggestions
+        :maxLat: Maximum latitude found in suggestions
+        :minLon: Minimum longitude found in suggestions
+        :maxLon: Maximum longitude found in suggestions
+        :stepsLat: Size of each step to next clusters
+        :stepsLon: Size of each step to next clusters
+        :latInversed: Boolean true if latitude is negative
+        :lonInversed: Boolean true if longitude is negative
+        Returns
+        -> clusters: newly created clusters, without any suggestions in them
+        */
 
-        let stepsWidth = (differenceWidth / 6)
-        let stepsHeight = (differenceHeight / 4)
-
-        let clusters = []
-
-        // Creating all 24 clusters
-        let i = -1
-        while (++i < 24) {
-            let currentStepHeight = i % amountStepsHeight
-            let currentStepWidth = Math.floor(i / amountStepsWidth)
-            let centerLat
-            if (latInversed)
-                centerLat = (((top - (stepsHeight * currentStepHeight)) + (top - (stepsHeight * (currentStepHeight + 1)))) / 2)
-            else
-                centerLat = (((top + (stepsHeight * currentStepHeight)) + (top + (stepsHeight * (currentStepHeight + 1)))) / 2)
-            let centerLng 
-            if (lngInversed)
-                centerLng = (((left - (stepsWidth * currentStepWidth)) + (left - (stepsWidth * (currentStepWidth + 1)))) / 2)
-            else
-                centerLng = (((left + (stepsWidth * currentStepWidth)) + (left + (stepsWidth * (currentStepWidth + 1)))) / 2)
-            clusters.push(
-                {
-                    "top": latInversed ? (top - (stepsHeight * currentStepHeight)) : (top + (stepsHeight * currentStepHeight)),
-                    "bottom": latInversed ? (top - (stepsHeight * (currentStepHeight + 1))) : (top + (stepsHeight * (currentStepHeight + 1))),
-                    "left": lngInversed ? (left - (stepsWidth * currentStepWidth)) : (left + (stepsWidth * currentStepWidth)),
-                    "right": lngInversed ? (left - (stepsWidth * (currentStepWidth + 1))) : (left + (stepsWidth * (currentStepWidth + 1))),
-                    "center": [centerLng, centerLat],
-                    "points": []
-                }
-            )
+        // Utility function to return true of false for latitude loop
+        latCondition = (latInversed, currentLat, maxLat) => {
+            if (latInversed) {
+                return currentLat > maxLat
+            } else {
+                return currentLat < maxLat
+            }
         }
 
-        // Adding the suggestions in their respective clusters
-        i = -1
+        // Utility function to return true of false for longitude loop
+        lonCondition = (lonInversed, currentLon, maxLon) => {
+            if (lonInversed) {
+                return currentLon > maxLon
+            } else {
+                return currentLon < maxLon
+            }
+        }
+
+        let clusters = []
+        let currentLat = minLat
+
+        // Looping through the entire height
+        while (latCondition(latInversed, currentLat, maxLat)) {
+            let currentLon = minLon
+
+            // Looping through the entire width
+            while(lonCondition(lonInversed, currentLon, maxLon)) {
+                clusters.push(
+                    {
+                        "top": currentLat,
+                        "bottom": latInversed ? currentLat - stepsLat : currentLat + stepLat,
+                        "left": currentLon,
+                        "right": lonInversed ? currentLon - stepsLon : currentLon + stepsLon,
+
+                        // We calculate the center once we've added all suggestions in their respective clusters
+                        "center": [0, 0],
+                        "points": []
+                    }
+                )
+                if (lonInversed)
+                    currentLon -= stepsLon
+                else
+                    currentLon += stepsLon
+            }
+            if (latInversed)
+                currentLat -= stepsLat
+            else
+                currentLat += stepsLat
+        }
+        
+        return clusters
+    }
+
+    _addSuggestionsToClusters = (suggestions, clusters) => {
+        /*
+        That function loops through all the suggestions, and put them in their clusters
+        :suggestions: list of suggestions
+        :clusters: list of clusters
+        Returns
+        -> clusters: Uppdated list of clusters with suggestions in them
+        */
+
+        let i = -1
+
+        // Looping through all the suggestions
         while (++i < suggestions.length) {
             let j = -1
             let point = suggestions[i].geoJson.coordinates
+
+            // Looping throught all the clusters
             while (++j < clusters.length) {
+
+                // If the suggestions is located inside a cluster, we add it inside
                 if ((Math.abs(point[0]) > Math.abs(clusters[j].top)
                     && Math.abs(point[0]) < Math.abs(clusters[j].bottom))
                     && (Math.abs(point[1]) < Math.abs(clusters[j].right)
@@ -354,9 +426,17 @@ class Map extends React.Component {
                     }
             }
         }
+        return clusters
+    }
 
-        // Updating the clusters center point (Place where I display the icon on map)
-        // The center point is now based on the nested points locations
+    _calculateClusterCenter = (clusters) => {
+        /*
+        That function calculates the centers point of the cluster based on its nested points
+        :clusters: List of clusters
+        Returns
+        -> clusters: List of clusters with updated center coordinates
+        */
+
         for (var cluster of clusters) {
             if (cluster.points.length > 0) {
                 let total_lat = 0
@@ -368,8 +448,50 @@ class Map extends React.Component {
                 cluster.center = [total_lon / cluster.points.length, total_lat / cluster.points.length]
             }
         }
-        return clusters
 
+        return clusters
+    }
+
+    _clusterMarkers = (bounds, suggestions) => {
+        /*
+        That function handles the clustering of markers on the map.
+        It is called on map layout and when the zoom changes
+        :bounds: Current bounds of the map
+        :suggestions: List of suggestions we made to the user
+        Returns
+        -> clusters: List of clusters, with the suggestions nested inside them
+        */
+
+        // We get the borders of the map boundaries
+        let top = bounds[0][0]
+        let bottom = bounds[1][0]
+        let right = bounds[0][1]
+        let left = bounds[1][1]
+
+        // We look if latitude or longitude are negative. This is important because
+        // it will change the way we loop to create the clusters
+        let latInversed = ((top < 0) || (bottom < 0))
+        let lngInversed = ((left < 0) || (right < 0))
+        
+        // Now we calculate the width and height of the cluster zones
+        let differenceHeight = Math.abs(bottom - top)
+        let differenceWidth = Math.abs(left - right)
+        let stepsWidth = (differenceWidth / 6)
+        let stepsHeight = (differenceHeight / 4)
+
+        // We get the minimum and maximum longitude and latitude of the suggestions
+        var [minLat, maxLat, minLon, maxLon] = this._getMinMax(suggestions, stepsWidth, stepsHeight)
+
+        // We create the clusters
+        let clusters = this._makeClusters(minLat, maxLat, minLon, maxLon, stepsHeight, stepsWidth, latInversed, lngInversed)
+
+        // We add the suggestions inside their respective clusters
+        clusters = this._addSuggestionsToClusters(suggestions, clusters)
+
+        // We calculate where we should display the cluster on the map, based on the suggestions nested inside them
+        clusters = this._calculateClusterCenter(clusters)
+
+        return clusters
     }
 
     _inZoomRange(place, zoom) {
