@@ -298,7 +298,7 @@ export class PlaceInformations extends React.Component {
             <View>
                 <View style={{ flexDirection: "row", alignItems: 'center' }}>
                     <Image
-                        source={require("../../../Images/location_red.png")}
+                        source={require("../../../Images/location_gray_full.png")}
                         style={{ height: 14, width: 10, marginRight: 5 }}
                     />
                     <Text style={{ fontWeight: "500", margin: 7 }}>{place.address}</Text>

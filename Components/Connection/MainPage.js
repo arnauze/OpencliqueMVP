@@ -9,7 +9,7 @@ export default class MainPage extends React.Component {
         return (
             <View style={{flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: "#F2788C"}}>
                 <View style={{flex: 9, alignItems: 'center', justifyContent: 'center'}}>
-                    <Image source={require('../../Images/MapIcons/logo_white.png')} style={{width: 73, height: 74}}/>
+                    <Image source={require('../../Images/logo_white.png')} style={{width: 73, height: 74}}/>
                     <Text style={{fontWeight: "500", fontSize: 44, color: "white", marginTop: 10}}>openclique</Text>
                 </View>
                 <View style={{flex: 3, alignItems: 'center', justifyContent: 'flex-start', width: '100%'}}>

@@ -3,8 +3,6 @@ import { Image, TextInput, StyleSheet, TouchableOpacity, View, Text, SafeAreaVie
 import { connect } from 'react-redux'
 import { Auth, API, Storage } from 'aws-amplify'
 import {appColor, almostWhite} from '../../Styles/styles'
-import ItemsInformations from '../Profile/ItemsInformations';
-import ProgressBar from '../Profile/ProgressBar'
 
 // I need to make the page more beautiful 
 
@@ -591,14 +589,22 @@ class SignUp extends React.Component {
                         />
                     </View>
                     :
-                    <SafeAreaView style={{flex: 1, justifyContent: 'center', alignItems: 'center', position: 'relative', backgroundColor: "#EDF1F2"}}>
-                            <Text style={{fontWeight: "600", fontSize: 24, color: appColor, marginBottom: 36}}>You're all set up!</Text>
-                        <TouchableOpacity
-                        style={{ height: 50, width: 300, borderRadius: 30, backgroundColor: "#F2788C", alignItems: 'center', justifyContent: 'center'}}
-                        onPress={this._onSignupComplete}
-                        >
-                            <Text style={{color: "white", fontWeight: "600", fontSize: 16}}>Start discovering</Text>
-                        </TouchableOpacity>
+                    <SafeAreaView style={{flex: 1, position: 'relative', backgroundColor: "#EDF1F2"}}>
+                        <View style={{flex: 6, justifyContent: "flex-end", alignItems: 'center'}}>
+                            <Image
+                            source={require("../../Images/start_discovering.png")}
+                            style={{width: 279, height: 285}}
+                            />
+                        </View>
+                        <View style={{flex: 4, justifyContent: 'center', alignItems: 'center'}}>
+                            <Text style={{fontWeight: "600", fontSize: 24, color: appColor, marginBottom: 36}}>You're all set!</Text>
+                            <TouchableOpacity
+                            style={{ height: 50, width: 300, borderRadius: 30, backgroundColor: "#F2788C", alignItems: 'center', justifyContent: 'center'}}
+                            onPress={this._onSignupComplete}
+                            >
+                                <Text style={{color: "white", fontWeight: "600", fontSize: 16}}>Start discovering</Text>
+                            </TouchableOpacity>
+                        </View>
                     </SafeAreaView>
                 )
 

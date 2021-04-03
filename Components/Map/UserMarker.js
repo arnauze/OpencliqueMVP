@@ -4,7 +4,6 @@ import { Marker } from 'react-native-maps'
 import { Storage, API } from 'aws-amplify'
 import MapboxGL from '@react-native-mapbox-gl/maps';
 import { appColor, flyToAnimationSpeed } from '../../Styles/styles';
-import Character from '../Character/Character';
 import { connect } from 'react-redux'
 
 MapboxGL.setAccessToken("pk.eyJ1IjoiYXJuYXV6ZSIsImEiOiJja2Jhcjg4c3cwOTlrMnVuMWFwY2VwYnhyIn0.SEtqlYaWpFvuqSQ2GhXDTQ");

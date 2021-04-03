@@ -2,51 +2,15 @@ import { createStackNavigator, createAppContainer, createBottomTabNavigator } fr
 import React from 'react'
 import { StyleSheet, Image, Text, View } from 'react-native'
 
-// Imports from Components/Flux
-import Flux from '../Components/Flux/Flux'
-import ShareContent from '../Components/Flux/ShareContent'
-import AddMedia from '../Components/Flux/AddMedia'
-import ShareLocation from '../Components/Flux/ShareLocation'
-import LeaveReview from '../Components/Flux/LeaveReview'
-
 // Imports from Components/Map
 import Map from '../Components/Map/Map'
-import Preferences from '../Components/Map/Preferences'
-import Settings from '../Components/Map/Settings'
-import MyEvents from '../Components/Map/MyEvents'
 import SuggestReport from '../Components/Map/SuggestReport'
-import CalendarComponent from '../Components/Map/CalendarComponent'
-import PostImage from '../Components/Map/StatusPanel/PostImage'
 import Frame from '../Components/Map/StatusPanel/Frame'
 
-// Imports from Components/Profile
-import Profile from '../Components/Profile/Profile'
-import Achievements from '../Components/Profile/Achievements/Achievements'
-import Boutique from '../Components/Profile/Boutique'
-import ModifyProfile from '../Components/Profile/ModifyProfile'
-import FollowersPage from '../Components/Profile/FollowersPage'
-import FollowingsPage from '../Components/Profile/FollowingsPage'
-import ModifyCharacter from '../Components/Profile/ModifyCharacter'
-import ItemsCollection from '../Components/Profile/ItemsCollection'
-import ItemDescription from '../Components/Profile/ItemDescription'
-import Leaderboard from '../Components/Leaderboard/Leaderboard'
-
-// Imports from Components/FriendsProfile
-import FriendsProfile from '../Components/FriendsProfile/FriendsProfile'
-
-// Imports from Components/Event
-import PickLocation from '../Components/Event/PickLocation'
-import CreateEvent from '../Components/Event/CreateEvent'
-import ListUsers from '../Components/Event/ListUsers'
-
 // Import from Components/Shared
-import ReviewPlace from '../Components/Shared/ReviewPlace'
-import InviteFriends from '../Components/Shared/InviteFriends'
-import DisplayStatus from '../Components/Shared/DisplayStatus'
 import BugsReport from '../Components/Shared/BugsReport'
 import SendBugReport from '../Components/Shared/SendBugReport'
 
-import {fromLeft, fromRight, fromBottom} from 'react-navigation-transitions';
 import { appColor } from '../Styles/styles';
 
 const SuggestionStack = createStackNavigator({
@@ -68,36 +32,17 @@ const MapStackNavigator = createStackNavigator({
       navigationOptions: {
         header: null
       }
-    },
-    PickLocation: {
-        screen: PickLocation
-    },
+    }
 }, {
     navigationOptions: ({ navigation }) => ({
         header: null,
       }),
-    //   transitionConfig: nav => {
-    //       if (nav.scenes[nav.scenes.length - 1].route.routeName == "SuggestReport" ||
-    //         nav.scenes[nav.scenes.length - 1].route.routeName == "Settings" || 
-    //         nav.scenes[nav.scenes.length - 1].route.routeName == "Frame") {
-    //           return fromBottom()
-    //       } else {
-    //           return fromRight()
-    //       }
-    //   }
 })
 
 const CommunityStack = createStackNavigator({
     SuggestReport: {
         screen: SuggestReport,
         navigationOptions: {
-            header: null
-        }
-    },
-    Settings: {
-        screen: Settings,
-        navigationOptions: {
-            title: 'Settings',
             header: null
         }
     },
