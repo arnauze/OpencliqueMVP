@@ -1,4 +1,5 @@
 import { createStackNavigator, createAppContainer, createBottomTabNavigator } from 'react-navigation'
+import { fromBottom, fromRight } from 'react-navigation-transitions'
 import React from 'react'
 import { StyleSheet, Image, Text, View } from 'react-native'
 
@@ -6,6 +7,8 @@ import { StyleSheet, Image, Text, View } from 'react-native'
 import Map from '../Components/Map/Map'
 import SuggestReport from '../Components/Map/SuggestReport'
 import Frame from '../Components/Map/StatusPanel/Frame'
+import Settings from '../Components/Map/Settings'
+import Filters from '../Components/Map/Filters'
 
 // Import from Components/Shared
 import BugsReport from '../Components/Shared/BugsReport'
@@ -32,17 +35,11 @@ const MapStackNavigator = createStackNavigator({
       navigationOptions: {
         header: null
       }
-    }
-}, {
-    navigationOptions: ({ navigation }) => ({
-        header: null,
-      }),
-})
-
-const CommunityStack = createStackNavigator({
-    SuggestReport: {
-        screen: SuggestReport,
+    },
+    Settings: {
+        screen: Settings,
         navigationOptions: {
+            title: 'Settings',
             header: null
         }
     },
@@ -60,6 +57,27 @@ const CommunityStack = createStackNavigator({
             header: null
         }
     },
+    Filters: {
+        screen: Filters,
+        navigationOptions: {
+            header: null,
+            gesturesEnabled: false
+        },
+    },
+}, {
+    navigationOptions: ({ navigation }) => ({
+        header: null
+    }),
+    transitionConfig: (props) => props.scene.route.routeName === "Filters" ? fromBottom() : fromRight(),
+})
+
+const CommunityStack = createStackNavigator({
+    SuggestReport: {
+        screen: SuggestReport,
+        navigationOptions: {
+            header: null
+        }
+    }
 }, {
     navigationOptions: ({ navigation }) => ({
         tabBarVisible:  true,

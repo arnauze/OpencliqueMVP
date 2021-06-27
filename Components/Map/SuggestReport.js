@@ -383,29 +383,11 @@ class SuggestReport extends React.Component {
                     <SafeAreaView
                         style={{ flex: 1 }}
                     >
-                        <View style={{ flex: 1, flexDirection: "row", alignItems: 'center' }}>
-                            <View style={{flex: 1}}/>
-                            <View style={{flex: 1, alignItems: 'center'}}>
-                                <View>
-                                    <Image
-                                    source={require("../../Images/logo_red.png")}
-                                    style={{width: 24, height: 25}}
-                                    />
-                                </View>
-                            </View>
-                            <View
-                            style={{flex: 1, alignItems: "flex-end" }}
-                            >
-                                <TouchableOpacity
-                                    onPress={() => this.props.navigation.navigate("Settings")}
-                                    style={{marginRight: 15}}
-                                >
-                                    <Image
-                                        source={require("../../Images/bug_settings_red.png")}
-                                        style={{ width: 20, height: 20 }}
-                                    />
-                                </TouchableOpacity>
-                            </View>
+                        <View style={{ flex: 1, flexDirection: "row", alignItems: 'center', justifyContent: 'center' }}>
+                            <Image
+                            source={require("../../Images/logo_red.png")}
+                            style={{width: 24, height: 25}}
+                            />
                         </View>
                         <View style={{ flexDirection: "row", justifyContent: 'center', margin: 15, marginBottom: 50 }}>
                             <Text style={{ fontWeight: "600", fontSize: 20, textAlign: 'center'}}>Send us a suggestion about a place that you like, and <Text style={{ color: appColor }}>get featured on the app!</Text></Text>

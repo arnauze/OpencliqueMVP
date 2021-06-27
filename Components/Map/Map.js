@@ -1,5 +1,5 @@
 import React from 'react'
-import { StyleSheet, View, Text, TouchableOpacity, ActivityIndicator, Image, Switch, Animated, ScrollView, Dimensions, SafeAreaView } from 'react-native'
+import { StyleSheet, View, Text, TextInput, TouchableOpacity, ActivityIndicator, Image, Switch, Animated, ScrollView, Dimensions, SafeAreaView } from 'react-native'
 import { connect } from 'react-redux'
 import CustomMarker from './CustomMarker'
 import { API, Storage } from 'aws-amplify'
@@ -31,6 +31,94 @@ class MyLocationButton extends React.Component {
                 source={require("../../Images/near_me_white.png")}
                 style={{width: 14, height: 14}}
                 />
+            </TouchableOpacity>
+        )
+    }
+}
+
+class TopBar extends React.Component {
+    render() {
+        return (
+            <View
+            style={{position: "absolute", top: 50, width: "100%", alignItems: 'center', flexDirection: "row"}}
+            >
+                <View
+                style={{flex: 1, alignItems: 'center'}}
+                >
+                    <SettingsButton
+                    navigation={this.props.navigation}
+                    />
+                </View>
+                <View
+                style={{flex: 4, alignItems: 'center'}}
+                >
+                    <SearchBar />
+                </View>
+                <View
+                style={{flex: 1, alignItems: 'center'}}
+                >
+                    <FiltersButton
+                    navigation={this.props.navigation}
+                    />
+                </View>
+            </View>
+        )
+    }
+}
+
+class SettingsButton extends React.Component {
+    render() {
+        return (
+            <TouchableOpacity
+            style={{width: 35, height: 35, alignItems: 'center', justifyContent: "center", borderRadius: 17.5, backgroundColor: "rgba(255,255,255,0.9)"}}
+            onPress={() => this.props.navigation.navigate("Settings")}
+            >
+                <Image
+                source={require("../../Images/settings_gray.png")}
+                style={{width: 15, height: 15}}
+                />
+            </TouchableOpacity>
+        )
+    }
+}
+
+class FiltersButton extends React.Component {
+    render() {
+        return (
+            <TouchableOpacity
+            style={{width: 35, height: 35, alignItems: 'center', justifyContent: "center", borderRadius: 17.5, backgroundColor: "rgba(255,255,255,0.9)"}}
+            onPress={() => this.props.navigation.navigate("Filters")}
+            >
+                <Image
+                source={require("../../Images/filters_gray.png")}
+                style={{width: 13.5, height: 13.5}}
+                />
+            </TouchableOpacity>
+        )
+    }
+}
+
+class SearchBar extends React.Component {
+
+    _getCity = () => {
+        return "Los Angeles"
+    }
+
+    render() {
+        return (
+            <TouchableOpacity
+            style={{width: 200, height: 35, borderRadius: 17.5, backgroundColor: "rgba(255,255,255,0.9)", flexDirection: "row", alignItems: "center", paddingHorizontal: 15}}
+            >
+                <Image
+                source={require("../../Images/search_icon.png")}
+                style={{width: 14, height: 14, marginRight: 8}}
+                />
+                <Text style={{color: "#8A8A8A", fontWeight: "600"}}>
+                    |
+                </Text>
+                <Text style={{marginLeft: 8, color: "#8A8A8A", fontWeight: "600"}}>
+                    {this._getCity()}
+                </Text>
             </TouchableOpacity>
         )
     }
@@ -805,6 +893,9 @@ class Map extends React.Component {
                 </MapboxGL.MapView>
                 <MyLocationButton
                 centerMap={this._centerMap}
+                />
+                <TopBar
+                navigation={this.props.navigation}
                 />
                 <OpenCallout
                 openCallout={this.state.openCallout}

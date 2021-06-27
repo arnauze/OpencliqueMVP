@@ -4,9 +4,18 @@ require_relative '../node_modules/@react-native-community/cli-platform-ios/nativ
 platform :ios, '10.0'
 
 target 'Openclique' do
+  pod 'Mapbox-iOS-SDK', '~> 5.9.0'
   config = use_native_modules!
 
   use_react_native!(:path => config["reactNativePath"])
+
+  pre_install do |installer|
+    $RNMBGL.pre_install(installer)
+  end
+
+  post_install do |installer|
+    $RNMBGL.post_install(installer)
+  end
 
   target 'OpencliqueTests' do
     inherit! :complete
