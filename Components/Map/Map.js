@@ -887,9 +887,7 @@ class Map extends React.Component {
                     visible
                     animated
                     />
-                    {/* {this._displayMarkersByZoom()} */}
                     {this._displayMarkersByCluster()}
-                    {this._displayUsers()}
                 </MapboxGL.MapView>
                 <MyLocationButton
                 centerMap={this._centerMap}
