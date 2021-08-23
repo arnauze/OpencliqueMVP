@@ -6,11 +6,12 @@ import Store from './Store/configureStore'
 import Amplify, {Auth} from 'aws-amplify'
 import AWS from 'aws-sdk'
 import { MemoryStorageNew } from './StorageService'
+import { aws_access_key_id, aws_secret_key } from './env'
 
 
 AWS.config.update({
-    accessKeyId:  "AKIAVPM4WHYNOGKNILXH",
-    secretAccessKey: "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",
+    accessKeyId:  aws_access_key_id,
+    secretAccessKey: aws_secret_key,
     region: "us-east-2"  
 });
 
