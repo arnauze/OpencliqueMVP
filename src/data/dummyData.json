@@ -1,0 +1,2212 @@
+{
+  "data": [
+    {
+      "address": "1 Rue Voltaire, 92290 Châtenay-Malabry, France",
+      "categories": ["Tobacco shop", "Bar", "Brasserie"],
+      "coordinates": {
+        "lat": 33.83003814942132,
+        "lng": -84.32427909225225,
+        "latitude": 50.739940521067155,
+        "longitude": 14.701908129404497
+      },
+      "current_popularity": 0,
+      "geohash": "u09t7vegbb",
+      "id": "u09t1",
+      "name": "Le Voltaire",
+      "place_types":[["tobacco_shop"], ["bar"], ["restaurant_brasserie"]],
+      "populartimes": [
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 1, 25, 69, 44, 24, 49, 71, 62, 41, 35, 46, 61, 71,
+            72, 63, 0, 0, 0
+          ],
+          "name": "Monday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 8, 35, 58, 49, 29, 48, 80, 57, 24, 23, 36, 43, 37,
+            24, 10, 0, 0, 0
+          ],
+          "name": "Tuesday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 1, 27, 75, 45, 19, 51, 59, 30, 19, 26, 32, 35, 31,
+            24, 15, 0, 0, 0
+          ],
+          "name": "Wednesday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 1, 13, 53, 75, 43, 22, 48, 62, 42, 39, 47, 53, 53,
+            46, 34, 0, 0, 0
+          ],
+          "name": "Thursday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 9, 39, 70, 60, 31, 46, 100, 97, 45, 30, 53, 76,
+            76, 52, 24, 0, 0, 0
+          ],
+          "name": "Friday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 0, 13, 30, 51, 69, 76, 72, 63, 57, 53, 48, 39, 26,
+            0, 0, 0, 0, 0
+          ],
+          "name": "Saturday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0
+          ],
+          "name": "Sunday"
+        }
+      ],
+      "rating": 4.2,
+      "rating_n": 219,
+      "time_spent": [10, 45]
+    },
+    {
+      "address": "1 Rue Voltaire, 92290 Châtenay-Malabry, France",
+      "categories": ["Tobacco shop", "Bar", "Brasserie"],
+      "coordinates": {
+        "lat": 48.8666666,
+        "lng": 2.2793585988,
+        "latitude": 49.70201225037012,
+        "longitude": 19.36566210175497
+      },
+      "current_popularity": 10,
+      "geohash": "u09t7vegbb",
+      "id": "u09t2",
+      "name": "Le Voltaire",
+      "place_types":[["tobacco_shop"], ["bar"], ["restaurant_brasserie"]],
+      "populartimes": [
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 1, 25, 69, 44, 24, 49, 71, 62, 41, 35, 46, 61, 71,
+            72, 63, 0, 0, 0
+          ],
+          "name": "Monday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 8, 35, 58, 49, 29, 48, 80, 57, 24, 23, 36, 43, 37,
+            24, 10, 0, 0, 0
+          ],
+          "name": "Tuesday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 1, 27, 75, 45, 19, 51, 59, 30, 19, 26, 32, 35, 31,
+            24, 15, 0, 0, 0
+          ],
+          "name": "Wednesday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 1, 13, 53, 75, 43, 22, 48, 62, 42, 39, 47, 53, 53,
+            46, 34, 0, 0, 0
+          ],
+          "name": "Thursday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 9, 39, 70, 60, 31, 46, 100, 97, 45, 30, 53, 76,
+            76, 52, 24, 0, 0, 0
+          ],
+          "name": "Friday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 0, 13, 30, 51, 69, 76, 72, 63, 57, 53, 48, 39, 26,
+            0, 0, 0, 0, 0
+          ],
+          "name": "Saturday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0
+          ],
+          "name": "Sunday"
+        }
+      ],
+      "rating": 4.2,
+      "rating_n": 219,
+      "time_spent": [10, 45]
+    },
+    {
+      "address": "1 Rue Voltaire, 92290 Châtenay-Malabry, France",
+      "categories": ["Tobacco shop", "Bar", "Brasserie"],
+      "coordinates": {
+        "lat": 48.86666666,
+        "lng": 2.27935869999,
+        "latitude": 55.31182162479888,
+        "longitude": 16.451847749824964
+      },
+      "current_popularity": 20,
+      "geohash": "u09t7vegbb",
+      "id": "u09t3",
+      "name": "Le Voltaire",
+      "place_types":[["tobacco_shop"], ["bar"], ["restaurant_brasserie"]],
+      "populartimes": [
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 1, 25, 69, 44, 24, 49, 71, 62, 41, 35, 46, 61, 71,
+            72, 63, 0, 0, 0
+          ],
+          "name": "Monday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 8, 35, 58, 49, 29, 48, 80, 57, 24, 23, 36, 43, 37,
+            24, 10, 0, 0, 0
+          ],
+          "name": "Tuesday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 1, 27, 75, 45, 19, 51, 59, 30, 19, 26, 32, 35, 31,
+            24, 15, 0, 0, 0
+          ],
+          "name": "Wednesday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 1, 13, 53, 75, 43, 22, 48, 62, 42, 39, 47, 53, 53,
+            46, 34, 0, 0, 0
+          ],
+          "name": "Thursday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 9, 39, 70, 60, 31, 46, 100, 97, 45, 30, 53, 76,
+            76, 52, 24, 0, 0, 0
+          ],
+          "name": "Friday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 0, 13, 30, 51, 69, 76, 72, 63, 57, 53, 48, 39, 26,
+            0, 0, 0, 0, 0
+          ],
+          "name": "Saturday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0
+          ],
+          "name": "Sunday"
+        }
+      ],
+      "rating": 4.2,
+      "rating_n": 219,
+      "time_spent": [10, 45]
+    },
+    {
+      "address": "1 Rue Voltaire, 92290 Châtenay-Malabry, France",
+      "categories": ["Tobacco shop", "Bar", "Brasserie"],
+      "coordinates": {
+        "lat": 48.7662124,
+        "lng": 2.2793585999999997,
+        "latitude": 54.20434812688539,
+        "longitude": 16.67067412236405
+      },
+      "current_popularity": 80,
+      "geohash": "u09t7vegbb",
+      "id": "u09t4",
+      "name": "Le Voltaire",
+      "place_types":[["tobacco_shop"], ["bar"], ["restaurant_brasserie"]],
+      "populartimes": [
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 1, 25, 69, 44, 24, 49, 71, 62, 41, 35, 46, 61, 71,
+            72, 63, 0, 0, 0
+          ],
+          "name": "Monday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 8, 35, 58, 49, 29, 48, 80, 57, 24, 23, 36, 43, 37,
+            24, 10, 0, 0, 0
+          ],
+          "name": "Tuesday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 1, 27, 75, 45, 19, 51, 59, 30, 19, 26, 32, 35, 31,
+            24, 15, 0, 0, 0
+          ],
+          "name": "Wednesday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 1, 13, 53, 75, 43, 22, 48, 62, 42, 39, 47, 53, 53,
+            46, 34, 0, 0, 0
+          ],
+          "name": "Thursday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 9, 39, 70, 60, 31, 46, 100, 97, 45, 30, 53, 76,
+            76, 52, 24, 0, 0, 0
+          ],
+          "name": "Friday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 0, 13, 30, 51, 69, 76, 72, 63, 57, 53, 48, 39, 26,
+            0, 0, 0, 0, 0
+          ],
+          "name": "Saturday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0
+          ],
+          "name": "Sunday"
+        }
+      ],
+      "rating": 4.2,
+      "rating_n": 219,
+      "time_spent": [10, 45]
+    },
+    {
+      "address": "1 Rue Voltaire, 92290 Châtenay-Malabry, France",
+      "categories": ["Tobacco shop", "Bar", "Brasserie"],
+      "coordinates": {
+        "lat": 48.7662124,
+        "lng": 2.2793585999999997,
+        "latitude": 52.050538989115495,
+        "longitude": 19.048282271567047
+      },
+      "current_popularity": 90,
+      "geohash": "u09t7vegbb",
+      "id": "u09t5",
+      "name": "Le Voltaire",
+      "place_types":[["tobacco_shop"], ["bar"], ["restaurant_brasserie"]],
+      "populartimes": [
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 1, 25, 69, 44, 24, 49, 71, 62, 41, 35, 46, 61, 71,
+            72, 63, 0, 0, 0
+          ],
+          "name": "Monday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 8, 35, 58, 49, 29, 48, 80, 57, 24, 23, 36, 43, 37,
+            24, 10, 0, 0, 0
+          ],
+          "name": "Tuesday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 1, 27, 75, 45, 19, 51, 59, 30, 19, 26, 32, 35, 31,
+            24, 15, 0, 0, 0
+          ],
+          "name": "Wednesday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 1, 13, 53, 75, 43, 22, 48, 62, 42, 39, 47, 53, 53,
+            46, 34, 0, 0, 0
+          ],
+          "name": "Thursday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 9, 39, 70, 60, 31, 46, 100, 97, 45, 30, 53, 76,
+            76, 52, 24, 0, 0, 0
+          ],
+          "name": "Friday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 0, 13, 30, 51, 69, 76, 72, 63, 57, 53, 48, 39, 26,
+            0, 0, 0, 0, 0
+          ],
+          "name": "Saturday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0
+          ],
+          "name": "Sunday"
+        }
+      ],
+      "rating": 4.2,
+      "rating_n": 219,
+      "time_spent": [10, 45]
+    },
+    {
+      "address": "1 Rue Voltaire, 92290 Châtenay-Malabry, France",
+      "categories": ["Tobacco shop", "Bar", "Brasserie"],
+      "coordinates": {
+        "lat": 48.7662124,
+        "lng": 2.2793585999999997,
+        "longitude": -21.592080555576665,
+        "latitude": 49.781274086127745
+      },
+      "current_popularity": 95,
+      "geohash": "u09t7vegbb",
+      "id": "u09t6",
+      "name": "Le Voltaire",
+      "place_types":[["tobacco_shop"], ["bar"], ["restaurant_brasserie"]],
+      "populartimes": [
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 1, 25, 69, 44, 24, 49, 71, 62, 41, 35, 46, 61, 71,
+            72, 63, 0, 0, 0
+          ],
+          "name": "Monday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 8, 35, 58, 49, 29, 48, 80, 57, 24, 23, 36, 43, 37,
+            24, 10, 0, 0, 0
+          ],
+          "name": "Tuesday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 1, 27, 75, 45, 19, 51, 59, 30, 19, 26, 32, 35, 31,
+            24, 15, 0, 0, 0
+          ],
+          "name": "Wednesday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 1, 13, 53, 75, 43, 22, 48, 62, 42, 39, 47, 53, 53,
+            46, 34, 0, 0, 0
+          ],
+          "name": "Thursday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 9, 39, 70, 60, 31, 46, 100, 97, 45, 30, 53, 76,
+            76, 52, 24, 0, 0, 0
+          ],
+          "name": "Friday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 0, 13, 30, 51, 69, 76, 72, 63, 57, 53, 48, 39, 26,
+            0, 0, 0, 0, 0
+          ],
+          "name": "Saturday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0
+          ],
+          "name": "Sunday"
+        }
+      ],
+      "rating": 4.2,
+      "rating_n": 219,
+      "time_spent": [10, 45]
+    },
+    {
+      "address": "1 Rue Voltaire, 92290 Châtenay-Malabry, France",
+      "categories": ["Tobacco shop", "Bar", "Brasserie"],
+      "coordinates": {
+        "lat": 48.7662124,
+        "lng": 2.2793585999999997,
+        "longitude": 23.370217113245317,
+        "latitude": 54.71433470270709
+      },
+      "current_popularity": 67,
+      "geohash": "u09t7vegbb",
+      "id": "u09t7",
+      "name": "Le Voltaire",
+      "place_types":[["tobacco_shop"], ["bar"], ["restaurant_brasserie"]],
+      "populartimes": [
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 1, 25, 69, 44, 24, 49, 71, 62, 41, 35, 46, 61, 71,
+            72, 63, 0, 0, 0
+          ],
+          "name": "Monday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 8, 35, 58, 49, 29, 48, 80, 57, 24, 23, 36, 43, 37,
+            24, 10, 0, 0, 0
+          ],
+          "name": "Tuesday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 1, 27, 75, 45, 19, 51, 59, 30, 19, 26, 32, 35, 31,
+            24, 15, 0, 0, 0
+          ],
+          "name": "Wednesday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 1, 13, 53, 75, 43, 22, 48, 62, 42, 39, 47, 53, 53,
+            46, 34, 0, 0, 0
+          ],
+          "name": "Thursday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 9, 39, 70, 60, 31, 46, 100, 97, 45, 30, 53, 76,
+            76, 52, 24, 0, 0, 0
+          ],
+          "name": "Friday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 0, 13, 30, 51, 69, 76, 72, 63, 57, 53, 48, 39, 26,
+            0, 0, 0, 0, 0
+          ],
+          "name": "Saturday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0
+          ],
+          "name": "Sunday"
+        }
+      ],
+      "rating": 4.2,
+      "rating_n": 219,
+      "time_spent": [10, 45]
+    },
+    {
+      "address": "1 Rue Voltaire, 92290 Châtenay-Malabry, France",
+      "categories": ["Tobacco shop", "Bar", "Brasserie"],
+      "coordinates": {
+        "lat": 48.7662124,
+        "lng": 2.2793585999999997,
+        "longitude": 19.976390954746805,
+        "latitude": 52.813928403443704
+      },
+      "current_popularity": 67,
+      "geohash": "u09t7vegbb",
+      "id": "u09t8",
+      "name": "Le Voltaire",
+      "place_types":[["tobacco_shop"], ["bar"], ["restaurant_brasserie"]],
+      "populartimes": [
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 1, 25, 69, 44, 24, 49, 71, 62, 41, 35, 46, 61, 71,
+            72, 63, 0, 0, 0
+          ],
+          "name": "Monday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 8, 35, 58, 49, 29, 48, 80, 57, 24, 23, 36, 43, 37,
+            24, 10, 0, 0, 0
+          ],
+          "name": "Tuesday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 1, 27, 75, 45, 19, 51, 59, 30, 19, 26, 32, 35, 31,
+            24, 15, 0, 0, 0
+          ],
+          "name": "Wednesday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 1, 13, 53, 75, 43, 22, 48, 62, 42, 39, 47, 53, 53,
+            46, 34, 0, 0, 0
+          ],
+          "name": "Thursday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 9, 39, 70, 60, 31, 46, 100, 97, 45, 30, 53, 76,
+            76, 52, 24, 0, 0, 0
+          ],
+          "name": "Friday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 0, 13, 30, 51, 69, 76, 72, 63, 57, 53, 48, 39, 26,
+            0, 0, 0, 0, 0
+          ],
+          "name": "Saturday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0
+          ],
+          "name": "Sunday"
+        }
+      ],
+      "rating": 4.2,
+      "rating_n": 219,
+      "time_spent": [10, 45]
+    },
+    {
+      "address": "1 Rue Voltaire, 92290 Châtenay-Malabry, France",
+      "categories": ["Tobacco shop", "Bar", "Brasserie"],
+      "coordinates": {
+        "lat": 48.7662124,
+        "lng": 2.2793585999999997,
+        "longitude": 18.35713076981701,
+        "latitude": 55.37324954363608
+      },
+      "current_popularity": 67,
+      "geohash": "u09t7vegbb",
+      "id": "u09t9",
+      "name": "Le Voltaire",
+      "place_types":[["tobacco_shop"], ["bar"], ["restaurant_brasserie"]],
+      "populartimes": [
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 1, 25, 69, 44, 24, 49, 71, 62, 41, 35, 46, 61, 71,
+            72, 63, 0, 0, 0
+          ],
+          "name": "Monday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 8, 35, 58, 49, 29, 48, 80, 57, 24, 23, 36, 43, 37,
+            24, 10, 0, 0, 0
+          ],
+          "name": "Tuesday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 1, 27, 75, 45, 19, 51, 59, 30, 19, 26, 32, 35, 31,
+            24, 15, 0, 0, 0
+          ],
+          "name": "Wednesday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 1, 13, 53, 75, 43, 22, 48, 62, 42, 39, 47, 53, 53,
+            46, 34, 0, 0, 0
+          ],
+          "name": "Thursday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 9, 39, 70, 60, 31, 46, 100, 97, 45, 30, 53, 76,
+            76, 52, 24, 0, 0, 0
+          ],
+          "name": "Friday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 0, 13, 30, 51, 69, 76, 72, 63, 57, 53, 48, 39, 26,
+            0, 0, 0, 0, 0
+          ],
+          "name": "Saturday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0
+          ],
+          "name": "Sunday"
+        }
+      ],
+      "rating": 4.2,
+      "rating_n": 219,
+      "time_spent": [10, 45]
+    },
+    {
+      "address": "1 Rue Voltaire, 92290 Châtenay-Malabry, France",
+      "categories": ["Tobacco shop", "Bar", "Brasserie"],
+      "coordinates": {
+        "lat": 48.7662124,
+        "lng": 2.2793585999999997,
+        "longitude": 22.358275447961486,
+        "latitude": 50.9690953840948
+      },
+      "current_popularity": 30,
+      "geohash": "u09t7vegbb",
+      "id": "u09t10",
+      "name": "Le Voltaire",
+      "place_types":[["tobacco_shop"], ["bar"], ["restaurant_brasserie"]],
+      "populartimes": [
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 1, 25, 69, 44, 24, 49, 71, 62, 41, 35, 46, 61, 71,
+            72, 63, 0, 0, 0
+          ],
+          "name": "Monday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 8, 35, 58, 49, 29, 48, 80, 57, 24, 23, 36, 43, 37,
+            24, 10, 0, 0, 0
+          ],
+          "name": "Tuesday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 1, 27, 75, 45, 19, 51, 59, 30, 19, 26, 32, 35, 31,
+            24, 15, 0, 0, 0
+          ],
+          "name": "Wednesday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 1, 13, 53, 75, 43, 22, 48, 62, 42, 39, 47, 53, 53,
+            46, 34, 0, 0, 0
+          ],
+          "name": "Thursday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 9, 39, 70, 60, 31, 46, 100, 97, 45, 30, 53, 76,
+            76, 52, 24, 0, 0, 0
+          ],
+          "name": "Friday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 0, 13, 30, 51, 69, 76, 72, 63, 57, 53, 48, 39, 26,
+            0, 0, 0, 0, 0
+          ],
+          "name": "Saturday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0
+          ],
+          "name": "Sunday"
+        }
+      ],
+      "rating": 4.2,
+      "rating_n": 219,
+      "time_spent": [10, 45]
+    },
+    {
+      "address": "1 Rue Voltaire, 92290 Châtenay-Malabry, France",
+      "categories": ["Tobacco shop", "Bar", "Brasserie"],
+      "coordinates": {
+        "lat": 48.7662124,
+        "lng": 2.2793585999999997,
+        "longitude": 22.7787330982009,
+        "latitude": 50.892134637059335
+      },
+      "current_popularity": 40,
+      "geohash": "u09t7vegbb",
+      "id": "u09t11",
+      "name": "Le Voltaire",
+      "place_types":[["tobacco_shop"], ["club"], ["restaurant_brasserie"]],
+      "populartimes": [
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 1, 25, 69, 44, 24, 49, 71, 62, 41, 35, 46, 61, 71,
+            72, 63, 0, 0, 0
+          ],
+          "name": "Monday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 8, 35, 58, 49, 29, 48, 80, 57, 24, 23, 36, 43, 37,
+            24, 10, 0, 0, 0
+          ],
+          "name": "Tuesday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 1, 27, 75, 45, 19, 51, 59, 30, 19, 26, 32, 35, 31,
+            24, 15, 0, 0, 0
+          ],
+          "name": "Wednesday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 1, 13, 53, 75, 43, 22, 48, 62, 42, 39, 47, 53, 53,
+            46, 34, 0, 0, 0
+          ],
+          "name": "Thursday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 9, 39, 70, 60, 31, 46, 100, 97, 45, 30, 53, 76,
+            76, 52, 24, 0, 0, 0
+          ],
+          "name": "Friday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 0, 13, 30, 51, 69, 76, 72, 63, 57, 53, 48, 39, 26,
+            0, 0, 0, 0, 0
+          ],
+          "name": "Saturday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0
+          ],
+          "name": "Sunday"
+        }
+      ],
+      "rating": 4.2,
+      "rating_n": 219,
+      "time_spent": [10, 45]
+    },
+    {
+      "address": "1 Rue Voltaire, 92290 Châtenay-Malabry, France",
+      "categories": ["Tobacco shop", "Bar", "Brasserie"],
+      "coordinates": {
+        "lat": 48.7662124,
+        "lng": 2.2793585999999997,
+        "longitude": 19.718139991503616,
+        "latitude": 48.90181955149015
+      },
+      "current_popularity": 50,
+      "geohash": "u09t7vegbb",
+      "id": "u09t12",
+      "name": "Le Voltaire",
+      "place_types":[["tobacco_shop"], ["club"], ["restaurant_brasserie"]],
+      "populartimes": [
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 1, 25, 69, 44, 24, 49, 71, 62, 41, 35, 46, 61, 71,
+            72, 63, 0, 0, 0
+          ],
+          "name": "Monday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 8, 35, 58, 49, 29, 48, 80, 57, 24, 23, 36, 43, 37,
+            24, 10, 0, 0, 0
+          ],
+          "name": "Tuesday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 1, 27, 75, 45, 19, 51, 59, 30, 19, 26, 32, 35, 31,
+            24, 15, 0, 0, 0
+          ],
+          "name": "Wednesday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 1, 13, 53, 75, 43, 22, 48, 62, 42, 39, 47, 53, 53,
+            46, 34, 0, 0, 0
+          ],
+          "name": "Thursday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 9, 39, 70, 60, 31, 46, 100, 97, 45, 30, 53, 76,
+            76, 52, 24, 0, 0, 0
+          ],
+          "name": "Friday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 0, 13, 30, 51, 69, 76, 72, 63, 57, 53, 48, 39, 26,
+            0, 0, 0, 0, 0
+          ],
+          "name": "Saturday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0
+          ],
+          "name": "Sunday"
+        }
+      ],
+      "rating": 4.2,
+      "rating_n": 219,
+      "time_spent": [10, 45]
+    },
+    {
+      "address": "1 Rue Voltaire, 92290 Châtenay-Malabry, France",
+      "categories": ["Tobacco shop", "Bar", "Brasserie"],
+      "coordinates": {
+        "lat": 48.7662124,
+        "lng": 2.2793585999999997,
+        "longitude": 18.301123341848317,
+        "latitude": 50.27505587850817
+      },
+      "current_popularity": 35,
+      "geohash": "u09t7vegbb",
+      "id": "u09t13",
+      "name": "Le Voltaire",
+      "place_types":[["tobacco_shop"], ["bar"], ["restaurant_brasserie"]],
+      "populartimes": [
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 1, 25, 69, 44, 24, 49, 71, 62, 41, 35, 46, 61, 71,
+            72, 63, 0, 0, 0
+          ],
+          "name": "Monday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 8, 35, 58, 49, 29, 48, 80, 57, 24, 23, 36, 43, 37,
+            24, 10, 0, 0, 0
+          ],
+          "name": "Tuesday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 1, 27, 75, 45, 19, 51, 59, 30, 19, 26, 32, 35, 31,
+            24, 15, 0, 0, 0
+          ],
+          "name": "Wednesday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 1, 13, 53, 75, 43, 22, 48, 62, 42, 39, 47, 53, 53,
+            46, 34, 0, 0, 0
+          ],
+          "name": "Thursday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 9, 39, 70, 60, 31, 46, 100, 97, 45, 30, 53, 76,
+            76, 52, 24, 0, 0, 0
+          ],
+          "name": "Friday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 0, 13, 30, 51, 69, 76, 72, 63, 57, 53, 48, 39, 26,
+            0, 0, 0, 0, 0
+          ],
+          "name": "Saturday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0
+          ],
+          "name": "Sunday"
+        }
+      ],
+      "rating": 4.2,
+      "rating_n": 219,
+      "time_spent": [10, 45]
+    },
+    {
+      "address": "1 Rue Voltaire, 92290 Châtenay-Malabry, France",
+      "categories": ["Tobacco shop", "Bar", "Brasserie"],
+      "coordinates": {
+        "lat": 48.7662124,
+        "lng": 2.2793585999999997,
+        "longitude": 19.82219991786169,
+        "latitude": 52.7223055946685
+      },
+      "current_popularity": 25,
+      "geohash": "u09t7vegbb",
+      "id": "u09t14",
+      "name": "Le Voltaire",
+      "place_types":[["tobacco_shop"], ["club"], ["restaurant_brasserie"]],
+      "populartimes": [
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 1, 25, 69, 44, 24, 49, 71, 62, 41, 35, 46, 61, 71,
+            72, 63, 0, 0, 0
+          ],
+          "name": "Monday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 8, 35, 58, 49, 29, 48, 80, 57, 24, 23, 36, 43, 37,
+            24, 10, 0, 0, 0
+          ],
+          "name": "Tuesday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 1, 27, 75, 45, 19, 51, 59, 30, 19, 26, 32, 35, 31,
+            24, 15, 0, 0, 0
+          ],
+          "name": "Wednesday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 1, 13, 53, 75, 43, 22, 48, 62, 42, 39, 47, 53, 53,
+            46, 34, 0, 0, 0
+          ],
+          "name": "Thursday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 9, 39, 70, 60, 31, 46, 100, 97, 45, 30, 53, 76,
+            76, 52, 24, 0, 0, 0
+          ],
+          "name": "Friday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 0, 13, 30, 51, 69, 76, 72, 63, 57, 53, 48, 39, 26,
+            0, 0, 0, 0, 0
+          ],
+          "name": "Saturday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0
+          ],
+          "name": "Sunday"
+        }
+      ],
+      "rating": 4.2,
+      "rating_n": 219,
+      "time_spent": [10, 45]
+    },
+    {
+      "address": "1 Rue Voltaire, 92290 Châtenay-Malabry, France",
+      "categories": ["Tobacco shop", "Bar", "Brasserie"],
+      "coordinates": {
+        "lat": 48.7662124,
+        "lng": 2.2793585999999997,
+        "longitude": 15.828252176929386,
+        "latitude": 53.08896158823422
+      },
+      "current_popularity": 100,
+      "geohash": "u09t7vegbb",
+      "id": "u09t15",
+      "name": "Le Voltaire",
+      "place_types":[["tobacco_shop"], ["bar"], ["restaurant_brasserie"]],
+      "populartimes": [
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 1, 25, 69, 44, 24, 49, 71, 62, 41, 35, 46, 61, 71,
+            72, 63, 0, 0, 0
+          ],
+          "name": "Monday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 8, 35, 58, 49, 29, 48, 80, 57, 24, 23, 36, 43, 37,
+            24, 10, 0, 0, 0
+          ],
+          "name": "Tuesday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 1, 27, 75, 45, 19, 51, 59, 30, 19, 26, 32, 35, 31,
+            24, 15, 0, 0, 0
+          ],
+          "name": "Wednesday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 1, 13, 53, 75, 43, 22, 48, 62, 42, 39, 47, 53, 53,
+            46, 34, 0, 0, 0
+          ],
+          "name": "Thursday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 9, 39, 70, 60, 31, 46, 100, 97, 45, 30, 53, 76,
+            76, 52, 24, 0, 0, 0
+          ],
+          "name": "Friday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 0, 13, 30, 51, 69, 76, 72, 63, 57, 53, 48, 39, 26,
+            0, 0, 0, 0, 0
+          ],
+          "name": "Saturday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0
+          ],
+          "name": "Sunday"
+        }
+      ],
+      "rating": 4.2,
+      "rating_n": 219,
+      "time_spent": [10, 45]
+    },
+    {
+      "address": "1 Rue Voltaire, 92290 Châtenay-Malabry, France",
+      "categories": ["Tobacco shop", "Bar", "Brasserie"],
+      "coordinates": {
+        "lat": 48.7662124,
+        "lng": 2.2793585999999997,
+        "longitude": 18.753316996442067,
+        "latitude": 49.302827057139815
+      },
+      "current_popularity": 90,
+      "geohash": "u09t7vegbb",
+      "id": "u09t16",
+      "name": "Le Voltaire",
+      "place_types":[["tobacco_shop"], ["pub"], ["restaurant_brasserie"]],
+      "populartimes": [
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 1, 25, 69, 44, 24, 49, 71, 62, 41, 35, 46, 61, 71,
+            72, 63, 0, 0, 0
+          ],
+          "name": "Monday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 8, 35, 58, 49, 29, 48, 80, 57, 24, 23, 36, 43, 37,
+            24, 10, 0, 0, 0
+          ],
+          "name": "Tuesday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 1, 27, 75, 45, 19, 51, 59, 30, 19, 26, 32, 35, 31,
+            24, 15, 0, 0, 0
+          ],
+          "name": "Wednesday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 1, 13, 53, 75, 43, 22, 48, 62, 42, 39, 47, 53, 53,
+            46, 34, 0, 0, 0
+          ],
+          "name": "Thursday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 9, 39, 70, 60, 31, 46, 100, 97, 45, 30, 53, 76,
+            76, 52, 24, 0, 0, 0
+          ],
+          "name": "Friday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 0, 13, 30, 51, 69, 76, 72, 63, 57, 53, 48, 39, 26,
+            0, 0, 0, 0, 0
+          ],
+          "name": "Saturday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0
+          ],
+          "name": "Sunday"
+        }
+      ],
+      "rating": 4.2,
+      "rating_n": 219,
+      "time_spent": [10, 45]
+    },
+    {
+      "address": "1 Rue Voltaire, 92290 Châtenay-Malabry, France",
+      "categories": ["Tobacco shop", "Bar", "Brasserie"],
+      "coordinates": {
+        "lat": 48.7662124,
+        "lng": 2.2793585999999997,
+        "longitude": 23.178172054185723,
+        "latitude": 52.2820736170984
+      },
+      "current_popularity": 100,
+      "geohash": "u09t7vegbb",
+      "id": "u09t17",
+      "name": "Le Voltaire",
+      "place_types":[["tobacco_shop"], ["pub"], ["restaurant_brasserie"]],
+      "populartimes": [
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 1, 25, 69, 44, 24, 49, 71, 62, 41, 35, 46, 61, 71,
+            72, 63, 0, 0, 0
+          ],
+          "name": "Monday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 8, 35, 58, 49, 29, 48, 80, 57, 24, 23, 36, 43, 37,
+            24, 10, 0, 0, 0
+          ],
+          "name": "Tuesday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 1, 27, 75, 45, 19, 51, 59, 30, 19, 26, 32, 35, 31,
+            24, 15, 0, 0, 0
+          ],
+          "name": "Wednesday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 1, 13, 53, 75, 43, 22, 48, 62, 42, 39, 47, 53, 53,
+            46, 34, 0, 0, 0
+          ],
+          "name": "Thursday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 9, 39, 70, 60, 31, 46, 100, 97, 45, 30, 53, 76,
+            76, 52, 24, 0, 0, 0
+          ],
+          "name": "Friday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 0, 13, 30, 51, 69, 76, 72, 63, 57, 53, 48, 39, 26,
+            0, 0, 0, 0, 0
+          ],
+          "name": "Saturday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0
+          ],
+          "name": "Sunday"
+        }
+      ],
+      "rating": 4.2,
+      "rating_n": 219,
+      "time_spent": [10, 45]
+    },
+    {
+      "address": "1 Rue Voltaire, 92290 Châtenay-Malabry, France",
+      "categories": ["Tobacco shop", "Bar", "Brasserie"],
+      "coordinates": {
+        "lat": 48.7662124,
+        "lng": 2.2793585999999997,
+        "longitude": 17.89399843902114,
+        "latitude": 49.89149566698791
+      },
+      "current_popularity": 100,
+      "geohash": "u09t7vegbb",
+      "id": "u09t18",
+      "name": "Le Voltaire",
+      "place_types":[["tobacco_shop"], ["pub"], ["restaurant_brasserie"]],
+      "populartimes": [
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 1, 25, 69, 44, 24, 49, 71, 62, 41, 35, 46, 61, 71,
+            72, 63, 0, 0, 0
+          ],
+          "name": "Monday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 8, 35, 58, 49, 29, 48, 80, 57, 24, 23, 36, 43, 37,
+            24, 10, 0, 0, 0
+          ],
+          "name": "Tuesday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 1, 27, 75, 45, 19, 51, 59, 30, 19, 26, 32, 35, 31,
+            24, 15, 0, 0, 0
+          ],
+          "name": "Wednesday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 1, 13, 53, 75, 43, 22, 48, 62, 42, 39, 47, 53, 53,
+            46, 34, 0, 0, 0
+          ],
+          "name": "Thursday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 9, 39, 70, 60, 31, 46, 100, 97, 45, 30, 53, 76,
+            76, 52, 24, 0, 0, 0
+          ],
+          "name": "Friday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 0, 13, 30, 51, 69, 76, 72, 63, 57, 53, 48, 39, 26,
+            0, 0, 0, 0, 0
+          ],
+          "name": "Saturday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0
+          ],
+          "name": "Sunday"
+        }
+      ],
+      "rating": 4.2,
+      "rating_n": 219,
+      "time_spent": [10, 45]
+    },
+    {
+      "address": "1 Rue Voltaire, 92290 Châtenay-Malabry, France",
+      "categories": ["Tobacco shop", "Bar", "Brasserie"],
+      "coordinates": {
+        "lat": 48.7662124,
+        "lng": 2.2793585999999997,
+        "longitude": 17.8647642971559,
+        "latitude": 55.77795291953613
+      },
+      "current_popularity": 100,
+      "geohash": "u09t7vegbb",
+      "id": "u09t19",
+      "name": "Le Voltaire",
+      "place_types":[["tobacco_shop"], ["pub"], ["restaurant_brasserie"]],
+      "populartimes": [
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 1, 25, 69, 44, 24, 49, 71, 62, 41, 35, 46, 61, 71,
+            72, 63, 0, 0, 0
+          ],
+          "name": "Monday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 8, 35, 58, 49, 29, 48, 80, 57, 24, 23, 36, 43, 37,
+            24, 10, 0, 0, 0
+          ],
+          "name": "Tuesday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 1, 27, 75, 45, 19, 51, 59, 30, 19, 26, 32, 35, 31,
+            24, 15, 0, 0, 0
+          ],
+          "name": "Wednesday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 1, 13, 53, 75, 43, 22, 48, 62, 42, 39, 47, 53, 53,
+            46, 34, 0, 0, 0
+          ],
+          "name": "Thursday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 9, 39, 70, 60, 31, 46, 100, 97, 45, 30, 53, 76,
+            76, 52, 24, 0, 0, 0
+          ],
+          "name": "Friday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 0, 13, 30, 51, 69, 76, 72, 63, 57, 53, 48, 39, 26,
+            0, 0, 0, 0, 0
+          ],
+          "name": "Saturday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0
+          ],
+          "name": "Sunday"
+        }
+      ],
+      "rating": 4.2,
+      "rating_n": 219,
+      "time_spent": [10, 45]
+    },
+    {
+      "address": "1 Rue Voltaire, 92290 Châtenay-Malabry, France",
+      "categories": ["Tobacco shop", "Bar", "Brasserie"],
+      "coordinates": {
+        "lat": 48.7662124,
+        "lng": 2.2793585999999997,
+        "longitude": 23.3607726510114,
+        "latitude": 50.80657934653902
+      },
+      "current_popularity": 100,
+      "geohash": "u09t7vegbb",
+      "id": "u09t20",
+      "name": "Le Voltaire",
+      "place_types":[["tobacco_shop"], ["club"], ["restaurant_brasserie"]],
+      "populartimes": [
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 1, 25, 69, 44, 24, 49, 71, 62, 41, 35, 46, 61, 71,
+            72, 63, 0, 0, 0
+          ],
+          "name": "Monday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 8, 35, 58, 49, 29, 48, 80, 57, 24, 23, 36, 43, 37,
+            24, 10, 0, 0, 0
+          ],
+          "name": "Tuesday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 1, 27, 75, 45, 19, 51, 59, 30, 19, 26, 32, 35, 31,
+            24, 15, 0, 0, 0
+          ],
+          "name": "Wednesday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 1, 13, 53, 75, 43, 22, 48, 62, 42, 39, 47, 53, 53,
+            46, 34, 0, 0, 0
+          ],
+          "name": "Thursday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 9, 39, 70, 60, 31, 46, 100, 97, 45, 30, 53, 76,
+            76, 52, 24, 0, 0, 0
+          ],
+          "name": "Friday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 0, 13, 30, 51, 69, 76, 72, 63, 57, 53, 48, 39, 26,
+            0, 0, 0, 0, 0
+          ],
+          "name": "Saturday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0
+          ],
+          "name": "Sunday"
+        }
+      ],
+      "rating": 4.2,
+      "rating_n": 219,
+      "time_spent": [10, 45]
+    },
+    {
+      "address": "1 Rue Voltaire, 92290 Châtenay-Malabry, France",
+      "categories": ["Tobacco shop", "Bar", "Brasserie"],
+      "coordinates": {
+        "lat": 48.7662124,
+        "lng": 2.2793585999999997,
+        "longitude": 21.652800063648478,
+        "latitude": 55.24727990113701
+      },
+      "current_popularity": 100,
+      "geohash": "u09t7vegbb",
+      "id": "u09t21",
+      "name": "Le Voltaire",
+      "place_types":[["tobacco_shop"], ["club"], ["restaurant_brasserie"]],
+      "populartimes": [
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 1, 25, 69, 44, 24, 49, 71, 62, 41, 35, 46, 61, 71,
+            72, 63, 0, 0, 0
+          ],
+          "name": "Monday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 8, 35, 58, 49, 29, 48, 80, 57, 24, 23, 36, 43, 37,
+            24, 10, 0, 0, 0
+          ],
+          "name": "Tuesday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 1, 27, 75, 45, 19, 51, 59, 30, 19, 26, 32, 35, 31,
+            24, 15, 0, 0, 0
+          ],
+          "name": "Wednesday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 1, 13, 53, 75, 43, 22, 48, 62, 42, 39, 47, 53, 53,
+            46, 34, 0, 0, 0
+          ],
+          "name": "Thursday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 9, 39, 70, 60, 31, 46, 100, 97, 45, 30, 53, 76,
+            76, 52, 24, 0, 0, 0
+          ],
+          "name": "Friday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 0, 13, 30, 51, 69, 76, 72, 63, 57, 53, 48, 39, 26,
+            0, 0, 0, 0, 0
+          ],
+          "name": "Saturday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0
+          ],
+          "name": "Sunday"
+        }
+      ],
+      "rating": 4.2,
+      "rating_n": 219,
+      "time_spent": [10, 45]
+    },
+    {
+      "address": "1 Rue Voltaire, 92290 Châtenay-Malabry, France",
+      "categories": ["Tobacco shop", "Bar", "Brasserie"],
+      "coordinates": {
+        "lat": 48.7662124,
+        "lng": 2.2793585999999997,
+        "longitude": 16.93992725070369,
+        "latitude": 50.16308535402742
+      },
+      "current_popularity": 100,
+      "geohash": "u09t7vegbb",
+      "id": "u09t22",
+      "name": "Le Voltaire",
+      "place_types":[["tobacco_shop"], ["club"], ["restaurant_brasserie"]],
+      "populartimes": [
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 1, 25, 69, 44, 24, 49, 71, 62, 41, 35, 46, 61, 71,
+            72, 63, 0, 0, 0
+          ],
+          "name": "Monday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 8, 35, 58, 49, 29, 48, 80, 57, 24, 23, 36, 43, 37,
+            24, 10, 0, 0, 0
+          ],
+          "name": "Tuesday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 1, 27, 75, 45, 19, 51, 59, 30, 19, 26, 32, 35, 31,
+            24, 15, 0, 0, 0
+          ],
+          "name": "Wednesday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 1, 13, 53, 75, 43, 22, 48, 62, 42, 39, 47, 53, 53,
+            46, 34, 0, 0, 0
+          ],
+          "name": "Thursday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 9, 39, 70, 60, 31, 46, 100, 97, 45, 30, 53, 76,
+            76, 52, 24, 0, 0, 0
+          ],
+          "name": "Friday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 0, 13, 30, 51, 69, 76, 72, 63, 57, 53, 48, 39, 26,
+            0, 0, 0, 0, 0
+          ],
+          "name": "Saturday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0
+          ],
+          "name": "Sunday"
+        }
+      ],
+      "rating": 4.2,
+      "rating_n": 219,
+      "time_spent": [10, 45]
+    },
+    {
+      "address": "1 Rue Voltaire, 92290 Châtenay-Malabry, France",
+      "categories": ["Tobacco shop", "Bar", "Brasserie"],
+      "coordinates": {
+        "lat": 48.7662124,
+        "lng": 2.2793585999999997,
+        "longitude": 17.046085554620216,
+        "latitude": 52.653210310062434
+      },
+      "current_popularity": 100,
+      "geohash": "u09t7vegbb",
+      "id": "u09t23",
+      "name": "Le Voltaire",
+      "place_types":[["tobacco_shop"], ["bar"], ["restaurant_brasserie"]],
+      "populartimes": [
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 1, 25, 69, 44, 24, 49, 71, 62, 41, 35, 46, 61, 71,
+            72, 63, 0, 0, 0
+          ],
+          "name": "Monday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 8, 35, 58, 49, 29, 48, 80, 57, 24, 23, 36, 43, 37,
+            24, 10, 0, 0, 0
+          ],
+          "name": "Tuesday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 1, 27, 75, 45, 19, 51, 59, 30, 19, 26, 32, 35, 31,
+            24, 15, 0, 0, 0
+          ],
+          "name": "Wednesday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 1, 13, 53, 75, 43, 22, 48, 62, 42, 39, 47, 53, 53,
+            46, 34, 0, 0, 0
+          ],
+          "name": "Thursday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 9, 39, 70, 60, 31, 46, 100, 97, 45, 30, 53, 76,
+            76, 52, 24, 0, 0, 0
+          ],
+          "name": "Friday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 0, 13, 30, 51, 69, 76, 72, 63, 57, 53, 48, 39, 26,
+            0, 0, 0, 0, 0
+          ],
+          "name": "Saturday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0
+          ],
+          "name": "Sunday"
+        }
+      ],
+      "rating": 4.2,
+      "rating_n": 219,
+      "time_spent": [10, 45]
+    },
+    {
+      "address": "1 Rue Voltaire, 92290 Châtenay-Malabry, France",
+      "categories": ["Tobacco shop", "Bar", "Brasserie"],
+      "coordinates": {
+        "lat": 48.7662124,
+        "lng": 2.2793585999999997,
+        "longitude": 23.971035001177484,
+        "latitude": 51.86487593028206
+      },
+      "current_popularity": 100,
+      "geohash": "u09t7vegbb",
+      "id": "u09t24",
+      "name": "Le Voltaire",
+      "place_types":[["tobacco_shop"], ["bar"], ["restaurant_brasserie"]],
+      "populartimes": [
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 1, 25, 69, 44, 24, 49, 71, 62, 41, 35, 46, 61, 71,
+            72, 63, 0, 0, 0
+          ],
+          "name": "Monday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 8, 35, 58, 49, 29, 48, 80, 57, 24, 23, 36, 43, 37,
+            24, 10, 0, 0, 0
+          ],
+          "name": "Tuesday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 1, 27, 75, 45, 19, 51, 59, 30, 19, 26, 32, 35, 31,
+            24, 15, 0, 0, 0
+          ],
+          "name": "Wednesday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 1, 13, 53, 75, 43, 22, 48, 62, 42, 39, 47, 53, 53,
+            46, 34, 0, 0, 0
+          ],
+          "name": "Thursday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 9, 39, 70, 60, 31, 46, 100, 97, 45, 30, 53, 76,
+            76, 52, 24, 0, 0, 0
+          ],
+          "name": "Friday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 0, 13, 30, 51, 69, 76, 72, 63, 57, 53, 48, 39, 26,
+            0, 0, 0, 0, 0
+          ],
+          "name": "Saturday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0
+          ],
+          "name": "Sunday"
+        }
+      ],
+      "rating": 4.2,
+      "rating_n": 219,
+      "time_spent": [10, 45]
+    },
+    {
+      "address": "1 Rue Voltaire, 92290 Châtenay-Malabry, France",
+      "categories": ["Tobacco shop", "Bar", "Brasserie"],
+      "coordinates": {
+        "lat": 48.7662124,
+        "lng": 2.2793585999999997,
+        "longitude": 23.393071986575404,
+        "latitude": 50.023686928975096
+      },
+      "current_popularity": 67,
+      "geohash": "u09t7vegbb",
+      "id": "u09t25",
+      "name": "Le Voltaire",
+      "place_types":[["tobacco_shop"], ["club"], ["restaurant_brasserie"]],
+      "populartimes": [
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 1, 25, 69, 44, 24, 49, 71, 62, 41, 35, 46, 61, 71,
+            72, 63, 0, 0, 0
+          ],
+          "name": "Monday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 8, 35, 58, 49, 29, 48, 80, 57, 24, 23, 36, 43, 37,
+            24, 10, 0, 0, 0
+          ],
+          "name": "Tuesday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 1, 27, 75, 45, 19, 51, 59, 30, 19, 26, 32, 35, 31,
+            24, 15, 0, 0, 0
+          ],
+          "name": "Wednesday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 1, 13, 53, 75, 43, 22, 48, 62, 42, 39, 47, 53, 53,
+            46, 34, 0, 0, 0
+          ],
+          "name": "Thursday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 9, 39, 70, 60, 31, 46, 100, 97, 45, 30, 53, 76,
+            76, 52, 24, 0, 0, 0
+          ],
+          "name": "Friday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 0, 13, 30, 51, 69, 76, 72, 63, 57, 53, 48, 39, 26,
+            0, 0, 0, 0, 0
+          ],
+          "name": "Saturday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0
+          ],
+          "name": "Sunday"
+        }
+      ],
+      "rating": 4.2,
+      "rating_n": 219,
+      "time_spent": [10, 45]
+    },
+    {
+      "address": "1 Rue Voltaire, 92290 Châtenay-Malabry, France",
+      "categories": ["Tobacco shop", "Bar", "Brasserie"],
+      "coordinates": {
+        "lat": 48.7662124,
+        "lng": 2.2793585999999997,
+        "longitude": 17.539957813822674,
+        "latitude": 54.2073809084951
+      },
+      "current_popularity": 67,
+      "geohash": "u09t7vegbb",
+      "id": "u09t26",
+      "name": "Le Voltaire",
+      "place_types":[["tobacco_shop"], ["pub"], ["restaurant_brasserie"]],
+      "populartimes": [
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 1, 25, 69, 44, 24, 49, 71, 62, 41, 35, 46, 61, 71,
+            72, 63, 0, 0, 0
+          ],
+          "name": "Monday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 8, 35, 58, 49, 29, 48, 80, 57, 24, 23, 36, 43, 37,
+            24, 10, 0, 0, 0
+          ],
+          "name": "Tuesday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 1, 27, 75, 45, 19, 51, 59, 30, 19, 26, 32, 35, 31,
+            24, 15, 0, 0, 0
+          ],
+          "name": "Wednesday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 1, 13, 53, 75, 43, 22, 48, 62, 42, 39, 47, 53, 53,
+            46, 34, 0, 0, 0
+          ],
+          "name": "Thursday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 9, 39, 70, 60, 31, 46, 100, 97, 45, 30, 53, 76,
+            76, 52, 24, 0, 0, 0
+          ],
+          "name": "Friday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 0, 13, 30, 51, 69, 76, 72, 63, 57, 53, 48, 39, 26,
+            0, 0, 0, 0, 0
+          ],
+          "name": "Saturday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0
+          ],
+          "name": "Sunday"
+        }
+      ],
+      "rating": 4.2,
+      "rating_n": 219,
+      "time_spent": [10, 45]
+    },
+    {
+      "address": "1 Rue Voltaire, 92290 Châtenay-Malabry, France",
+      "categories": ["Tobacco shop", "Bar", "Brasserie"],
+      "coordinates": {
+        "lat": 48.7662124,
+        "lng": 2.2793585999999997,
+        "longitude": 17.908220183410414,
+        "latitude": 50.4174178690277
+      },
+      "current_popularity": 67,
+      "geohash": "u09t7vegbb",
+      "id": "u09t27",
+      "name": "Le Voltaire",
+      "place_types":[["tobacco_shop"], ["pub"], ["restaurant_brasserie"]],
+      "populartimes": [
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 1, 25, 69, 44, 24, 49, 71, 62, 41, 35, 46, 61, 71,
+            72, 63, 0, 0, 0
+          ],
+          "name": "Monday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 8, 35, 58, 49, 29, 48, 80, 57, 24, 23, 36, 43, 37,
+            24, 10, 0, 0, 0
+          ],
+          "name": "Tuesday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 1, 27, 75, 45, 19, 51, 59, 30, 19, 26, 32, 35, 31,
+            24, 15, 0, 0, 0
+          ],
+          "name": "Wednesday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 1, 13, 53, 75, 43, 22, 48, 62, 42, 39, 47, 53, 53,
+            46, 34, 0, 0, 0
+          ],
+          "name": "Thursday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 9, 39, 70, 60, 31, 46, 100, 97, 45, 30, 53, 76,
+            76, 52, 24, 0, 0, 0
+          ],
+          "name": "Friday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 0, 13, 30, 51, 69, 76, 72, 63, 57, 53, 48, 39, 26,
+            0, 0, 0, 0, 0
+          ],
+          "name": "Saturday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0
+          ],
+          "name": "Sunday"
+        }
+      ],
+      "rating": 4.2,
+      "rating_n": 219,
+      "time_spent": [10, 45]
+    },
+    {
+      "address": "1 Rue Voltaire, 92290 Châtenay-Malabry, France",
+      "categories": ["Tobacco shop", "Bar", "Brasserie"],
+      "coordinates": {
+        "lat": 48.7662124,
+        "lng": 2.2793585999999997,
+        "longitude": 14.636479014620434,
+        "latitude": 55.4040734712909
+      },
+      "current_popularity": 67,
+      "geohash": "u09t7vegbb",
+      "id": "u09t28",
+      "name": "Le Voltaire",
+      "place_types":[["tobacco_shop"], ["pub"], ["restaurant_brasserie"]],
+      "populartimes": [
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 1, 25, 69, 44, 24, 49, 71, 62, 41, 35, 46, 61, 71,
+            72, 63, 0, 0, 0
+          ],
+          "name": "Monday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 8, 35, 58, 49, 29, 48, 80, 57, 24, 23, 36, 43, 37,
+            24, 10, 0, 0, 0
+          ],
+          "name": "Tuesday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 1, 27, 75, 45, 19, 51, 59, 30, 19, 26, 32, 35, 31,
+            24, 15, 0, 0, 0
+          ],
+          "name": "Wednesday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 1, 13, 53, 75, 43, 22, 48, 62, 42, 39, 47, 53, 53,
+            46, 34, 0, 0, 0
+          ],
+          "name": "Thursday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 9, 39, 70, 60, 31, 46, 100, 97, 45, 30, 53, 76,
+            76, 52, 24, 0, 0, 0
+          ],
+          "name": "Friday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 0, 13, 30, 51, 69, 76, 72, 63, 57, 53, 48, 39, 26,
+            0, 0, 0, 0, 0
+          ],
+          "name": "Saturday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0
+          ],
+          "name": "Sunday"
+        }
+      ],
+      "rating": 4.2,
+      "rating_n": 219,
+      "time_spent": [10, 45]
+    },
+    {
+      "address": "1 Rue Voltaire, 92290 Châtenay-Malabry, France",
+      "categories": ["Tobacco shop", "Bar", "Brasserie"],
+      "coordinates": {
+        "lat": 48.7662124,
+        "lng": 2.2793585999999997,
+        "longitude": 15.062624611995567,
+        "latitude": 51.53294509816032
+      },
+      "current_popularity": 67,
+      "geohash": "u09t7vegbb",
+      "id": "u09t29",
+      "name": "Le Voltaire",
+      "place_types":[["tobacco_shop"], ["bar"], ["restaurant_brasserie"]],
+      "populartimes": [
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 1, 25, 69, 44, 24, 49, 71, 62, 41, 35, 46, 61, 71,
+            72, 63, 0, 0, 0
+          ],
+          "name": "Monday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 8, 35, 58, 49, 29, 48, 80, 57, 24, 23, 36, 43, 37,
+            24, 10, 0, 0, 0
+          ],
+          "name": "Tuesday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 1, 27, 75, 45, 19, 51, 59, 30, 19, 26, 32, 35, 31,
+            24, 15, 0, 0, 0
+          ],
+          "name": "Wednesday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 1, 13, 53, 75, 43, 22, 48, 62, 42, 39, 47, 53, 53,
+            46, 34, 0, 0, 0
+          ],
+          "name": "Thursday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 9, 39, 70, 60, 31, 46, 100, 97, 45, 30, 53, 76,
+            76, 52, 24, 0, 0, 0
+          ],
+          "name": "Friday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 0, 13, 30, 51, 69, 76, 72, 63, 57, 53, 48, 39, 26,
+            0, 0, 0, 0, 0
+          ],
+          "name": "Saturday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0
+          ],
+          "name": "Sunday"
+        }
+      ],
+      "rating": 4.2,
+      "rating_n": 219,
+      "time_spent": [10, 45]
+    },
+    {
+      "address": "1 Rue Voltaire, 92290 Châtenay-Malabry, France",
+      "categories": ["Tobacco shop", "Bar", "Brasserie"],
+      "coordinates": {
+        "lat": 48.7662124,
+        "lng": 2.2793585999999997,
+        "longitude": 18.251086838167936,
+        "latitude": 53.987106143084844
+      },
+      "current_popularity": 67,
+      "geohash": "u09t7vegbb",
+      "id": "u09t30",
+      "name": "Le Voltaire",
+      "place_types":[["tobacco_shop"], ["pub"], ["restaurant_brasserie"]],
+      "populartimes": [
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 1, 25, 69, 44, 24, 49, 71, 62, 41, 35, 46, 61, 71,
+            72, 63, 0, 0, 0
+          ],
+          "name": "Monday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 8, 35, 58, 49, 29, 48, 80, 57, 24, 23, 36, 43, 37,
+            24, 10, 0, 0, 0
+          ],
+          "name": "Tuesday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 1, 27, 75, 45, 19, 51, 59, 30, 19, 26, 32, 35, 31,
+            24, 15, 0, 0, 0
+          ],
+          "name": "Wednesday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 1, 13, 53, 75, 43, 22, 48, 62, 42, 39, 47, 53, 53,
+            46, 34, 0, 0, 0
+          ],
+          "name": "Thursday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 9, 39, 70, 60, 31, 46, 100, 97, 45, 30, 53, 76,
+            76, 52, 24, 0, 0, 0
+          ],
+          "name": "Friday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 0, 13, 30, 51, 69, 76, 72, 63, 57, 53, 48, 39, 26,
+            0, 0, 0, 0, 0
+          ],
+          "name": "Saturday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0
+          ],
+          "name": "Sunday"
+        }
+      ],
+      "rating": 4.2,
+      "rating_n": 219,
+      "time_spent": [10, 45]
+    },
+    {
+      "address": "1 Rue Voltaire, 92290 Châtenay-Malabry, France",
+      "categories": ["Tobacco shop", "Bar", "Brasserie"],
+      "coordinates": {
+        "lat": 48.7662124,
+        "lng": 2.2793585999999997,
+        "longitude": 17.971270976897678,
+        "latitude": 52.40956651277981
+      },
+      "current_popularity": 67,
+      "geohash": "u09t7vegbb",
+      "id": "u09t31",
+      "name": "Le Voltaire",
+      "place_types":[["tobacco_shop"], ["club"], ["restaurant_brasserie"]],
+      "populartimes": [
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 1, 25, 69, 44, 24, 49, 71, 62, 41, 35, 46, 61, 71,
+            72, 63, 0, 0, 0
+          ],
+          "name": "Monday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 8, 35, 58, 49, 29, 48, 80, 57, 24, 23, 36, 43, 37,
+            24, 10, 0, 0, 0
+          ],
+          "name": "Tuesday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 1, 27, 75, 45, 19, 51, 59, 30, 19, 26, 32, 35, 31,
+            24, 15, 0, 0, 0
+          ],
+          "name": "Wednesday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 1, 13, 53, 75, 43, 22, 48, 62, 42, 39, 47, 53, 53,
+            46, 34, 0, 0, 0
+          ],
+          "name": "Thursday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 9, 39, 70, 60, 31, 46, 100, 97, 45, 30, 53, 76,
+            76, 52, 24, 0, 0, 0
+          ],
+          "name": "Friday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 0, 13, 30, 51, 69, 76, 72, 63, 57, 53, 48, 39, 26,
+            0, 0, 0, 0, 0
+          ],
+          "name": "Saturday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0
+          ],
+          "name": "Sunday"
+        }
+      ],
+      "rating": 4.2,
+      "rating_n": 219,
+      "time_spent": [10, 45]
+    },
+    {
+      "address": "1 Rue Voltaire, 92290 Châtenay-Malabry, France",
+      "categories": ["Tobacco shop", "Bar", "Brasserie"],
+      "coordinates": {
+        "lat": 48.7662124,
+        "lng": 2.2793585999999997,
+        "longitude": 20.28727646326113,
+        "latitude": 50.66730897781076
+      },
+      "current_popularity": 67,
+      "geohash": "u09t7vegbb",
+      "id": "u09t32",
+      "name": "Le Voltaire",
+      "place_types":[["tobacco_shop"], ["club"], ["restaurant_brasserie"]],
+      "populartimes": [
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 1, 25, 69, 44, 24, 49, 71, 62, 41, 35, 46, 61, 71,
+            72, 63, 0, 0, 0
+          ],
+          "name": "Monday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 8, 35, 58, 49, 29, 48, 80, 57, 24, 23, 36, 43, 37,
+            24, 10, 0, 0, 0
+          ],
+          "name": "Tuesday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 1, 27, 75, 45, 19, 51, 59, 30, 19, 26, 32, 35, 31,
+            24, 15, 0, 0, 0
+          ],
+          "name": "Wednesday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 1, 13, 53, 75, 43, 22, 48, 62, 42, 39, 47, 53, 53,
+            46, 34, 0, 0, 0
+          ],
+          "name": "Thursday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 9, 39, 70, 60, 31, 46, 100, 97, 45, 30, 53, 76,
+            76, 52, 24, 0, 0, 0
+          ],
+          "name": "Friday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 0, 13, 30, 51, 69, 76, 72, 63, 57, 53, 48, 39, 26,
+            0, 0, 0, 0, 0
+          ],
+          "name": "Saturday"
+        },
+        {
+          "data": [
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0
+          ],
+          "name": "Sunday"
+        }
+      ],
+      "rating": 4.2,
+      "rating_n": 219,
+      "time_spent": [10, 45]
+    }
+  ]
+}
